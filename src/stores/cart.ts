@@ -6,14 +6,7 @@ import { defineStore } from "pinia";
 // the first argument is a unique id of the store across your application
 export const useCartStore = defineStore("cart", {
   state: () => ({
-    items: [
-      {
-        id: 1, title: "Ancient Greece", price: 500
-      },
-      {
-        id: 2, title: "Egypt", price: 750
-      }
-    ]
+    items: []
   }),
   getters: {
     totalValue: (state) => state.items.reduce((acc, item) => acc + item.price, 0),
@@ -25,6 +18,9 @@ export const useCartStore = defineStore("cart", {
     },
     removeItem(item) {
       this.items = this.items.filter(i => i.id !== item.id)
+    },
+    clear() {
+      this.items = [];
     }
   },
 });

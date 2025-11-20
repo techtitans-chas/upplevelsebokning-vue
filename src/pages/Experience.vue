@@ -1,8 +1,14 @@
 <template>
-  <h1 v-if="item.title" font="bold" text="lg">{{ item.title }}</h1>
-  <h1 v-else>Experience not found</h1>
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 v-if="item.title" font="bold" text="4xl">{{ item.title }}</h1>
+    <h1 v-else>Experience not found</h1>
 
-  <RouterLink :to="`/booking/${item.id}`"><button>Book now</button></RouterLink>
+    <p v-if="item.description">{{ item.description }}</p>
+
+    <RouterLink :to="`/booking/${item.id}`">
+      <button class="bg-emerald-500 px-4 py-3">Book now</button>
+    </RouterLink>
+  </div>
 </template>
 
 <script setup>

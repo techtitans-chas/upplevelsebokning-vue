@@ -8,10 +8,14 @@ export const useExperienceStore = defineStore("experience", {
   state: () => ({
     items: [
       {
-        id: 1, title: "Ancient Greece", price: 500
+        id: 1, title: "Ancient Greece",
+        price: 500,
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nobis mollitia ullam, ea tempora possimus soluta adipisci esse consectetur dolores ipsum ducimus error veritatis obcaecati rerum, facilis velit expedita vel."
       },
       {
-        id: 2, title: "Egypt", price: 750
+        id: 2, title: "Egypt",
+        price: 750,
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas."
       }
     ]
   }),
