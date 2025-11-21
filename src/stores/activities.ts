@@ -1,32 +1,32 @@
 import { defineStore } from "pinia";
 import { useDestinationStore } from "./destination";
 
-export const useAccommodationStore = defineStore("accommodation", {
+export const useActivityStore = defineStore("activity", {
   state: () => ({
     items: [
       {
         id: 1,
         destinationId: 1,
-        title: "Stone Age Suites & Spa",
-        description: "Rooms cut out in stone",
-        amenities: ["Dino proof windows", "Breakfast served by mammoths"],
-        beds: 2,
-        pricePerNight: 500,
-        thumbnail: "src image",
+        title: "Temple tours",
+        description: "Explore the ancient temples with a knowledgeable guide.",
+        duration: "2 hours",
+        groupSize: "Up to 10 people",
+        ageGroup: "All ages",
+        included: ["Guide", "Transportation", "Snacks"],
+        requirements: ["Comfortable shoes", "18+ for wine tasting"],
+        price: 50,
         rating: 4.5,
         reviews: [
           { user: "John Doe", rating: 5, comment: "Amazing stay!" },
           { user: "Jane Smith", rating: 4, comment: "Great service, but the room was small." }
-        ]
+        ],
+        thumbnail: "src image",
       },
       {
         id: 2,
-        destinationId: 2,
-        title: "Pharaoh's Pyramid Palace",
-        description: "Pyramid-shaped rooms with mysterious hieroglyphs",
-        amenities: ["Complimentary sarcophagus nap service", "All-inclusive with sun-god guarantee"],
-        beds: 2,
-        pricePerNight: 300
+        destinationId: 1,
+        title: "Wine tasting",
+        ageGroup: "18+"
       },
     ]
   }),
