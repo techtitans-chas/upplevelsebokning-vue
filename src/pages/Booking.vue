@@ -15,16 +15,16 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useExperienceStore } from "@/stores/experience";
+import { useDestinationStore } from "@/stores/destination";
 import { useCartStore } from "@/stores/cart";
 
 const route = useRoute();
 const router = useRouter();
 
-const experiences = useExperienceStore();
+const destination = useDestinationStore();
 const cart = useCartStore();
 
-const item = computed(() => experiences.find(Number(route.params.id)) || { title: "Not Found", price: 0 });
+const item = computed(() => destination.getById(Number(route.params.id)) || { title: "Not Found", price: 0 });
 
 function order() {
   cart.addItem(item.value);

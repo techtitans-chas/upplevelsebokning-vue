@@ -1,3 +1,9 @@
+:root {
+  --branding: rgb(0, 115, 125);
+}
+
 #app {
   min-height: 100vh;
+  color: white;
+  background: linear-gradient(var(--branding));
 }

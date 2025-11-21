@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="nav bg-sky-500">
+    <nav class="nav var(--branding) border-bottom solid">
       <div v-tooltip="'Home'" class="branding nav-link">
         <Icon icon="streamline-plump:hourglass-remix" /> <RouterLink to="/">Hourglass Adventures</RouterLink>
       </div>

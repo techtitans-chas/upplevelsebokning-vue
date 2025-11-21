@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 // but it's best to use the name of the store and surround it with `use`
 // and `Store` (e.g. `useUserStore`, `useCartStore`, `useProductStore`)
 // the first argument is a unique id of the store across your application
-export const useExperienceStore = defineStore("experience", {
+export const useDestinationStore = defineStore("destination", {
   state: () => ({
     items: [
       {
@@ -16,14 +16,20 @@ export const useExperienceStore = defineStore("experience", {
         id: 2, title: "Egypt",
         price: 750,
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas."
+      },
+      {
+        id: 3, title: "Jupiter",
+        price: 750000,
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas."
       }
     ]
   }),
   getters: {
+    getById: (state) => (id: number) => {
+      return state.items.find(i => i.id === id);
+    },
   },
   actions: {
-    find(id) {
-      return this.items.find(i => i.id === id);
-    },
+
   },
 });
