@@ -17,7 +17,7 @@
 
     <h2 font="bold" text="3xl">Destinations</h2>
     <div class="grid grid-cols-[1fr_1fr_1fr] gap-4 p-8">
-      <div v-for="item in destinations.items" :key="item.id">
+      <div v-for="item in destinations.data" :key="item.id">
         <RouterLink :to="`/destination/${item.id}`" class="border border-1 p-4 block">
           {{ item.title }}
         </RouterLink>
@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useDestinationStore } from "@/stores/destination";
 import { RouterLink } from "vue-router";
 

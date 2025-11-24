@@ -1,38 +1,15 @@
 import { defineStore } from "pinia";
+import { computed } from "vue";
+import { useDataLoader } from "../composables/useDataLoader";
 import { useDestinationStore } from "./destination";
+import type { Accommodation } from "../types";
 
-export const useAccommodationStore = defineStore("accommodation", {
-  state: () => ({
-    items: [
-      {
-        id: 1,
-        destinationId: 1,
-        title: "Stone Age Suites & Spa",
-        description: "Rooms cut out in stone",
-        amenities: ["Dino proof windows", "Breakfast served by mammoths"],
-        beds: 2,
-        pricePerNight: 500,
-        thumbnail: "src image",
-        rating: 4.5,
-        reviews: [
-          { user: "John Doe", rating: 5, comment: "Amazing stay!" },
-          { user: "Jane Smith", rating: 4, comment: "Great service, but the room was small." }
-        ]
-      },
-      {
-        id: 2,
-        destinationId: 2,
-        title: "Pharaoh's Pyramid Palace",
-        description: "Pyramid-shaped rooms with mysterious hieroglyphs",
-        amenities: ["Complimentary sarcophagus nap service", "All-inclusive with sun-god guarantee"],
-        beds: 2,
-        pricePerNight: 300
-      },
-    ]
-  }),
-  getters: {
-    getById: (state) => (id: number, populate: string[] = []) => {
-      const item = state.items.find(i => i.id === id);
+export const useAccommodationStore = defineStore("accommodation", () => {
+  const { data, loading, error, load } = useDataLoader<Accommodation>("/data/accommodations.json");
+
+  const getById = computed(() => {
+    return (id: string, populate: string[] = []) => {
+      const item = data.value.find(i => i.id === String(id));
       if (!item) return null;
 
       const enrichedItem: any = { ...item };
@@ -43,10 +20,14 @@ export const useAccommodationStore = defineStore("accommodation", {
       }
 
       return enrichedItem;
-    },
+    }
+  });
 
-  },
-  actions: {
-   
-  },
+  return {
+    data,
+    loading,
+    error,
+    load,
+    getById
+  }
 });

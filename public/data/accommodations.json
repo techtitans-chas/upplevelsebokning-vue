@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "destinationId": 1,
+    "title": "Stone Age Suites & Spa",
+    "description": "Rooms cut out in stone",
+    "amenities": ["Dino proof windows", "Breakfast served by mammoths"],
+    "beds": 2,
+    "pricePerNight": 500,
+    "thumbnail": "src image",
+    "rating": 4.5,
+    "reviews": [
+      { "user": "John Doe", "rating": 5, "comment": "Amazing stay!" },
+      {
+        "user": "Jane Smith",
+        "rating": 4,
+        "comment": "Great service, but the room was small."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "destinationId": 2,
+    "title": "Pharaoh's Pyramid Palace",
+    "description": "Pyramid-shaped rooms with mysterious hieroglyphs",
+    "amenities": [
+      "Complimentary sarcophagus nap service",
+      "All-inclusive with sun-god guarantee"
+    ],
+    "beds": 2,
+    "pricePerNight": 300
+  }
+]

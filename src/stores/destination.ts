@@ -1,59 +1,20 @@
 import { defineStore } from "pinia";
+import { computed } from "vue";
+import type { Destination } from "../types";
+import { useDataLoader } from "../composables/useDataLoader";
 
-export const useDestinationStore = defineStore("destination", {
-  state: () => ({
-    items: [
-      {
-        id: 1,
-        title: "Ancient Greece",
-        location: "Greece",
-        timePeriod: 1100,
-        climate: "Warm Mediterranean climate, best visited in spring or autumn",
-        travelTips: ["Pack light clothing", "Learn basic Greek phrases"],
-        price: 500,
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nobis mollitia ullam, ea tempora possimus soluta adipisci esse consectetur dolores ipsum ducimus error veritatis obcaecati rerum, facilis velit expedita vel.",
-        thumbnail: "src image",
-        coverImage: "src image",
-        reviews: [
-          { user: "John Doe", rating: 5, comment: "Amazing experience!" },
-          { user: "Jane Smith", rating: 4, comment: "Beautiful, but crowded." }
-        ]
-      },
-      {
-        id: 2,
-        title: "Egypt",
-        location: "Egypt",
-        timePeriod: 300,
-        price: 750,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas.",
-        thumbnail: "src image",
-        coverImage: "src image",
-        reviews: [
-          { user: "John Doe", rating: 5, comment: "Amazing experience!" },
-          { user: "Jane Smith", rating: 4, comment: "Beautiful, but crowded." }
-        ]
-      },
-      {
-        id: 3,
-        title: "Jupiter",
-        location: "Jupiter",
-        price: 750000,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas.",
-        thumbnail: "src image",
-        coverImage: "src image",
-        reviews: [
-          { user: "John Doe", rating: 5, comment: "Amazing experience!" },
-          { user: "Jane Smith", rating: 4, comment: "Beautiful, but crowded." }
-        ]
-      }
-    ]
-  }),
-  getters: {
-    getById: (state) => (id: number) => {
-      return state.items.find(i => i.id === id);
-    },
-  },
-  actions: {
+export const useDestinationStore = defineStore("destination", () => {
+ const { data, loading, error, load } = useDataLoader<Destination>("/data/destinations.json");
 
-  },
+  const getById = computed(() => {
+    return (id: string) => data.value.find(i => i.id === id);
+  });
+
+  return {
+    data,
+    loading,
+    error,
+    load,
+    getById
+  }
 });

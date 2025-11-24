@@ -1,0 +1,20 @@
+[
+{
+    "id": 1,
+    "destinationId": 1,
+    "title": "Temple tours",
+    "description": "Explore the ancient temples with a knowledgeable guide.",
+    "duration": "2 hours",
+    "groupSize": "Up to 10 people",
+    "ageGroup": "All ages",
+    "included": ["Guide", "Transportation", "Snacks"],
+    "requirements": ["Comfortable shoes", "18+ for wine tasting"],
+    "price": 50,
+    "rating": 4.5,
+    "reviews": [
+      { "user": "John Doe", "rating": 5, "comment": "Amazing stay!" },
+      { "user": "Jane Smith", "rating": 4, "comment": "Great service, but the room was small." }
+    ],
+    "thumbnail": "src image"
+  }
+]

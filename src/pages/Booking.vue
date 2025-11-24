@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
@@ -24,7 +24,7 @@ const router = useRouter();
 const destination = useDestinationStore();
 const cart = useCartStore();
 
-const item = computed(() => destination.getById(Number(route.params.id)) || { title: "Not Found", price: 0 });
+const item = computed(() => destination.getById(route.params.id) || { title: "Not Found", price: 0 });
 
 function order() {
   cart.addItem(item.value);
