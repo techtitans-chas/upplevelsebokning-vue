@@ -4,6 +4,11 @@
       <h1 font="bold" text="4xl">{{ destination.title }}</h1>
       <p v-if="destination.description">{{ destination.description }}</p>
 
+      <Section> 
+        <h1>This is a section component</h1>
+        <p>Lorem ipsum</p>
+      </Section> 
+
       <RouterLink :to="`/booking/${destination.id}`">
         <button class="bg-emerald-500 px-4 py-3">Book now</button>
       </RouterLink>
@@ -20,6 +25,7 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
+import Section from "@/components/Section.vue";
 // import { useAccommodationStore } from "@/stores/accommodation";
 
 const route = useRoute();
