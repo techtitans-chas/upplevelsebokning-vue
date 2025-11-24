@@ -16,8 +16,17 @@
       <Dropdown label="Destination" placeholder="Select a destination" v-model="selectedDestination">
         <template #content="{ select }">
           <div class="p-2 space-y-1">
-            <div v-for="dest in destinations.data" :key="dest.id" @click="select(dest.title)"
-              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm">
+            <div 
+              v-for="dest in destinations.data" 
+              :key="dest.id"
+              @click="select(dest.title)"
+              role="option"
+              :aria-selected="selectedDestination === dest.title"
+              tabindex="0"
+              @keydown.enter.prevent="select(dest.title)"
+              @keydown.space.prevent="select(dest.title)"
+              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none"
+            >
               {{ dest.title }}
             </div>
           </div>
@@ -45,8 +54,17 @@
       <Dropdown label="Age group" placeholder="Select an age group" v-model="selectedAgeGroup">
         <template #content="{ select }">
           <div class="p-2 space-y-1">
-            <div v-for="group in ageGroups" :key="group" @click="select(group)"
-              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm">
+            <div 
+              v-for="group in ageGroups" 
+              :key="group"
+              @click="select(group)"
+              role="option"
+              :aria-selected="selectedAgeGroup === group"
+              tabindex="0"
+              @keydown.enter.prevent="select(group)"
+              @keydown.space.prevent="select(group)"
+              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none"
+            >
               {{ group }}
             </div>
           </div>

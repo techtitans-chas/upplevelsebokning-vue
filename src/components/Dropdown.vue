@@ -4,20 +4,35 @@
     <!-- Trigger button -->
     <div
       class="h-full flex gap-2 p-3 px-4 items-start bg-white rounded-sm color-gray-600 cursor-pointer hover:bg-gray-50 transition-colors min-w-[200px]"
-      :class="{ 'ring-2 ring-primary-500': isOpen }">
+      :class="{ 'ring-2 ring-primary-500': isOpen }"
+      tabindex="0"
+      role="combobox"
+      :aria-expanded="isOpen"
+      :aria-haspopup="true"
+      :aria-controls="`dropdown-content-${label}`"
+      :aria-label="`${label}: ${modelValue || placeholder}`"
+      @keydown.enter.prevent="toggleDropdown"
+      @keydown.space.prevent="toggleDropdown"
+      @keydown.escape="closeDropdown"
+    >
       <div class="flex-1">
-        <div class="text-xs text-gray-500 mb-1">{{ label }}</div>
+        <div class="text-xs text-gray-500 mb-1" :id="`dropdown-label-${label}`">{{ label }}</div>
         <div class="text-sm font-medium" :class="{ 'text-gray-400': !modelValue }">
           {{ modelValue || placeholder }}
         </div>
       </div>
       <Icon icon="fa-solid:chevron-down" :class="{ 'rotate-180': isOpen }"
-        class="transition-transform duration-200 text-gray-500" />
+        class="transition-transform duration-200 text-gray-500" aria-hidden="true" />
     </div>
 
     <!-- Dropdown content -->
     <template #popper="{ hide }">
-      <div class="bg-white  min-w-[200px] max-h-[300px] overflow-auto">
+      <div 
+        :id="`dropdown-content-${label}`"
+        role="listbox"
+        :aria-labelledby="`dropdown-label-${label}`"
+        class="bg-white  min-w-[200px] max-h-[300px] overflow-auto"
+      >
         <slot name="content" :close="hide" :select="(value: string | number) => handleSelect(value, hide)" />
       </div>
     </template>
@@ -42,6 +57,18 @@ const emit = defineEmits<{
 
 const isOpen = ref(false);
 const dropdownRef = ref<InstanceType<typeof Dropdown>>();
+
+const toggleDropdown = () => {
+  if (isOpen.value) {
+    dropdownRef.value?.hide();
+  } else {
+    dropdownRef.value?.show();
+  }
+};
+
+const closeDropdown = () => {
+  dropdownRef.value?.hide();
+};
 
 const handleSelect = (value: string | number, hide: () => void) => {
   emit("update:modelValue", value);
