@@ -12,5 +12,17 @@ export default defineConfig({
       "primary-light": "#9cd5cb",
       secondary: "#f3a639ff",
     }
-  }
+  },
+  preflights: [
+    {
+      getCSS: ({ theme }) => `
+        :root {
+          --color-primary: ${theme.colors.primary};
+          --color-primary-dark: ${theme.colors["primary-dark"]};
+          --color-primary-light: ${theme.colors["primary-light"]};
+          --color-secondary: ${theme.colors.secondary};
+        }
+      `,
+    },
+  ],
 });

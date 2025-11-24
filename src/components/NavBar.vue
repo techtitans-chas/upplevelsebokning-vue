@@ -1,8 +1,8 @@
 <template>
   <header>
-    <nav class="nav var(--branding) border-bottom solid">
+    <nav class="nav bg-black/15 border-bottom border-1 border-black/30 solid">
       <div v-tooltip="'Home'" class="branding nav-link">
-        <Icon icon="streamline-plump:hourglass-remix" /> <RouterLink to="/">Hourglass Adventures</RouterLink>
+        <Icon icon="streamline-plump:hourglass-remix" class="text-secondary" /> <RouterLink to="/" class="text-white">Hourglass Adventures</RouterLink>
       </div>
       <ul class="flex gap-4">
         <li v-tooltip="'Cart'" class="nav-link">

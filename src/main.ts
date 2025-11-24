@@ -1,11 +1,11 @@
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import FloatingVue from "floating-vue";
-import "./style.css";
 import App from "./App.vue";
 import { router } from "./router";
 import "virtual:uno.css";
 import "floating-vue/dist/style.css";
-import { createPinia } from "pinia";
+import "./style.css";
 
 const pinia = createPinia();
 

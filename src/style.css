@@ -1,19 +1,71 @@
-:root {
-  --branding: #051b2a;
-  --branding1: #007f79;
-  --color1: #f39939;
-  --color2: rgb(243, 196, 68);
-  --color3: rgb(67, 159, 101);
-  --color4: rgb(115, 198, 205);
-  --color5: rgb(200, 152, 184);
-  --color6: rgb(255, 137, 127);
-  --color7: rgb(221, 138, 93);
+html {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
 #app {
   min-height: 100vh;
-  color: #9cd5cb;
-  background: linear-gradient(var(--branding));
+  color: var(--color-primary-light);
+  background: linear-gradient(var(--color-primary-dark));
+}
+
+/* Typography */
+h1 {
+  font-family: "Oswald", serif;
+  font-size: 2.5rem;
+  font-weight: 450;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-family: "Oswald", serif;
+  font-size: 2rem;
+  font-weight: 450;
+  color: white;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-primary-light);
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--color-secondary);
 }
 
 
