@@ -3,7 +3,7 @@
     <div class="flex items-center align-center text-black">
       <slot name="left" />
     </div>
-    <input type="text" v-model="value" :class="inputClasses" text="black sm" />
+    <input type="text" v-model="value" :class="inputClasses" :placeholder="placeholder" text="black sm" />
     <div class="flex items-center align-center text-black">
       <slot name="right" />
     </div>
@@ -15,6 +15,7 @@ import { ref, computed } from "vue";
 import { twMerge } from "tailwind-merge";
 
 const props = defineProps<{
+  placeholder?: string
   rightContent?: string
   class?: string
   inputClass?: string

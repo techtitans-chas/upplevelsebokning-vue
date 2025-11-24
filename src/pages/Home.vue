@@ -7,22 +7,11 @@
 
     <h2>Search</h2>
 
-    <Input>
-    <template #right>
-      <Button icon="iconamoon:search-bold" size="sm" color="secondary">
-        Search
-      </Button>
-    </template>
-    </Input>
+    <SearchForm class="mb-6" />
 
-    <ul class="mb-4">
-      <li>Destination</li>
-      <li>Date</li>
-      <li>People amount</li>
-      <li>Age group</li>
-    </ul>
-
-    <Button to="/search" icon-left="iconamoon:search-bold" icon="fluent:arrow-right-12-filled">Search</Button>
+    <Button to="/search" icon-left="iconamoon:search-bold" icon="fluent:arrow-right-12-filled">
+      Search
+    </Button>
 
     <h2>Destinations</h2>
     <div class="grid grid-cols-[1fr_1fr_1fr] gap-4 p-8">
@@ -43,14 +32,14 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import { Icon } from "@iconify/vue";
 import Button from "@/components/Button.vue";
+import SearchForm from "@/components/SearchForm.vue";
 import Section from "@/components/Section.vue";
 import Card from "@/components/Card.vue";
-import Input from "@/components/Input.vue";
 import { useDestinationStore } from "@/stores/destination";
 
 const destinations = useDestinationStore();
+
 </script>
 
 <style scoped>

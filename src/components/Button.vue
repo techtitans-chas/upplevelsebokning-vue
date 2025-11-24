@@ -59,7 +59,7 @@
     const color = props.color || "primary";
 
     return twMerge(
-      "btn flex items-center align-center gap-3 rounded-full transition-all font-medium leading-none uppercase",
+      "btn flex items-center justify-center gap-3 rounded-full transition-all font-medium leading-none uppercase",
       buttonColors[color],
       sizeClasses[size],
       padding,
