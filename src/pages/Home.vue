@@ -1,11 +1,20 @@
 <template>
-  <Section >
+  <Section>
     <h1>Welcome to Hourglass Adventures!</h1>
     <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti voluptas, dolorum perferendis
       hic harum ex, inventore blanditiis necessitatibus fugit iusto praesentium minus optio maiores quam magni
       voluptates dignissimos repellat?</p>
 
     <h2>Search</h2>
+
+    <Input>
+    <template #right>
+      <Button icon="iconamoon:search-bold" size="sm" color="secondary">
+        Search
+      </Button>
+    </template>
+    </Input>
+
     <ul class="mb-4">
       <li>Destination</li>
       <li>Date</li>
@@ -26,17 +35,19 @@
   </Section>
 
   <Section>
-     <Card>
+    <Card>
       Testing
-     </Card>
+    </Card>
   </Section>
 </template>
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import { Icon } from "@iconify/vue";
 import Button from "@/components/Button.vue";
 import Section from "@/components/Section.vue";
 import Card from "@/components/Card.vue";
+import Input from "@/components/Input.vue";
 import { useDestinationStore } from "@/stores/destination";
 
 const destinations = useDestinationStore();
