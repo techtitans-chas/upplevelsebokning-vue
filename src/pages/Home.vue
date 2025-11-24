@@ -2,7 +2,7 @@
   <div class="max-w-6xl mx-auto p-6">
     <h1 font="bold" text="4xl" class="mb-6">Welcome to Hourglass Adventures!</h1>
     <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti voluptas, dolorum perferendis hic harum ex, inventore blanditiis necessitatibus fugit iusto praesentium minus optio maiores quam magni voluptates dignissimos repellat?</p>
-    
+
     <h2 font="bold" text="3xl">Search</h2>
     <ul class="mb-4">
       <li>Destination</li>
@@ -32,3 +32,10 @@ import { RouterLink } from "vue-router";
 
 const destinations = useDestinationStore();
 </script>
+
+<style scoped>
+.box {
+  height: 100px;
+  width: 100%;
+}
+</style>

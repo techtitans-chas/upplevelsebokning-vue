@@ -1,9 +1,19 @@
 :root {
-  --branding: rgb(0, 115, 125);
+  --branding: #051b2a;
+  --branding1: #007f79;
+  --color1: #f39939;
+  --color2: rgb(243, 196, 68);
+  --color3: rgb(67, 159, 101);
+  --color4: rgb(115, 198, 205);
+  --color5: rgb(200, 152, 184);
+  --color6: rgb(255, 137, 127);
+  --color7: rgb(221, 138, 93);
 }
 
 #app {
   min-height: 100vh;
-  color: white;
+  color: #9cd5cb;
   background: linear-gradient(var(--branding));
 }
+
+
