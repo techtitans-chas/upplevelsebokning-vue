@@ -5,11 +5,13 @@ import { useDestinationStore } from "./destination";
 import type { Accommodation } from "../types";
 
 export const useAccommodationStore = defineStore("accommodation", () => {
-  const { data, loading, error, load } = useDataLoader<Accommodation>("/data/accommodations.json");
+  const { data, loading, error, load } = useDataLoader<Accommodation>(
+    "/data/accommodations.json"
+  );
 
   const getById = computed(() => {
     return (id: string, populate: string[] = []) => {
-      const item = data.value.find(i => i.id === String(id));
+      const item = data.value.find((i) => i.id === String(id));
       if (!item) return null;
 
       const enrichedItem: any = { ...item };
@@ -20,7 +22,13 @@ export const useAccommodationStore = defineStore("accommodation", () => {
       }
 
       return enrichedItem;
-    }
+    };
+  });
+
+  const getByDestination = computed(() => {
+    return (destinationId: string) => {
+      return data.value.filter((i) => i.destinationId === destinationId);
+    };
   });
 
   return {
@@ -28,6 +36,7 @@ export const useAccommodationStore = defineStore("accommodation", () => {
     loading,
     error,
     load,
-    getById
-  }
+    getById,
+    getByDestination,
+  };
 });

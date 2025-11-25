@@ -26,7 +26,17 @@
   </Section>
 
   <Section>
-    <Card> Testing </Card>
+    <Card
+      image="./images/sunrise-over-matanzas-bay.jpg"
+      headerClass="bg-blue-500"
+    >
+      <template #header> Header! </template>
+      <template #content class="bg-blue-500"> This is card content. </template>
+      This is not content.
+      <template #footer>
+        <Button>Click</Button>
+      </template>
+    </Card>
   </Section>
 </template>
 
@@ -36,6 +46,7 @@ import SearchForm from "@/components/SearchForm.vue";
 import Section from "@/components/Section.vue";
 import Card from "@/components/Card.vue";
 import { useDestinationStore } from "@/stores/destination";
+import Button from "@/components/Button.vue";
 
 const destinations = useDestinationStore();
 </script>
