@@ -97,7 +97,7 @@
     "price": 1200,
     "description": "Meet master artists, attend exclusive workshops, and stroll cobblestone streets full of new ideas, inventions, and exquisite art.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/florence-1.jpg",
     "reviews": [
       {
         "user": "Sofia M.",
@@ -125,7 +125,7 @@
     "price": 1100,
     "description": "Experience serene temple rituals, samurai sword demonstrations, and traditional tea ceremonies in an age of discipline and artistry.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/kyoto-1.jpg",
     "reviews": [
       {
         "user": "Aiko T.",
@@ -153,7 +153,7 @@
     "price": 900,
     "description": "Sail longships into narrow fjords, trade at bustling shore markets, and learn ancient crafts by firelight with seasoned crews.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/viking-age-1.jpg",
     "reviews": [
       {
         "user": "Ingrid J.",
@@ -181,7 +181,7 @@
     "price": 1300,
     "description": "Explore an island metropolis of canals, towering temples, and bustling markets, where tribute, artistry, and ritual meet daily life.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/aztec-1.jpg",
     "reviews": [
       {
         "user": "Carlos M.",
@@ -209,7 +209,7 @@
     "price": 850,
     "description": "Ride hansom cabs, visit steam-powered exhibitions, and navigate gaslit alleyways—an era of invention, opulence, and shadowy secrets.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/london-2.jpg",
     "reviews": [
       {
         "user": "Eleanor D.",
@@ -237,7 +237,7 @@
     "price": 950,
     "description": "Dance at roaring jazz clubs, watch daring new films, and experience the excitement of a city booming with commerce and culture.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/new-york-1.jpg",
     "reviews": [
       {
         "user": "Mabel Q.",
@@ -265,7 +265,7 @@
     "price": 5000,
     "description": "Visit advanced bio-domes, experience low-gravity recreation, and learn pioneering terraforming techniques from future colonists.",
     "thumbnail": "",
-    "coverImage": "",
+    "coverImage": "/images/mars-2.jpg",
     "reviews": [
       {
         "user": "Ava K.",
