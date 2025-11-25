@@ -5,26 +5,26 @@
   >
     <!-- Left image -->
     <div
-      v-if="imagePosition !== 'right'"
+      v-if="image && imagePosition !== 'right'"
       class="w-[400px] bg-cover bg-center"
       :style="`background-image:url(${image})`"
     />
     <!-- Card content wrapper -->
-    <div class="flex flex-col w-full">
-      <div :class="headerClasses">
+    <div class="flex flex-col h-full w-full">
+      <div v-if="$slots.header" :class="headerClasses">
         <slot name="header" />
       </div>
       <slot />
-      <div :class="contentClasses">
+      <div v-if="$slots.content" :class="contentClasses">
         <slot name="content" />
       </div>
-      <div :class="footerClasses">
+      <div v-if="$slots.footer" :class="footerClasses">
         <slot name="footer" />
       </div>
     </div>
     <!-- Right image -->
     <div
-      v-if="imagePosition === 'right'"
+      v-if="image && imagePosition === 'right'"
       class="w-[400px] bg-cover bg-center"
       :style="`background-image:url(${image})`"
     />
@@ -55,7 +55,7 @@ const classes = computed(() =>
 
 const headerClasses = computed(() => twMerge("p-2", props.headerClass));
 
-const contentClasses = computed(() => twMerge("p-2", props.contentClass));
+const contentClasses = computed(() => twMerge("p-2 flex-1", props.contentClass));
 
 const footerClasses = computed(() => twMerge("p-2", props.footerClass));
 </script>

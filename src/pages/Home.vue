@@ -12,16 +12,9 @@
 
     <SearchForm class="mb-6" />
 
-    <h2>Current offers</h2>
-    <div class="grid grid-cols-[1fr_1fr_1fr] gap-4 p-8">
-      <div v-for="item in destinations.data" :key="item.id">
-        <RouterLink
-          :to="`/destination/${item.id}`"
-          class="border border-1 p-4 block"
-        >
-          {{ item.title }}
-        </RouterLink>
-      </div>
+    <h2>Featured destinations</h2>
+    <div class="grid grid-cols-[1fr_1fr_1fr] gap-4">
+      <DestinationCard v-for="item in destinations.data" :key="item.id" :data="item" @click="router.push(`/destination/${item.id}`)" />
     </div>
   </Section>
 
@@ -43,13 +36,16 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { useRouter } from "vue-router";
 import SearchForm from "@/components/SearchForm.vue";
 import Section from "@/components/Section.vue";
 import Link from "@/components/Link.vue";
 import Card from "@/components/Card.vue";
+import DestinationCard from "@/components/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
 import Button from "@/components/Button.vue";
+
+const router = useRouter();
 
 const destinations = useDestinationStore();
 </script>
