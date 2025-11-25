@@ -5,20 +5,22 @@
       <RouterView />
     </main>
     <Footer />
+    <ScrollToTop />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { RouterView } from "vue-router";
-import NavBar from "./components/NavBar.vue";
-import Footer from "./components/Footer.vue";
 import {
   useAccommodationStore,
   useActivityStore,
   useDestinationStore,
   useTravelStore
 } from "./stores";
+import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
+import ScrollToTop from "./components/ScrollToTop.vue";
 
 const store = {
   accommodation: useAccommodationStore(),
