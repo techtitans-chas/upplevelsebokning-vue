@@ -1,33 +1,959 @@
 [
   {
-    "id": 1,
-    "destinationId": 1,
-    "title": "Stone Age Suites & Spa",
-    "description": "Rooms cut out in stone",
-    "amenities": ["Dino proof windows", "Breakfast served by mammoths"],
+    "id": "ancient-greece-marble-manor",
+    "destinationId": "ancient-greece",
+    "title": "Marble Manor - Luxury Guesthouse",
+    "description": "An opulently furnished manor with sea views and private courtyards—luxury hosts provide guided philosophical salons.",
+    "amenities": [
+      "Private courtyards",
+      "Serviced baths",
+      "Breakfast with olives and honey"
+    ],
     "beds": 2,
-    "pricePerNight": 500,
+    "pricePerNight": 1200,
     "thumbnail": "src image",
-    "rating": 4.5,
+    "rating": 4.9,
     "reviews": [
-      { "user": "John Doe", "rating": 5, "comment": "Amazing stay!" },
       {
-        "user": "Jane Smith",
-        "rating": 4,
-        "comment": "Great service, but the room was small."
+        "user": "SocratesFan",
+        "rating": 5,
+        "comment": "Incredible hospitality and intriguing nightly debates!"
+      },
+      {
+        "user": "TravelAva",
+        "rating": 5,
+        "comment": "Best stay on my tour — the architecture is sublime and the hosts were attentive."
       }
     ]
   },
   {
-    "id": 2,
-    "destinationId": 2,
-    "title": "Pharaoh's Pyramid Palace",
-    "description": "Pyramid-shaped rooms with mysterious hieroglyphs",
+    "id": "ancient-greece-olive-inn",
+    "destinationId": "ancient-greece",
+    "title": "Olive Inn — Simple Townhouse",
+    "description": "A modest, cozy townhouse near the market—clean and friendly, great value for travelers who just need a place to sleep.",
+    "amenities": ["Close to market", "Shared courtyard", "Local breakfasts"],
+    "beds": 1,
+    "pricePerNight": 120,
+    "thumbnail": "src image",
+    "rating": 4.0,
+    "reviews": [
+      {
+        "user": "BudgetBen",
+        "rating": 4,
+        "comment": "Clean and friendly staff — no frills but very central."
+      },
+      {
+        "user": "FussyFran",
+        "rating": 3,
+        "comment": "Rooms were small and made of rough stones, but it was authentic."
+      }
+    ]
+  },
+  {
+    "id": "ancient-greece-starlit-tent",
+    "destinationId": "ancient-greece",
+    "title": "Starlit Tent Camp",
+    "description": "For the adventurous: open-air tent camps near ruins with fireside storytellers—very rustic.",
+    "amenities": ["Open fires", "Blankets", "Night watch"],
+    "beds": 1,
+    "pricePerNight": 60,
+    "thumbnail": "src image",
+    "rating": 3.7,
+    "reviews": [
+      {
+        "user": "NatureNate",
+        "rating": 5,
+        "comment": "Magical under the stars and perfect for a bonfire night."
+      },
+      {
+        "user": "ColdCarl",
+        "rating": 2,
+        "comment": "Too chilly and noisy — no proper heating."
+      }
+    ]
+  },
+
+  {
+    "id": "ancient-egypt-river-palace",
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "River Palace — Nilefront Suites",
+    "description": "Luxurious suites with private Nile access and sun-god named attendants—best for discerning travelers.",
     "amenities": [
-      "Complimentary sarcophagus nap service",
-      "All-inclusive with sun-god guarantee"
+      "Private boat",
+      "Guided river tours",
+      "Dietary accommodations"
     ],
     "beds": 2,
-    "pricePerNight": 300
+    "pricePerNight": 1400,
+    "thumbnail": "src image",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "HistorianHank",
+        "rating": 5,
+        "comment": "Exceptional river excursions and lavish rooms."
+      },
+      {
+        "user": "ChloeT",
+        "rating": 4,
+        "comment": "Service was brilliant though the heat could be brutal midday."
+      }
+    ]
+  },
+  {
+    "id": "ancient-egypt-pyramid-inn",
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Pyramid Inn — Budget Lodging",
+    "description": "No frills but close to the pyramid sites; perfect for budget travelers who want more time at the sites.",
+    "amenities": ["Shared courtyards", "Simple meals"],
+    "beds": 2,
+    "pricePerNight": 80,
+    "thumbnail": "src image",
+    "rating": 3.2,
+    "reviews": [
+      {
+        "user": "BackpackerJoe",
+        "rating": 4,
+        "comment": "Inexpensive and convenient. Expect basic conditions."
+      },
+      {
+        "user": "Pamela",
+        "rating": 2,
+        "comment": "Noisy nights and occasionally dusty rooms."
+      }
+    ]
+  },
+  {
+    "id": "ancient-egypt-sarcophagus-spa",
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Sarcophagus Spa & Resort",
+    "description": "A piquant luxury resort that blends themed design with indulgent spa services—private tours included.",
+    "amenities": ["On-site spa", "Private guided tours", "Air-cooled chambers"],
+    "beds": 2,
+    "pricePerNight": 900,
+    "thumbnail": "src image",
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "LuxuryLou",
+        "rating": 5,
+        "comment": "Fantastic facilities and a lovely private guide set-up."
+      },
+      {
+        "user": "SkepticalSam",
+        "rating": 3,
+        "comment": "Beautiful but felt a touch gimmicky with the themes."
+      }
+    ]
+  },
+  {
+    "id": "ancient-egypt-nile-camp",
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Nile Camp — Riverside Tents",
+    "description": "Riverside tents for small-group travelers who want to sleep under the sky and rise for early boat tours.",
+    "amenities": ["Morning boat rides", "Campfires", "Local food"],
+    "beds": 1,
+    "pricePerNight": 200,
+    "thumbnail": "src image",
+    "rating": 4.0,
+    "reviews": [
+      {
+        "user": "ExplorerEve",
+        "rating": 4,
+        "comment": "Great basecamp for early tours, good value."
+      },
+      {
+        "user": "SandyPete",
+        "rating": 3,
+        "comment": "Occasional sand fleas — bring repellant."
+      }
+    ]
+  },
+
+  {
+    "id": "jurassic-coastal-delta-dome-lodge",
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Dome Lodge — Predator-Proof Luxury",
+    "description": "High-tech predator-proof domes with climate controls and 24/7 monitoring—recommended for small groups.",
+    "amenities": ["Predator-proof dome", "Climate control", "Private ranger"],
+    "beds": 2,
+    "pricePerNight": 3500,
+    "thumbnail": "src image",
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "PaleoPro",
+        "rating": 5,
+        "comment": "Impressive safety measures and amazing dinosaur views!"
+      },
+      {
+        "user": "SafetySue",
+        "rating": 5,
+        "comment": "Peace of mind and deluxe comforts—worth every credit."
+      }
+    ]
+  },
+  {
+    "id": "jurassic-coastal-delta-elevated-huts",
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Elevated Huts — Cliffside Cabins",
+    "description": "Wooden cabins raised on stilts to keep visitors safe from ground predators and high tides; scenic but rustic.",
+    "amenities": [
+      "Raised platforms",
+      "Solar lanterns",
+      "Guided hunts and safaris"
+    ],
+    "beds": 2,
+    "pricePerNight": 500,
+    "thumbnail": "src image",
+    "rating": 4.3,
+    "reviews": [
+      {
+        "user": "RangerRick",
+        "rating": 5,
+        "comment": "Comfortable and perfect location for sunrise dinosaur watching."
+      },
+      {
+        "user": "Sandy",
+        "rating": 3,
+        "comment": "Rustic — not much privacy between huts."
+      }
+    ]
+  },
+  {
+    "id": "jurassic-coastal-delta-cave-bunkhouse",
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Cave Bunkhouse — Group Dorms",
+    "description": "Large dorm-style accommodation carved into stone—cheap and adventurous but noisy and cramped.",
+    "amenities": ["Shared sleeping bays", "Basic kitchen", "Group guide"],
+    "beds": 6,
+    "pricePerNight": 80,
+    "thumbnail": "src image",
+    "rating": 2.8,
+    "reviews": [
+      {
+        "user": "BackpackBess",
+        "rating": 4,
+        "comment": "Good for a night; friendly guides."
+      },
+      {
+        "user": "SpoiledSam",
+        "rating": 2,
+        "comment": "Noisy, dusty, and pretty cramped."
+      }
+    ]
+  },
+  {
+    "id": "jurassic-coastal-delta-park-guard-station",
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Park Guard Station — Field Quarters",
+    "description": "Field quarters run by the park rangers for those on official paleontology excursions — tough conditions, excellent access.",
+    "amenities": [
+      "On-guard ranger",
+      "Secure storage",
+      "Scientific briefing room"
+    ],
+    "beds": 2,
+    "pricePerNight": 250,
+    "thumbnail": "src image",
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Dr. Patel",
+        "rating": 5,
+        "comment": "Clean, efficient, and brilliantly run by the team."
+      },
+      {
+        "user": "Todd",
+        "rating": 4,
+        "comment": "A bit spartan but comfortable for field work."
+      }
+    ]
+  },
+  {
+    "id": "jurassic-coastal-delta-rusty-rodents-bnb",
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Rusty Rodent B&B — Not Recommended",
+    "description": "A dilapidated B&B with uncertain hygiene standards—some travelers claim charm, others called it a dump.",
+    "amenities": ["Porch seating", "Questionable attic storage"],
+    "beds": 2,
+    "pricePerNight": 30,
+    "thumbnail": "src image",
+    "rating": 1.3,
+    "reviews": [
+      {
+        "user": "HorrifiedHal",
+        "rating": 1,
+        "comment": "Mice and mold—worst stay of my life."
+      },
+      {
+        "user": "AdventurousAnn",
+        "rating": 3,
+        "comment": "Rustic and near the trail — but bring your own sheets."
+      }
+    ]
+  },
+
+  {
+    "id": "renaissance-florence-grand-palazzo",
+    "destinationId": "renaissance-florence",
+    "title": "Grand Palazzo — Aristocratic Rooms",
+    "description": "Stay in a noble's palazzo with frescoed ceilings and private art viewings—elegant and costly.",
+    "amenities": [
+      "Private art viewing",
+      "Personal valet",
+      "Formal courtyard dining"
+    ],
+    "beds": 2,
+    "pricePerNight": 1600,
+    "thumbnail": "src image",
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "ArtistElla",
+        "rating": 5,
+        "comment": "Breathtaking art and incredible private tours—worth the splurge."
+      },
+      {
+        "user": "MarkL",
+        "rating": 4,
+        "comment": "Beautiful but very formal; small children might fuss."
+      }
+    ]
+  },
+  {
+    "id": "renaissance-florence-artists-lodge",
+    "destinationId": "renaissance-florence",
+    "title": "Artists' Lodge — Shared Workshop",
+    "description": "A shared lodging that connects to a working artisan workshop—meet craftsmen and learn techniques.",
+    "amenities": ["Workshop access", "Tools for sketching", "Communal meals"],
+    "beds": 2,
+    "pricePerNight": 180,
+    "thumbnail": "src image",
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "SketchSam",
+        "rating": 5,
+        "comment": "Loved the hands-on workshops—such an immersive experience."
+      },
+      {
+        "user": "QuietQuinn",
+        "rating": 4,
+        "comment": "Small, but vibrant and inspiring."
+      }
+    ]
+  },
+  {
+    "id": "renaissance-florence-tiny-inn",
+    "destinationId": "renaissance-florence",
+    "title": "Tiny Inn — Modest Rooms",
+    "description": "Simple rooms for traveling scholars; inexpensive and quiet but minimal services.",
+    "amenities": ["Quiet study nooks", "Basic breakfast"],
+    "beds": 1,
+    "pricePerNight": 90,
+    "thumbnail": "src image",
+    "rating": 3.8,
+    "reviews": [
+      {
+        "user": "StudentSteve",
+        "rating": 4,
+        "comment": "Perfect study environment and cheap."
+      },
+      {
+        "user": "PrissyPam",
+        "rating": 3,
+        "comment": "Tiny rooms and basic service."
+      }
+    ]
+  },
+
+  {
+    "id": "medieval-kyoto-bamboo-retreat",
+    "destinationId": "medieval-kyoto",
+    "title": "Bamboo Retreat — Traditional Ryokan",
+    "description": "Enjoy tatami rooms and exquisite kaiseki meals prepared daily; an authentic cultural stay.",
+    "amenities": ["Tatami rooms", "Kaiseki dining", "Hot baths"],
+    "beds": 1,
+    "pricePerNight": 600,
+    "thumbnail": "src image",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "Kaito",
+        "rating": 5,
+        "comment": "Beautiful ceremony and excellent food—authentically local."
+      },
+      {
+        "user": "TravelSue",
+        "rating": 4,
+        "comment": "A bit formal for some, but always respectful."
+      }
+    ]
+  },
+  {
+    "id": "medieval-kyoto-temple-guesthouse",
+    "destinationId": "medieval-kyoto",
+    "title": "Temple Guesthouse — Monastic Stay",
+    "description": "A serene stay with morning chants and simple vegetarian meals; very meditative.",
+    "amenities": ["Meditation sessions", "Monastic dining", "Guided rituals"],
+    "beds": 1,
+    "pricePerNight": 140,
+    "thumbnail": "src image",
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "ZenZelda",
+        "rating": 5,
+        "comment": "So calming and humbling—highly recommended for reflection."
+      },
+      {
+        "user": "BusyBob",
+        "rating": 3,
+        "comment": "Too quiet for my liking and strict schedules."
+      }
+    ]
+  },
+  {
+    "id": "medieval-kyoto-rustic-inn",
+    "destinationId": "medieval-kyoto",
+    "title": "Rustic Inn — Traveler's Rooms",
+    "description": "A homely inn run by a family of artisans—decent value and very friendly hosts.",
+    "amenities": ["Craft workshops", "Home-cooked meals"],
+    "beds": 1,
+    "pricePerNight": 95,
+    "thumbnail": "src image",
+    "rating": 4.1,
+    "reviews": [
+      {
+        "user": "Kimi",
+        "rating": 5,
+        "comment": "Loved the home-cooked meals and warm hosts."
+      },
+      {
+        "user": "NoisyNate",
+        "rating": 3,
+        "comment": "Thin walls — heard neighbors all night."
+      }
+    ]
+  },
+  {
+    "id": "medieval-kyoto-guest-pavilion",
+    "destinationId": "medieval-kyoto",
+    "title": "Guest Pavilion — Garden View",
+    "description": "Small private apartments overlooking serene gardens—excellent for couples and scholars.",
+    "amenities": ["Private garden view", "Tea ceremony sessions"],
+    "beds": 1,
+    "pricePerNight": 340,
+    "thumbnail": "src image",
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "Hana",
+        "rating": 5,
+        "comment": "The tea ceremony was the highlight—such care and tradition."
+      },
+      {
+        "user": "Greg",
+        "rating": 4,
+        "comment": "Quiet and authentic, slightly pricey for longer stays."
+      }
+    ]
+  },
+
+  {
+    "id": "viking-age-fjordlands-longhouse-luxe",
+    "destinationId": "viking-age-fjordlands",
+    "title": "Longhouse Luxe — Coastal Manor",
+    "description": "A refined longhouse with private docks, warm hearths, and hearty feasts—luxurious reinterpretation of Viking comforts.",
+    "amenities": ["Private dock", "Feasts and story nights", "Warm hearths"],
+    "beds": 3,
+    "pricePerNight": 1100,
+    "thumbnail": "src image",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "NordicNora",
+        "rating": 5,
+        "comment": "Amazing feast nights and those sunset fjord sails—magical."
+      },
+      {
+        "user": "ColdKen",
+        "rating": 4,
+        "comment": "Very cozy but bring extra wool for late nights."
+      }
+    ]
+  },
+  {
+    "id": "viking-age-fjordlands-harbor-inn",
+    "destinationId": "viking-age-fjordlands",
+    "title": "Harbor Inn — Seaside Rooms",
+    "description": "Family-run inn with easy access to boats and local market—comfortable and friendly.",
+    "amenities": ["Local market access", "Boat rentals"],
+    "beds": 2,
+    "pricePerNight": 190,
+    "thumbnail": "src image",
+    "rating": 4.2,
+    "reviews": [
+      {
+        "user": "FjordFan",
+        "rating": 5,
+        "comment": "Perfect base for trips and the fish dinners were superb."
+      },
+      {
+        "user": "PickyPam",
+        "rating": 3,
+        "comment": "Noisy when ships come in at night."
+      }
+    ]
+  },
+  {
+    "id": "viking-age-fjordlands-boat-cabins",
+    "destinationId": "viking-age-fjordlands",
+    "title": "Boat Cabins — Dockside Stay",
+    "description": "Converted cabins on larger ships for travelers who love being on the water and want quick sea access.",
+    "amenities": ["On-boat breakfast", "Dockside transport"],
+    "beds": 2,
+    "pricePerNight": 260,
+    "thumbnail": "src image",
+    "rating": 3.9,
+    "reviews": [
+      {
+        "user": "SeaSara",
+        "rating": 5,
+        "comment": "Loved drifting to sleep and the morning fishing trips."
+      },
+      {
+        "user": "IslandIan",
+        "rating": 3,
+        "comment": "Swaying all night — not for those who need absolute calm."
+      }
+    ]
+  },
+  {
+    "id": "viking-age-fjordlands-cliff-outhouse",
+    "destinationId": "viking-age-fjordlands",
+    "title": "Cliff Outhouse — Spartan Shelter",
+    "description": "Extremely rustic — minimal shelter for adventurous travelers or workers; no running water.",
+    "amenities": ["Basic shelter", "Bonfire area"],
+    "beds": 1,
+    "pricePerNight": 25,
+    "thumbnail": "src image",
+    "rating": 1.8,
+    "reviews": [
+      {
+        "user": "RoughRik",
+        "rating": 2,
+        "comment": "Barren and cold; bring your own bedding."
+      },
+      {
+        "user": "AdventAnna",
+        "rating": 4,
+        "comment": "Great for a rugged overnight but not a comfort stay."
+      }
+    ]
+  },
+  {
+    "id": "viking-age-fjordlands-watchtower-quarters",
+    "destinationId": "viking-age-fjordlands",
+    "title": "Watchtower Quarters — Guarding Post",
+    "description": "Quiet quarters in an old watch post with sweeping views—perfect for history buffs and solitude seekers.",
+    "amenities": ["Panoramic views", "Quiet retreat"],
+    "beds": 1,
+    "pricePerNight": 220,
+    "thumbnail": "src image",
+    "rating": 4.4,
+    "reviews": [
+      {
+        "user": "WatcherWill",
+        "rating": 5,
+        "comment": "Striking views and very peaceful—fun read about old guard life."
+      },
+      {
+        "user": "ClaustroCole",
+        "rating": 4,
+        "comment": "A bit small but characterful."
+      }
+    ]
+  },
+
+  {
+    "id": "tenochtitlan-aztec-capital-palace-guest",
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Palace Guestrooms — Canal-side Suites",
+    "description": "Elegant suites with canal views and private access to floating gardens—historically-inspired, upscale.",
+    "amenities": ["Canal access", "Private guide", "Gardens"],
+    "beds": 2,
+    "pricePerNight": 1300,
+    "thumbnail": "src image",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "CuratorCelia",
+        "rating": 5,
+        "comment": "Fascinating and beautiful—the guides made it come alive."
+      },
+      {
+        "user": "BudgetBert",
+        "rating": 4,
+        "comment": "Wonderful but pricey for longer stays."
+      }
+    ]
+  },
+  {
+    "id": "tenochtitlan-aztec-capital-market-rooms",
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Market Rooms — Near the Main Plaza",
+    "description": "Simple rooms a short walk from the market — a great spot to experience local commerce and cuisine.",
+    "amenities": ["Market access", "Local breakfasts"],
+    "beds": 1,
+    "pricePerNight": 120,
+    "thumbnail": "src image",
+    "rating": 4.1,
+    "reviews": [
+      {
+        "user": "TraderTom",
+        "rating": 5,
+        "comment": "Perfect location—markets were unreal."
+      },
+      {
+        "user": "CleanClara",
+        "rating": 3,
+        "comment": "Rooms were fine though occasionally noisy."
+      }
+    ]
+  },
+  {
+    "id": "tenochtitlan-aztec-capital-floating-hut",
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Floating Hut — On the Canals",
+    "description": "Unique floating huts directly on the canal—quaint but susceptible to weather and limited services.",
+    "amenities": ["Canal views", "Canoe service"],
+    "beds": 1,
+    "pricePerNight": 240,
+    "thumbnail": "src image",
+    "rating": 3.5,
+    "reviews": [
+      {
+        "user": "Luca",
+        "rating": 4,
+        "comment": "Magical to sleep on water—but can be wobbly."
+      },
+      {
+        "user": "Marta",
+        "rating": 3,
+        "comment": "Very damp nights and insects were a bother."
+      }
+    ]
+  },
+
+  {
+    "id": "victorian-london-1888-crystal-hotel",
+    "destinationId": "victorian-london-1888",
+    "title": "Crystal Hotel — Grand Victorian",
+    "description": "An ornate hotel offering refined dining, gas-lit lounges, and rooms with sweeping city views—ideal for visitors seeking comfort.",
+    "amenities": ["Grand dining", "Concierge", "Gas-lit parlor"],
+    "beds": 2,
+    "pricePerNight": 450,
+    "thumbnail": "src image",
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "EleanorB",
+        "rating": 5,
+        "comment": "Absolutely splendid and the afternoon teas are superb."
+      },
+      {
+        "user": "FoggyFred",
+        "rating": 4,
+        "comment": "Lovely decor but can be smoky in rooms near the parlor."
+      }
+    ]
+  },
+  {
+    "id": "victorian-london-1888-railway-boardinghouse",
+    "destinationId": "victorian-london-1888",
+    "title": "Railway Boardinghouse — Practical Stay",
+    "description": "Convenient lodgings for travelers based near a rail station—functional with shared dining.",
+    "amenities": ["Rail access", "Shared meals"],
+    "beds": 1,
+    "pricePerNight": 90,
+    "thumbnail": "src image",
+    "rating": 3.6,
+    "reviews": [
+      {
+        "user": "CommuterCarl",
+        "rating": 4,
+        "comment": "Practical and cheap—great location for travel."
+      },
+      {
+        "user": "FretfulFay",
+        "rating": 3,
+        "comment": "Not the cleanest, but serves its purpose."
+      }
+    ]
+  },
+  {
+    "id": "victorian-london-1888-speakeasy-rooms",
+    "destinationId": "victorian-london-1888",
+    "title": "Speakeasy Rooms — Hidden Suites",
+    "description": "Stylish underground rooms with access to clandestine performances and late-night music, suitable for daring guests.",
+    "amenities": ["Hidden club access", "Nightly shows"],
+    "beds": 2,
+    "pricePerNight": 220,
+    "thumbnail": "src image",
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "ClubClaud",
+        "rating": 5,
+        "comment": "Amazing music and late-night performances—very fun."
+      },
+      {
+        "user": "QuietQuinn",
+        "rating": 3,
+        "comment": "Not for those who need quiet sleep; very noisy at times."
+      }
+    ]
+  },
+  {
+    "id": "victorian-london-1888-gutter-lodge",
+    "destinationId": "victorian-london-1888",
+    "title": "Gutter Lodge — The Gritty Quarter",
+    "description": "A truly 'Victorian' experience for hardier travelers; questionable sanitation but very authentic street scenes.",
+    "amenities": ["Street access only"],
+    "beds": 1,
+    "pricePerNight": 15,
+    "thumbnail": "src image",
+    "rating": 1.2,
+    "reviews": [
+      {
+        "user": "HardyHarry",
+        "rating": 2,
+        "comment": "Authentic and cheap; not sanitary."
+      },
+      {
+        "user": "SafeSara",
+        "rating": 1,
+        "comment": "Robbed and unclean—avoid unless desperate."
+      }
+    ]
+  },
+  {
+    "id": "victorian-london-1888-boarding-terrace",
+    "destinationId": "victorian-london-1888",
+    "title": "Boarding Terrace — Hidden Gardens",
+    "description": "A quieter terrace with small private gardens—an oasis away from the city chaos.",
+    "amenities": ["Terrace gardens", "Quiet lounges"],
+    "beds": 1,
+    "pricePerNight": 260,
+    "thumbnail": "src image",
+    "rating": 4.2,
+    "reviews": [
+      {
+        "user": "GardenGail",
+        "rating": 5,
+        "comment": "Really peaceful and lovely for a quiet retreat."
+      },
+      {
+        "user": "CitySam",
+        "rating": 4,
+        "comment": "Comfortable and tucked away—but a little pricier for the neighborhood."
+      }
+    ]
+  },
+
+  {
+    "id": "roaring-twenties-nyc-skyline-suite",
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Skyline Suite — Jazz & Luxury",
+    "description": "Penthouse suite above the jazz clubs with exclusive access to nightlife and rooftop dances.",
+    "amenities": ["Rooftop parties", "Private speakeasy access"],
+    "beds": 2,
+    "pricePerNight": 700,
+    "thumbnail": "src image",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "JazzJane",
+        "rating": 5,
+        "comment": "A glamorous time—great rooftop soirees and service."
+      },
+      {
+        "user": "PragmaticPaul",
+        "rating": 4,
+        "comment": "Expensive but worth it for the views and shows."
+      }
+    ]
+  },
+  {
+    "id": "roaring-twenties-nyc-speakeasy-inn",
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Speakeasy Inn — Cozy & Hidden",
+    "description": "Small, intimate lodging attached to a speakeasy—fun for nightlife lovers.",
+    "amenities": ["Nightly music", "Discrete entrance"],
+    "beds": 1,
+    "pricePerNight": 220,
+    "thumbnail": "src image",
+    "rating": 4.4,
+    "reviews": [
+      {
+        "user": "GatsbyGeorge",
+        "rating": 5,
+        "comment": "Excellent scene and polished staff — a delight."
+      },
+      {
+        "user": "MildMary",
+        "rating": 4,
+        "comment": "Great vibe but a little cramped."
+      }
+    ]
+  },
+  {
+    "id": "roaring-twenties-nyc-boardinghouse",
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Boardinghouse — Practical Rooms",
+    "description": "Reliable, practical lodging near theaters with communal dining—good for long stays.",
+    "amenities": ["Communal meals", "Laundry"],
+    "beds": 1,
+    "pricePerNight": 95,
+    "thumbnail": "src image",
+    "rating": 3.7,
+    "reviews": [
+      {
+        "user": "TheaterTed",
+        "rating": 4,
+        "comment": "Great base for theater trips."
+      },
+      {
+        "user": "CrankyCory",
+        "rating": 3,
+        "comment": "Decent overall but thin walls and noise."
+      }
+    ]
+  },
+  {
+    "id": "roaring-twenties-nyc-flophouse",
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Flophouse — Sleep & Go",
+    "description": "The cheapest option in town; expect rowdy neighbors and basic bunks.",
+    "amenities": ["Bunks", "Shared washroom"],
+    "beds": 1,
+    "pricePerNight": 12,
+    "thumbnail": "src image",
+    "rating": 1.9,
+    "reviews": [
+      {
+        "user": "ToughTom",
+        "rating": 2,
+        "comment": "Not a comfort stay — but an authentic era touch."
+      },
+      {
+        "user": "PoorPete",
+        "rating": 1,
+        "comment": "Dirty and dangerous—avoid."
+      }
+    ]
+  },
+
+  {
+    "id": "mars-colony-new-dawn-2145-biodome-elite",
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Biodome Elite — Executive Habitat",
+    "description": "Top-tier habitat with controlled ecosystems, private labs, and personalized excursions across the colony's surface.",
+    "amenities": [
+      "Controlled environment",
+      "Private rover",
+      "Personal lab access"
+    ],
+    "beds": 2,
+    "pricePerNight": 8000,
+    "thumbnail": "src image",
+    "rating": 5.0,
+    "reviews": [
+      {
+        "user": "AstroAmy",
+        "rating": 5,
+        "comment": "Top-tier comfort and ground-breaking habitat design — spectacular."
+      },
+      {
+        "user": "ElonFan",
+        "rating": 5,
+        "comment": "Futuristic and flawless. It felt like home but on Mars."
+      }
+    ]
+  },
+  {
+    "id": "mars-colony-new-dawn-2145-research-quarters",
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Research Quarters — Staff Housing",
+    "description": "Functional accommodation for researchers and technicians—clean, efficient, and practical.",
+    "amenities": ["Lab access", "Communal kitchen", "Workshop"],
+    "beds": 1,
+    "pricePerNight": 400,
+    "thumbnail": "src image",
+    "rating": 4.3,
+    "reviews": [
+      {
+        "user": "DrZhao",
+        "rating": 5,
+        "comment": "Perfect for long-term research stays and very secure."
+      },
+      {
+        "user": "Nate",
+        "rating": 3,
+        "comment": "Functional but very clinical — not a leisure stay."
+      }
+    ]
+  },
+  {
+    "id": "mars-colony-new-dawn-2145-red-sand-dorm",
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Red Sand Dorm — Budget Habitat",
+    "description": "Basic, no-frills dorms for travelers on a strict budget—shared facilities and limited views.",
+    "amenities": ["Shared facilities", "Basic Wi-Fi"],
+    "beds": 1,
+    "pricePerNight": 60,
+    "thumbnail": "src image",
+    "rating": 2.5,
+    "reviews": [
+      {
+        "user": "BudgetBea",
+        "rating": 3,
+        "comment": "Very cheap and the pods are modern, but crowded."
+      },
+      {
+        "user": "Ralph",
+        "rating": 2,
+        "comment": "No view and limited privacy—expect noise."
+      }
+    ]
+  },
+  {
+    "id": "mars-colony-new-dawn-2145-terraform-villa",
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Terraform Villa — Experimental Retreat",
+    "description": "An experimental retreat on an early irrigation dome—full biosystems and guided terraforming demos for guests.",
+    "amenities": [
+      "Biosphere tours",
+      "Eco-lab experiences",
+      "Private dome gardens"
+    ],
+    "beds": 2,
+    "pricePerNight": 2900,
+    "thumbnail": "src image",
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "EcoErin",
+        "rating": 5,
+        "comment": "A fascinating look at future ecology and luxurious atmospheres."
+      },
+      {
+        "user": "SkepticSid",
+        "rating": 4,
+        "comment": "Incredible concept, but some rough edges still being finished."
+      }
+    ]
   }
 ]

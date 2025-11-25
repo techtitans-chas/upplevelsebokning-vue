@@ -1,56 +1,281 @@
 [
   {
-    "id": "1",
+    "id": "ancient-greece",
     "title": "Ancient Greece",
     "location": "Greece",
-    "timePeriod": 1100,
-    "climate": "Warm Mediterranean climate, best visited in spring or autumn",
-    "travelTips": ["Pack light clothing", "Learn basic Greek phrases"],
+    "timePeriod": -1200,
+    "climate": "Warm Mediterranean, best in spring or autumn",
+    "travelTips": [
+      "Pack light clothing",
+      "Bring sun protection",
+      "Learn a few Greek phrases"
+    ],
     "price": 500,
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nobis mollitia ullam, ea tempora possimus soluta adipisci esse consectetur dolores ipsum ducimus error veritatis obcaecati rerum, facilis velit expedita vel.",
+    "description": "Wander ruins, attend classic theater performances, and taste early Mediterranean cuisine in a world of myths and philosophers.",
     "thumbnail": "src image",
     "coverImage": "src image",
     "reviews": [
-      { "user": "John Doe", "rating": 5, "comment": "Amazing experience!" },
+      {
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Amazing experience! So much history."
+      },
       {
         "user": "Jane Smith",
         "rating": 4,
-        "comment": "Beautiful, but crowded."
+        "comment": "Beautiful, but a bit crowded during festivals."
       }
     ]
   },
   {
-    "id": "2",
-    "title": "Egypt",
+    "id": "ancient-egypt-giza-nile",
+    "title": "Ancient Egypt: Giza & the Nile",
     "location": "Egypt",
     "timePeriod": 300,
+    "climate": "Hot desert climate; mornings and evenings are cooler",
+    "travelTips": [
+      "Carry plenty of water",
+      "Dress modestly and cover up from the sun",
+      "Book a local guide for safe navigation"
+    ],
     "price": 750,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas.",
+    "description": "Explore pyramid construction sites, sail the Nile in a reed boat, and witness the grandeur of pharaonic processions.",
     "thumbnail": "src image",
     "coverImage": "src image",
     "reviews": [
-      { "user": "John Doe", "rating": 5, "comment": "Amazing experience!" },
       {
-        "user": "Jane Smith",
+        "user": "Laila A.",
+        "rating": 5,
+        "comment": "A surreal experience seeing the pyramids being built."
+      },
+      {
+        "user": "Marco P.",
         "rating": 4,
-        "comment": "Beautiful, but crowded."
+        "comment": "Unforgettable, but bring a good hat and patience for the heat."
       }
     ]
   },
   {
-    "id": "3",
-    "title": "Jupiter",
-    "location": "Jupiter",
-    "price": 750000,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus itaque dolorem inventore. Voluptatibus dolore ipsa debitis! Incidunt, assumenda! Odio suscipit reprehenderit qui debitis illum molestiae corporis optio eum voluptas.",
+    "id": "jurassic-coastal-delta",
+    "title": "Jurassic Coastal Delta",
+    "location": "What will become the Dorset Coast, UK",
+    "timePeriod": -145000000,
+    "climate": "Humid, warm subtropical with dense ferns and cycads",
+    "travelTips": [
+      "Follow safety guide at all times",
+      "Stay in elevated, predator-proof accommodations",
+      "Avoid unknown water sources"
+    ],
+    "price": 2000,
+    "description": "Witness colossal dinosaurs roam the shoreline, gather fossilized ammonites, and explore primeval forests under a sky of prehistoric constellations.",
     "thumbnail": "src image",
     "coverImage": "src image",
     "reviews": [
-      { "user": "John Doe", "rating": 5, "comment": "Amazing experience!" },
       {
-        "user": "Jane Smith",
+        "user": "Emily R.",
+        "rating": 5,
+        "comment": "Awe-inspiring — pure raw nature and bone-shaking footsteps!"
+      },
+      {
+        "user": "Dr. Patel",
+        "rating": 5,
+        "comment": "Perfect for paleontology enthusiasts and adventurers."
+      }
+    ]
+  },
+  {
+    "id": "renaissance-florence",
+    "title": "Renaissance Florence",
+    "location": "Florence, Italy",
+    "timePeriod": 1500,
+    "climate": "Mild Mediterranean; pleasant spring and autumn",
+    "travelTips": [
+      "Bring a journal for sketches",
+      "Visit artisan workshops early",
+      "Respect ateliers and galleries"
+    ],
+    "price": 1200,
+    "description": "Meet master artists, attend exclusive workshops, and stroll cobblestone streets full of new ideas, inventions, and exquisite art.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Sofia M.",
+        "rating": 5,
+        "comment": "Brilliant art and lively debates in the piazzas—felt like I stepped into a painting."
+      },
+      {
+        "user": "Thomas K.",
         "rating": 4,
-        "comment": "Beautiful, but crowded."
+        "comment": "Crowded ateliers, but seeing live masterpieces was worth it."
+      }
+    ]
+  },
+  {
+    "id": "medieval-kyoto",
+    "title": "Medieval Kyoto",
+    "location": "Kyoto, Japan",
+    "timePeriod": 1600,
+    "climate": "Temperate with distinct seasons; cherry blossoms in spring",
+    "travelTips": [
+      "Dress for modesty in shrines",
+      "Obey local courtesies, especially in temples",
+      "Learn basic etiquette for geisha districts"
+    ],
+    "price": 1100,
+    "description": "Experience serene temple rituals, samurai sword demonstrations, and traditional tea ceremonies in an age of discipline and artistry.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Aiko T.",
+        "rating": 5,
+        "comment": "Incredibly atmospheric — the tea ceremonies were mesmerizing."
+      },
+      {
+        "user": "Liam S.",
+        "rating": 4,
+        "comment": "Beautiful gardens, though some areas require strict observance of customs."
+      }
+    ]
+  },
+  {
+    "id": "viking-age-fjordlands",
+    "title": "Viking Age Fjordlands",
+    "location": "Norwegian Fjords",
+    "timePeriod": 900,
+    "climate": "Cool maritime; unpredictable weather; good summers",
+    "travelTips": [
+      "Dress warm and layered",
+      "Secure travel permits for fjord excursions",
+      "Respect local clan protocols"
+    ],
+    "price": 900,
+    "description": "Sail longships into narrow fjords, trade at bustling shore markets, and learn ancient crafts by firelight with seasoned crews.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Ingrid J.",
+        "rating": 5,
+        "comment": "Epic voyages and hearty feasts—very immersive!"
+      },
+      {
+        "user": "Gregor H.",
+        "rating": 4,
+        "comment": "A rugged adventure; bring sea-stable gear."
+      }
+    ]
+  },
+  {
+    "id": "tenochtitlan-aztec-capital",
+    "title": "Tenochtitlan: The Aztec Capital",
+    "location": "Valley of Mexico",
+    "timePeriod": 1520,
+    "climate": "High-altitude subtropical; cool nights and mild days",
+    "travelTips": [
+      "Learn local market practices",
+      "Respect sacred sites",
+      "Hire an expert translator"
+    ],
+    "price": 1300,
+    "description": "Explore an island metropolis of canals, towering temples, and bustling markets, where tribute, artistry, and ritual meet daily life.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Carlos M.",
+        "rating": 5,
+        "comment": "The markets were vibrant and richly scented—so much color and craft."
+      },
+      {
+        "user": "Maya L.",
+        "rating": 4,
+        "comment": "A powerful civilization—some sites require careful cultural sensitivity."
+      }
+    ]
+  },
+  {
+    "id": "victorian-london-1888",
+    "title": "Victorian London: Jack’s Lighter Side",
+    "location": "London, England",
+    "timePeriod": 1888,
+    "climate": "Cool, damp maritime with foggy mornings",
+    "travelTips": [
+      "Carry a warm coat and umbrella",
+      "Avoid certain districts after sunset",
+      "Hire a licensed guide for health precautions"
+    ],
+    "price": 850,
+    "description": "Ride hansom cabs, visit steam-powered exhibitions, and navigate gaslit alleyways—an era of invention, opulence, and shadowy secrets.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Eleanor D.",
+        "rating": 4,
+        "comment": "Fascinating museums and steam exhibits; a bit chilly but atmospheric."
+      },
+      {
+        "user": "Arthur P.",
+        "rating": 3,
+        "comment": "Crowded and smoky; recommend quieter Victorian neighborhoods."
+      }
+    ]
+  },
+  {
+    "id": "roaring-twenties-nyc",
+    "title": "Roaring Twenties: New York City",
+    "location": "New York, USA",
+    "timePeriod": 1925,
+    "climate": "Temperate; hot summers and cool winters",
+    "travelTips": [
+      "Embrace period dress for events",
+      "Visit speakeasies and jazz clubs",
+      "Be mindful of social norms and land ownership"
+    ],
+    "price": 950,
+    "description": "Dance at roaring jazz clubs, watch daring new films, and experience the excitement of a city booming with commerce and culture.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Mabel Q.",
+        "rating": 5,
+        "comment": "Clubs were the highlight — jazz at night, skylines by day."
+      },
+      {
+        "user": "Ralph G.",
+        "rating": 4,
+        "comment": "Great energy but be prepared for busy streets and fast living."
+      }
+    ]
+  },
+  {
+    "id": "mars-colony-new-dawn-2145",
+    "title": "Mars Colony: New Dawn (2145)",
+    "location": "Mars — Valles Marineris Basin",
+    "timePeriod": 2145,
+    "climate": "Thin atmosphere; cold with localized controlled habitats",
+    "travelTips": [
+      "Bring a certified habitat pass",
+      "Follow biosafety protocols",
+      "Be comfortable with enclosed habitats and high-tech travel"
+    ],
+    "price": 5000,
+    "description": "Visit advanced bio-domes, experience low-gravity recreation, and learn pioneering terraforming techniques from future colonists.",
+    "thumbnail": "src image",
+    "coverImage": "src image",
+    "reviews": [
+      {
+        "user": "Ava K.",
+        "rating": 5,
+        "comment": "Incredible technology and a perspective-changing landscape."
+      },
+      {
+        "user": "Chen Z.",
+        "rating": 5,
+        "comment": "A once-in-a-lifetime trip — the habitat design was impressive."
       }
     ]
   }
