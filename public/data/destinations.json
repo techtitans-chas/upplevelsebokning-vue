@@ -13,7 +13,7 @@
     "price": 500,
     "description": "Wander ruins, attend classic theater performances, and taste early Mediterranean cuisine in a world of myths and philosophers.",
     "thumbnail": "src image",
-    "coverImage": "src image",
+    "coverImage": "/images/ancient-greece.jpg",
     "reviews": [
       {
         "user": "John Doe",
@@ -41,7 +41,7 @@
     "price": 750,
     "description": "Explore pyramid construction sites, sail the Nile in a reed boat, and witness the grandeur of pharaonic processions.",
     "thumbnail": "src image",
-    "coverImage": "src image",
+    "coverImage": "/images/ancient-egypt.jpg",
     "reviews": [
       {
         "user": "Laila A.",
@@ -69,7 +69,7 @@
     "price": 2000,
     "description": "Witness colossal dinosaurs roam the shoreline, gather fossilized ammonites, and explore primeval forests under a sky of prehistoric constellations.",
     "thumbnail": "src image",
-    "coverImage": "src image",
+    "coverImage": "/images/jurassic.jpg",
     "reviews": [
       {
         "user": "Emily R.",

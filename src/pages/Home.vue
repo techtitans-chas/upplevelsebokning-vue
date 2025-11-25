@@ -1,5 +1,5 @@
 <template>
-  <Section>
+  <Section bg-image="/images/placeholder.jpg" bg-color="bg-primary-950/70" class="bg-fixed">
     <h1>Welcome to Hourglass Adventures!</h1>
     <p class="mb-4">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti
