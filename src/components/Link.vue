@@ -21,10 +21,10 @@ defineProps<{
     color: white;
     text-decoration: underline;
     text-underline-offset: 4px;
-    text-decoration-color: transparent;
+    text-decoration-color: var(--color-primary-600);
   }
   .link:hover {
     color: var(--primary-500);
-    text-decoration-color: var(--primary-500);
+    text-decoration-color: var(--color-primary-300);
   }
 </style>
