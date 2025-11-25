@@ -3,8 +3,8 @@
     <div class="flex flex-col gap-2 items-center">
       <Logo vertical />
       <p>Built by
-        <Link href="https://github.com/idaohlen">Ida</Link> &
-        <Link href="https://github.com/martinsodersten">Martin</Link>
+        <Link dark href="https://github.com/idaohlen">Ida</Link> &
+        <Link dark href="https://github.com/martinsodersten">Martin</Link>
         with <strong>Vue.js</strong>.
       </p>
     </div>
