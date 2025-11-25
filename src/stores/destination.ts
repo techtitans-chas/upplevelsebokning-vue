@@ -4,10 +4,19 @@ import type { Destination } from "../types";
 import { useDataLoader } from "../composables/useDataLoader";
 
 export const useDestinationStore = defineStore("destination", () => {
- const { data, loading, error, load } = useDataLoader<Destination>("/data/destinations.json");
+  const { data, loading, error, load } = useDataLoader<Destination>(
+    "/data/destinations.json"
+  );
 
   const getById = computed(() => {
-    return (id: string) => data.value.find(i => i.id === id);
+    return (id: string) => data.value.find((i) => i.id === id);
+  });
+
+  const search = computed(() => {
+    return (term: string) => {
+      const q = term.toLowerCase();
+      return data.value.filter((i) => i.title.toLowerCase().includes(q));
+    };
   });
 
   return {
@@ -15,6 +24,7 @@ export const useDestinationStore = defineStore("destination", () => {
     loading,
     error,
     load,
-    getById
-  }
+    getById,
+    search,
+  };
 });

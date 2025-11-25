@@ -3,7 +3,16 @@
     <div class="flex items-center align-center text-black">
       <slot name="left" />
     </div>
-    <input type="text" v-model="value" :class="inputClasses" :placeholder="placeholder" text="black sm" />
+    <input
+      type="text"
+      :value="modelValue"
+      @input="
+        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+      "
+      :class="inputClasses"
+      :placeholder="placeholder"
+      text="black sm"
+    />
     <div class="flex items-center align-center text-black">
       <slot name="right" />
     </div>
@@ -11,17 +20,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { twMerge } from "tailwind-merge";
 
 const props = defineProps<{
-  placeholder?: string
-  rightContent?: string
-  class?: string
-  inputClass?: string
+  modelValue?: string;
+  placeholder?: string;
+  rightContent?: string;
+  class?: string;
+  inputClass?: string;
 }>();
 
-const value = ref("");
+defineEmits<{
+  "update:modelValue": [value: string];
+}>();
 
 const wrapperClasses = computed(() =>
   twMerge("rounded-full p-1 w-full flex", props.class)

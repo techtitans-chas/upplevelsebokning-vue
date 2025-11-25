@@ -1,30 +1,43 @@
 <template>
   <div class="flex flex-col gap-4">
-
     <!-- Search -->
-    <Input placeholder="Search destinations, dates, and more">
-    <template #right>
-      <Button icon="iconamoon:search-bold" size="sm" color="secondary" to="/search">
-        Search
-      </Button>
-    </template>
+    <Input
+      placeholder="Search destinations, dates, and more"
+      v-model="searchTerm"
+    >
+      <template #right>
+        <Button
+          icon="iconamoon:search-bold"
+          size="sm"
+          color="secondary"
+          :to="query"
+        >
+          Search
+        </Button>
+      </template>
     </Input>
 
     <!-- Filters -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_1fr_auto] gap-4 w-full items-stretch">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_1fr_auto] gap-4 w-full items-stretch"
+    >
       <!-- Destination -->
-      <Dropdown label="Destination" placeholder="Select a destination" v-model="selectedDestination">
-        <template #content="{ select }">
+      <Dropdown
+        label="Destination"
+        placeholder="Select a destination"
+        :modelValue="selectedDestination?.title"
+      >
+        <template #content>
           <div class="p-2 space-y-1">
-            <div 
-              v-for="dest in destinations.data" 
+            <div
+              v-for="dest in destinations.data"
               :key="dest.id"
-              @click="select(dest.title)"
+              @click="selectedDestination = dest"
               role="option"
-              :aria-selected="selectedDestination === dest.title"
+              :aria-selected="selectedDestination?.id === dest.id"
               tabindex="0"
-              @keydown.enter.prevent="select(dest.title)"
-              @keydown.space.prevent="select(dest.title)"
+              @keydown.enter.prevent="selectedDestination = dest"
+              @keydown.space.prevent="selectedDestination = dest"
               class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none"
             >
               {{ dest.title }}
@@ -34,28 +47,44 @@
       </Dropdown>
 
       <!-- Date -->
-      <Dropdown label="Date" placeholder="Select dates" v-model="dateRangeDisplay">
+      <Dropdown
+        label="Date"
+        placeholder="Select dates"
+        v-model="dateRangeDisplay"
+      >
         <template #content>
           <div class="p-4 space-y-3">
             <div>
               <label class="text-xs text-gray-500 block mb-1">Start Date</label>
-              <input type="date" v-model="startDate" class="w-full p-2 border border-gray-300 rounded text-sm" />
+              <input
+                type="date"
+                v-model="startDate"
+                class="w-full p-2 border border-gray-300 rounded text-sm"
+              />
             </div>
             <div>
               <label class="text-xs text-gray-500 block mb-1">End Date</label>
-              <input type="date" v-model="endDate" :min="startDate"
-                class="w-full p-2 border border-gray-300 rounded text-sm" />
+              <input
+                type="date"
+                v-model="endDate"
+                :min="startDate"
+                class="w-full p-2 border border-gray-300 rounded text-sm"
+              />
             </div>
           </div>
         </template>
       </Dropdown>
 
       <!-- Age group -->
-      <Dropdown label="Age group" placeholder="Select an age group" v-model="selectedAgeGroup">
+      <Dropdown
+        label="Age group"
+        placeholder="Select an age group"
+        v-model="selectedAgeGroup"
+      >
         <template #content="{ select }">
           <div class="p-2 space-y-1">
-            <div 
-              v-for="group in ageGroups" 
+            <div
+              v-for="group in ageGroups"
               :key="group"
               @click="select(group)"
               role="option"
@@ -72,7 +101,12 @@
       </Dropdown>
 
       <!-- Number of People -->
-      <NumberInput label="Number of people" v-model="numberOfPeople" :min="1" :max="20" />
+      <NumberInput
+        label="Number of people"
+        v-model="numberOfPeople"
+        :min="1"
+        :max="20"
+      />
     </div>
   </div>
 </template>
@@ -87,20 +121,34 @@ import { useDestinationStore } from "@/stores/destination";
 
 const destinations = useDestinationStore();
 
-const selectedDestination = ref("");
+const selectedDestination = ref<(typeof destinations.data)[number] | null>(
+  null
+);
 const selectedAgeGroup = ref("");
 const startDate = ref("");
 const endDate = ref("");
 const numberOfPeople = ref(1);
+const searchTerm = ref("");
 
-const ageGroups = ref([
-  "All ages",
-  "18 and above"
-]);
+const ageGroups = ref(["All ages", "18 and above"]);
 
 const dateRangeDisplay = computed(() => {
-  if (startDate.value && endDate.value) return `${startDate.value} - ${endDate.value}`;
+  if (startDate.value && endDate.value)
+    return `${startDate.value} - ${endDate.value}`;
   else if (startDate.value) return startDate.value;
   return "";
+});
+
+const query = computed(() => {
+  const array = [];
+
+  if (searchTerm.value) array.push(`term=${searchTerm.value}`);
+  if (selectedDestination.value?.id)
+    array.push(`destination=${selectedDestination.value?.id}`);
+
+  const joinedArray = array.join("&");
+
+  return `/search?${joinedArray}`;
+  // return `/search?destination=${selectedDestination.value?.id}`;
 });
 </script>
