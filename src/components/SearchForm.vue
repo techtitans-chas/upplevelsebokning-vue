@@ -99,11 +99,8 @@ const ageGroups = ref([
 ]);
 
 const dateRangeDisplay = computed(() => {
-  if (startDate.value && endDate.value) {
-    return `${startDate.value} - ${endDate.value}`;
-  } else if (startDate.value) {
-    return startDate.value;
-  }
+  if (startDate.value && endDate.value) return `${startDate.value} - ${endDate.value}`;
+  else if (startDate.value) return startDate.value;
   return "";
 });
 </script>

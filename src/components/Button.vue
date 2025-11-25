@@ -15,8 +15,8 @@
 <script setup lang="ts">
   import { computed } from "vue";
   import { RouterLink } from "vue-router";
-  import { Icon } from "@iconify/vue";
   import { twMerge } from "tailwind-merge";
+  import { Icon } from "@iconify/vue";
 
   const props = defineProps<{
     to?: string
@@ -27,6 +27,7 @@
     color?: "primary" | "secondary"
   }>();
 
+  // Sizing classes
   const sizeClasses = {
     xs: "text--[.7rem] px-2 py-1 gap-2",
     sm: "text-[.8rem] px-3 py-2 gap-2",
@@ -35,6 +36,7 @@
     xl: "text-[1.2rem] px-6 py-5"
   };
 
+  // Extra padding on opposite side of icon
   const iconPadding = {
     xs: { right: "pl-3", left: "pr-3" },
     sm: { right: "pl-4", left: "pr-4" },

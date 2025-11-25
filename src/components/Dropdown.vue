@@ -51,37 +51,26 @@ defineProps<{
   autoOpen?: boolean
 }>();
 
-const emit = defineEmits<{
-  "update:modelValue": [value: string | number]
-}>();
+const emit = defineEmits<{ "update:modelValue": [value: string | number] }>();
 
 const isOpen = ref(false);
 const dropdownRef = ref<InstanceType<typeof Dropdown>>();
 
 const toggleDropdown = () => {
-  if (isOpen.value) {
-    dropdownRef.value?.hide();
-  } else {
-    dropdownRef.value?.show();
-  }
+  if (isOpen.value) dropdownRef.value?.hide();
+  else dropdownRef.value?.show();
 };
 
-const closeDropdown = () => {
-  dropdownRef.value?.hide();
+const closeDropdown = () => dropdownRef.value?.hide();
+
+const openDropdown = () => {
+  if (dropdownRef.value) dropdownRef.value.show();
 };
+
+defineExpose({ openDropdown });
 
 const handleSelect = (value: string | number, hide: () => void) => {
   emit("update:modelValue", value);
   hide();
 };
-
-const openDropdown = () => {
-  if (dropdownRef.value) {
-    dropdownRef.value.show();
-  }
-};
-
-defineExpose({
-  openDropdown
-});
 </script>

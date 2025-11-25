@@ -13,6 +13,6 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() =>
-  twMerge('rounded-lg p-6 bg-white text-black', props.innerClass)
+  twMerge("rounded-lg p-6 bg-white text-black", props.innerClass)
 );
 </script>
