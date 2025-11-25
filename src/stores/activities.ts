@@ -8,7 +8,7 @@ export const useActivityStore = defineStore("activity", () => {
   const { data, loading, error, load } = useDataLoader<Activity>("/data/activities.json");
 
   const getById = computed(() => {
-    return (id: number, populate: string[] = []) => {
+    return (id: string, populate: string[] = []) => {
       const item = data.value.find(i => i.id === String(id));
       if (!item) return null;
 
