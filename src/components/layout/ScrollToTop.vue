@@ -1,12 +1,17 @@
 <template>
-  <Button :class="`go-to-top ${isVisible && 'visible'}`" color="primary" @click="scrollToTop"  v-tooltip.left="isVisible && 'Scroll to top'">
+  <Button
+    :class="`go-to-top ${isVisible && 'visible'}`"
+    color="primary"
+    @click="scrollToTop"
+    v-tooltip.left="isVisible && 'Scroll to top'"
+  >
     <Icon icon="tabler:arrow-big-up-filled" />
   </Button>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import Button from "./Button.vue";
+import Button from "@/components/ui/Button.vue";
 import { Icon } from "@iconify/vue";
 
 const isVisible = ref(false);
@@ -26,7 +31,10 @@ function scrollToTop() {
 
     // Easing function - easeInOutQuad
     let percent = Math.min(progress / duration, 1);
-    percent = percent < 0.5 ? 2 * percent * percent : 1 - Math.pow(-2 * percent + 2, 2) / 2;
+    percent =
+      percent < 0.5
+        ? 2 * percent * percent
+        : 1 - Math.pow(-2 * percent + 2, 2) / 2;
 
     window.scrollTo(0, startPosition + distance * percent);
 
@@ -36,7 +44,7 @@ function scrollToTop() {
   }
 }
 
-const handleScroll = () => isVisible.value = window.scrollY > 200;
+const handleScroll = () => (isVisible.value = window.scrollY > 200);
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -51,8 +59,8 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  font-size: 1.3rem!important;
-  padding: .8rem!important;
+  font-size: 1.3rem !important;
+  padding: 0.8rem !important;
   aspect-ratio: 1 / 1;
   border-radius: 100%;
   z-index: 100;

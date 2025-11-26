@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex gap-2 p-3 px-4 items-center bg-white rounded-sm color-gray-600"
+    class="flex gap-2 p-3 px-4 items-center bg-white rounded-sm color-gray-600 h-full"
   >
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col items-center">
       <div class="text-xs text-gray-500 mb-1">{{ label }}</div>
       <div class="flex items-center gap-3">
         <button
@@ -19,15 +19,9 @@
           />
         </button>
 
-        <input
-          type="number"
-          :value="modelValue"
-          @input="handleInput"
-          :min="min"
-          :max="max"
-          class="w-16 text-center text-sm font-medium border-none outline-none"
-          readonly
-        />
+        <div class="w-5 text-center text-sm font-medium">
+          {{ modelValue }}
+        </div>
 
         <button
           @click="increment"
@@ -79,21 +73,6 @@ const increment = () => {
 const decrement = () => {
   if (props.modelValue > props.min) {
     emit("update:modelValue", props.modelValue - 1);
-  }
-};
-
-const handleInput = (e: Event) => {
-  const target = e.target as HTMLInputElement;
-  const value = parseInt(target.value);
-
-  if (!isNaN(value)) {
-    let clampedValue = value;
-
-    if (clampedValue < props.min) clampedValue = props.min;
-    if (props.max !== undefined && clampedValue > props.max)
-      clampedValue = props.max;
-
-    emit("update:modelValue", clampedValue);
   }
 };
 </script>

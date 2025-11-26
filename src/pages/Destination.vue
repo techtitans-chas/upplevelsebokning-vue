@@ -33,9 +33,9 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
-import Section from "@/components/Section.vue";
-import Button from "@/components/Button.vue";
-import Badge from "@/components/Badge.vue";
+import Section from "@/components/layout/Section.vue";
+import Button from "@/components/ui/Button.vue";
+import Badge from "@/components/ui/Badge.vue";
 
 const route = useRoute();
 const destinationStore = useDestinationStore();

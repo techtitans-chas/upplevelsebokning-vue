@@ -1,4 +1,4 @@
 export { useAccommodationStore } from "./accommodation";
-export { useActivityStore } from "./activities";
+export { useActivityStore } from "./activity";
 export { useCartStore } from "./cart";
 export { useDestinationStore } from "./destination";

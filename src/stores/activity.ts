@@ -5,14 +5,16 @@ import type { Activity } from "../types";
 import { useDataLoader } from "../composables/useDataLoader";
 
 export const useActivityStore = defineStore("activity", () => {
-  const { data, loading, error, load } = useDataLoader<Activity>("/data/activities.json");
+  const { data, loading, error, load } = useDataLoader<Activity>(
+    "/data/activities.json"
+  );
 
   const getById = computed(() => {
     return (id: string, populate: string[] = []) => {
-      const item = data.value.find(i => i.id === String(id));
+      const item = data.value.find((i) => i.id === String(id));
       if (!item) return null;
 
-      const enrichedItem: any = { ...item};
+      const enrichedItem: any = { ...item };
 
       if (populate.includes("destination")) {
         const destination = useDestinationStore();
@@ -20,7 +22,13 @@ export const useActivityStore = defineStore("activity", () => {
       }
 
       return enrichedItem;
-    }
+    };
+  });
+
+  const getByDestination = computed(() => {
+    return (destinationId: string) => {
+      return data.value.filter((i) => i.destinationId === destinationId);
+    };
   });
 
   return {
@@ -28,6 +36,7 @@ export const useActivityStore = defineStore("activity", () => {
     loading,
     error,
     load,
-    getById
-  }
+    getById,
+    getByDestination,
+  };
 });

@@ -47,33 +47,7 @@
       </Dropdown>
 
       <!-- Date -->
-      <Dropdown
-        label="Date"
-        placeholder="Select dates"
-        v-model="dateRangeDisplay"
-      >
-        <template #content>
-          <div class="p-4 gap-3">
-            <div>
-              <label class="text-xs text-gray-500 block mb-1">Start Date</label>
-              <input
-                type="date"
-                v-model="departureDate"
-                class="w-full p-2 border border-gray-300 rounded text-sm"
-              />
-            </div>
-            <div>
-              <label class="text-xs text-gray-500 block mb-1">End Date</label>
-              <input
-                type="date"
-                v-model="returnDate"
-                :min="departureDate"
-                class="w-full p-2 border border-gray-300 rounded text-sm"
-              />
-            </div>
-          </div>
-        </template>
-      </Dropdown>
+      <DateDropdown />
 
       <!-- Age group -->
       <Dropdown
@@ -105,39 +79,22 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import Button from "@/components/Button.vue";
-import Input from "@/components/Input.vue";
-import Dropdown from "@/components/Dropdown.vue";
+import Button from "@/components/ui/Button.vue";
+import Input from "@/components/form/Input.vue";
+import Dropdown from "@/components/form/Dropdown.vue";
+import DateDropdown from "@/components/form/DateDropdown.vue";
 import { useDestinationStore } from "@/stores/destination";
-import { useSessionStore } from "@/stores/session";
+// import { useSessionStore } from "@/stores/session";
 
 const destinations = useDestinationStore();
-const sessionStore = useSessionStore();
+// const sessionStore = useSessionStore();
 
 const selectedDestination = ref<(typeof destinations.data)[number] | null>(
   null
 );
-const selectedAgeGroup = ref("");
 const searchTerm = ref("");
-
-const departureDate = computed({
-  get: () => sessionStore.departureDate,
-  set: (value) => (sessionStore.departureDate = value),
-});
-
-const returnDate = computed({
-  get: () => sessionStore.returnDate,
-  set: (value) => (sessionStore.returnDate = value),
-});
-
+const selectedAgeGroup = ref("");
 const ageGroups = ref(["All ages", "18 and above"]);
-
-const dateRangeDisplay = computed(() => {
-  if (departureDate.value && returnDate.value)
-    return `${departureDate.value} - ${returnDate.value}`;
-  else if (departureDate.value) return departureDate.value;
-  return "";
-});
 
 const query = computed(() => {
   const array = [];

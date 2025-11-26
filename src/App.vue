@@ -17,9 +17,9 @@ import {
   useActivityStore,
   useDestinationStore,
 } from "./stores";
-import NavBar from "./components/NavBar.vue";
-import Footer from "./components/Footer.vue";
-import ScrollToTop from "./components/ScrollToTop.vue";
+import NavBar from "@/components/layout/NavBar.vue";
+import Footer from "@/components/layout/Footer.vue";
+import ScrollToTop from "@/components/layout/ScrollToTop.vue";
 
 const store = {
   accommodation: useAccommodationStore(),

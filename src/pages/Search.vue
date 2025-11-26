@@ -5,7 +5,12 @@
     <p>{{ destination }}</p>
 
     <div class="grid grid-cols-[1fr_1fr_1fr] gap-4">
-      <DestinationCard v-for="item in results" :key="item.id" :data="item" @click="router.push(`/destination/${item.id}`)" />
+      <DestinationCard
+        v-for="item in results"
+        :key="item.id"
+        :data="item"
+        @click="router.push(`/destination/${item.id}`)"
+      />
     </div>
   </Section>
 </template>
@@ -14,8 +19,8 @@
 import { computed } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
-import Section from "@/components/Section.vue";
-import DestinationCard from "@/components/DestinationCard.vue";
+import Section from "@/components/layout/Section.vue";
+import DestinationCard from "@/components/cards/DestinationCard.vue";
 
 const router = useRouter();
 const route = useRoute();

@@ -1,5 +1,9 @@
 <template>
-  <Section bg-image="/images/placeholder.jpg" bg-color="bg-primary-950/70" class="bg-fixed">
+  <Section
+    bg-image="/images/placeholder.jpg"
+    bg-color="bg-primary-950/70"
+    class="bg-fixed"
+  >
     <h1>Welcome to Hourglass Adventures!</h1>
     <p class="mb-4">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti
@@ -14,7 +18,12 @@
 
     <h2>Featured destinations</h2>
     <div class="grid grid-cols-[1fr_1fr_1fr] gap-4">
-      <DestinationCard v-for="item in destinations.data" :key="item.id" :data="item" @click="router.push(`/destination/${item.id}`)" />
+      <DestinationCard
+        v-for="item in destinations.data"
+        :key="item.id"
+        :data="item"
+        @click="router.push(`/destination/${item.id}`)"
+      />
     </div>
   </Section>
 
@@ -37,13 +46,13 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import SearchForm from "@/components/SearchForm.vue";
-import Section from "@/components/Section.vue";
-import Link from "@/components/Link.vue";
-import Card from "@/components/Card.vue";
-import DestinationCard from "@/components/DestinationCard.vue";
+import SearchForm from "@/components/form/SearchForm.vue";
+import Section from "@/components/layout/Section.vue";
+import Link from "@/components/ui/Link.vue";
+import Card from "@/components/ui/Card.vue";
+import DestinationCard from "@/components/cards/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
-import Button from "@/components/Button.vue";
+import Button from "@/components/ui/Button.vue";
 
 const router = useRouter();
 

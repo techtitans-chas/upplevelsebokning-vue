@@ -6,7 +6,8 @@
       </div>
       <ul class="flex gap-4">
         <li v-tooltip="'Cart'" class="nav-link">
-          <Icon icon="ion:cart" /> <RouterLink to="/cart">Cart ({{ cart.totalAmount }})</RouterLink>
+          <Icon icon="ion:cart" />
+          <RouterLink to="/cart">Cart ({{ cart.totalAmount }})</RouterLink>
         </li>
       </ul>
     </nav>
@@ -16,7 +17,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { useCartStore } from "@/stores/cart";
-import Logo from "./Logo.vue";
+import Logo from "@/components/ui/Logo.vue";
 
 const cart = useCartStore();
 </script>
@@ -34,7 +35,7 @@ const cart = useCartStore();
 .nav-link {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
   padding: 1rem 1.5rem;
 }
 

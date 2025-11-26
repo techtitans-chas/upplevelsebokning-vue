@@ -1,20 +1,1372 @@
 [
-{
+  {
     "id": 1,
-    "destinationId": 1,
-    "title": "Temple tours",
+    "destinationId": "ancient-greece",
+    "title": "Temple Tours",
     "description": "Explore the ancient temples with a knowledgeable guide.",
     "duration": "2 hours",
-    "groupSize": "Up to 10 people",
+    "groupSize": 10,
     "ageGroup": "All ages",
     "included": ["Guide", "Transportation", "Snacks"],
-    "requirements": ["Comfortable shoes", "18+ for wine tasting"],
+    "requirements": ["Comfortable shoes"],
     "price": 50,
     "rating": 4.5,
     "reviews": [
-      { "user": "John Doe", "rating": 5, "comment": "Amazing stay!" },
-      { "user": "Jane Smith", "rating": 4, "comment": "Great service, but the room was small." }
+      {
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Amazing experience! The guide was incredibly knowledgeable."
+      },
+      {
+        "user": "Jane Smith",
+        "rating": 4,
+        "comment": "Great service, but a bit rushed."
+      }
     ],
-    "thumbnail": "src image"
+    "thumbnail": ""
+  },
+  {
+    "id": 2,
+    "destinationId": "ancient-greece",
+    "title": "Theater Performance Attendance",
+    "description": "Watch a classic Greek drama performed by local actors in an ancient amphitheater.",
+    "duration": "3 hours",
+    "groupSize": 50,
+    "ageGroup": "10+",
+    "included": ["Ticket", "Seating", "Program"],
+    "requirements": ["Patience for ancient language"],
+    "price": 75,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "Maria K.",
+        "rating": 5,
+        "comment": "Absolutely mesmerizing! Felt like stepping back in time."
+      },
+      {
+        "user": "Pierre D.",
+        "rating": 5,
+        "comment": "The performances were brilliant."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 3,
+    "destinationId": "ancient-greece",
+    "title": "Olive Picking & Oil Tasting",
+    "description": "Help harvest olives and taste fresh pressed olive oil at a local farm.",
+    "duration": "4 hours",
+    "groupSize": 15,
+    "ageGroup": "All ages",
+    "included": ["Tools", "Lunch", "Oil samples"],
+    "requirements": ["Physical fitness"],
+    "price": 35,
+    "rating": 3.2,
+    "reviews": [
+      {
+        "user": "Alex T.",
+        "rating": 2,
+        "comment": "Very labor-intensive and the oil tasting was underwhelming."
+      },
+      {
+        "user": "Sophie R.",
+        "rating": 4,
+        "comment": "Fun experience, though my back was sore!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 4,
+    "destinationId": "ancient-greece",
+    "title": "Philosophy Discussion with Scholars",
+    "description": "Engage in Socratic debates with modern scholars in authentic settings.",
+    "duration": "2.5 hours",
+    "groupSize": 8,
+    "ageGroup": "13+",
+    "included": ["Scholar", "Refreshments"],
+    "requirements": ["Interest in philosophy"],
+    "price": 60,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "Heinrich S.",
+        "rating": 5,
+        "comment": "Intellectually stimulating and profoundly moving."
+      },
+      {
+        "user": "Lisa M.",
+        "rating": 4,
+        "comment": "Good discussion, though one scholar was a bit condescending."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 5,
+    "destinationId": "ancient-greece",
+    "title": "Beach Swimming & Fishing",
+    "description": "Swim in Mediterranean waters and learn traditional fishing techniques.",
+    "duration": "3 hours",
+    "groupSize": 20,
+    "ageGroup": "5+",
+    "included": ["Fishing equipment", "Life jackets"],
+    "requirements": ["Ability to swim"],
+    "price": 25,
+    "rating": 3.8,
+    "reviews": [
+      {
+        "user": "Marco V.",
+        "rating": 4,
+        "comment": "Relaxing and fun, water was perfect."
+      },
+      {
+        "user": "Ines B.",
+        "rating": 4,
+        "comment": "Nice beach day, though crowded."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 6,
+    "destinationId": "ancient-greece",
+    "title": "Pottery Workshop with Master Craftsman",
+    "description": "Create your own pottery using ancient wheel techniques.",
+    "duration": "3 hours",
+    "groupSize": 6,
+    "ageGroup": "All ages",
+    "included": ["Clay", "Wheel", "Firing"],
+    "requirements": ["None"],
+    "price": 85,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "Anna P.",
+        "rating": 5,
+        "comment": "Absolutely wonderful! The craftsman was patient and inspiring."
+      },
+      {
+        "user": "Michael R.",
+        "rating": 5,
+        "comment": "Best activity ever! Taking home my creation!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 7,
+    "destinationId": "ancient-greece",
+    "title": "Hiking to Mountain Shrine",
+    "description": "Trek through olive groves to a remote mountain shrine with panoramic views.",
+    "duration": "5 hours",
+    "groupSize": 12,
+    "ageGroup": "14+",
+    "included": ["Guide", "Water bottles", "Light snacks"],
+    "requirements": ["Moderate fitness level"],
+    "price": 40,
+    "rating": 2.9,
+    "reviews": [
+      {
+        "user": "Robert J.",
+        "rating": 2,
+        "comment": "Guide got us lost halfway up. Total waste of time."
+      },
+      {
+        "user": "Helena W.",
+        "rating": 4,
+        "comment": "Beautiful views but the hike was more difficult than described."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 8,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Pyramid Construction Tour",
+    "description": "Witness the ingenious techniques used to build the Great Pyramids.",
+    "duration": "3 hours",
+    "groupSize": 25,
+    "ageGroup": "All ages",
+    "included": ["Expert guide", "Binoculars", "Explanatory materials"],
+    "requirements": ["Comfortable shoes"],
+    "price": 90,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "David L.",
+        "rating": 5,
+        "comment": "Incredible insight into engineering. Mind-blowing!"
+      },
+      {
+        "user": "Yasmin H.",
+        "rating": 5,
+        "comment": "The guide's expertise was exceptional."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 9,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Nile Reed Boat Sailing",
+    "description": "Sail the Nile River in an authentic reed boat with traditional crew.",
+    "duration": "2.5 hours",
+    "groupSize": 8,
+    "ageGroup": "5+",
+    "included": ["Boat", "Captain", "Refreshments"],
+    "requirements": ["Comfort with water"],
+    "price": 75,
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "Fatima M.",
+        "rating": 5,
+        "comment": "Serene and magical. A true highlight of my journey!"
+      },
+      {
+        "user": "Thomas E.",
+        "rating": 4,
+        "comment": "Beautiful but a bit slow-paced for my liking."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 10,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Papyrus Painting Class",
+    "description": "Learn to paint hieroglyphics and traditional scenes on authentic papyrus.",
+    "duration": "2 hours",
+    "groupSize": 10,
+    "ageGroup": "8+",
+    "included": ["Papyrus", "Paint", "Brushes", "Your finished work"],
+    "requirements": ["Artistic interest"],
+    "price": 45,
+    "rating": 4.2,
+    "reviews": [
+      {
+        "user": "Sophia K.",
+        "rating": 5,
+        "comment": "So fun and creative! Great souvenir."
+      },
+      {
+        "user": "Ahmed N.",
+        "rating": 3,
+        "comment": "Instructor was rushed; wished for more detailed instruction."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 11,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Pharaonic Procession Experience",
+    "description": "Participate in a recreated pharaonic procession with costumes and traditional music.",
+    "duration": "2 hours",
+    "groupSize": 30,
+    "ageGroup": "All ages",
+    "included": ["Costume", "Music performance", "Photography"],
+    "requirements": ["None"],
+    "price": 65,
+    "rating": 3.4,
+    "reviews": [
+      {
+        "user": "Emma L.",
+        "rating": 4,
+        "comment": "Fun and colorful, though a bit theatrical."
+      },
+      {
+        "user": "Omar S.",
+        "rating": 3,
+        "comment": "Costumes were cheap and uncomfortable. Felt more like a tourist trap."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 12,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Desert Camel Trek",
+    "description": "Explore the desert surrounding the pyramids on camelback.",
+    "duration": "4 hours",
+    "groupSize": 15,
+    "ageGroup": "10+",
+    "included": ["Camel", "Guide", "Water", "Sunset viewing"],
+    "requirements": ["Moderate fitness"],
+    "price": 85,
+    "rating": 4.1,
+    "reviews": [
+      {
+        "user": "Isabella R.",
+        "rating": 5,
+        "comment": "Spectacular sunset over the dunes. Unforgettable!"
+      },
+      {
+        "user": "Klaus W.",
+        "rating": 3,
+        "comment": "Camel was uncomfortable and the guide wasn't very attentive."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 13,
+    "destinationId": "ancient-egypt-giza-nile",
+    "title": "Market Haggling Workshop",
+    "description": "Learn negotiation skills and explore local markets with an experienced trader.",
+    "duration": "3 hours",
+    "groupSize": 12,
+    "ageGroup": "All ages",
+    "included": ["Guide", "Trader insights"],
+    "requirements": ["Patience and humor"],
+    "price": 30,
+    "rating": 3.6,
+    "reviews": [
+      {
+        "user": "Nina P.",
+        "rating": 4,
+        "comment": "Entertaining and educational. Got some great deals!"
+      },
+      {
+        "user": "Peter H.",
+        "rating": 3,
+        "comment": "Felt pressured to buy overpriced souvenirs."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 14,
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Dinosaur Fossil Hunting",
+    "description": "Search for ammonites and other fossils under expert paleontologist supervision.",
+    "duration": "4 hours",
+    "groupSize": 8,
+    "ageGroup": "8+",
+    "included": [
+      "Expert guide",
+      "Excavation tools",
+      "Safety gear",
+      "Specimens to keep"
+    ],
+    "requirements": ["Careful handling of equipment"],
+    "price": 150,
+    "rating": 5,
+    "reviews": [
+      {
+        "user": "Emma T.",
+        "rating": 5,
+        "comment": "Found my first fossil! The guide was incredible."
+      },
+      {
+        "user": "David K.",
+        "rating": 5,
+        "comment": "Educational and thrilling. Worth every penny!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 15,
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Predator Safety Training",
+    "description": "Learn survival techniques to safely navigate dinosaur-inhabited zones.",
+    "duration": "3 hours",
+    "groupSize": 10,
+    "ageGroup": "12+",
+    "included": [
+      "Training materials",
+      "Protective gear",
+      "Flares",
+      "Communication device"
+    ],
+    "requirements": ["Good physical condition"],
+    "price": 200,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "James R.",
+        "rating": 5,
+        "comment": "Intense and professional. Felt genuinely safer after."
+      },
+      {
+        "user": "Sarah M.",
+        "rating": 5,
+        "comment": "Excellent instructors. Highly recommend for adventurers."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 16,
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Ancient Fern Forest Walk",
+    "description": "Stroll through primeval forests of ferns and cycads with a botanist guide.",
+    "duration": "2.5 hours",
+    "groupSize": 15,
+    "ageGroup": "All ages",
+    "included": [
+      "Botanist guide",
+      "Plant identification books",
+      "Photography opportunities"
+    ],
+    "requirements": ["Moderate walking ability"],
+    "price": 70,
+    "rating": 3.3,
+    "reviews": [
+      {
+        "user": "Margaret L.",
+        "rating": 4,
+        "comment": "Beautiful plants and informative, though humid and buggy."
+      },
+      {
+        "user": "Vincent T.",
+        "rating": 3,
+        "comment": "Guide moved too quickly through the forest for my taste."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 17,
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Prehistoric Constellation Viewing",
+    "description": "Observe the night sky as it was during the Jurassic period with astronomy expert.",
+    "duration": "3 hours",
+    "groupSize": 12,
+    "ageGroup": "10+",
+    "included": [
+      "Telescope",
+      "Astronomy guide",
+      "Star charts",
+      "Hot beverages"
+    ],
+    "requirements": ["Weather dependent"],
+    "price": 120,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "Lucas C.",
+        "rating": 5,
+        "comment": "Mind-bending to see ancient constellations. Absolutely fascinating!"
+      },
+      {
+        "user": "Iris N.",
+        "rating": 4,
+        "comment": "Great experience though the cold was intense."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 18,
+    "destinationId": "jurassic-coastal-delta",
+    "title": "Dinosaur Egg Discovery Expedition",
+    "description": "Search for fossilized dinosaur eggs in designated safe zones.",
+    "duration": "5 hours",
+    "groupSize": 6,
+    "ageGroup": "10+",
+    "included": ["Equipment", "Expert guide", "All-day permit", "Lunch"],
+    "requirements": ["High physical fitness"],
+    "price": 250,
+    "rating": 2.8,
+    "reviews": [
+      {
+        "user": "Robert M.",
+        "rating": 2,
+        "comment": "Didn't find anything. Guide seemed disorganized. Waste of money."
+      },
+      {
+        "user": "Victoria P.",
+        "rating": 4,
+        "comment": "Didn't find eggs but saw amazing fossil formations."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 19,
+    "destinationId": "renaissance-florence",
+    "title": "Master Artist Workshop",
+    "description": "Train in Renaissance painting techniques with master artists in their ateliers.",
+    "duration": "4 hours",
+    "groupSize": 5,
+    "ageGroup": "14+",
+    "included": ["Supplies", "Canvas", "Expert instruction", "Your artwork"],
+    "requirements": ["Basic artistic interest"],
+    "price": 200,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "Lucia V.",
+        "rating": 5,
+        "comment": "The master was generous with knowledge. Transformative experience!"
+      },
+      {
+        "user": "Francesco B.",
+        "rating": 5,
+        "comment": "Best workshop I've ever attended. Pure artistry."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 20,
+    "destinationId": "renaissance-florence",
+    "title": "Marble Sculpture Fundamentals",
+    "description": "Learn basic sculpture techniques using authentic materials and methods.",
+    "duration": "3 hours",
+    "groupSize": 6,
+    "ageGroup": "16+",
+    "included": ["Marble", "Tools", "Safety equipment", "Small sculpture"],
+    "requirements": ["Physical strength"],
+    "price": 180,
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Alessandro R.",
+        "rating": 5,
+        "comment": "Challenging but rewarding. Felt like a true artisan."
+      },
+      {
+        "user": "Beatrice M.",
+        "rating": 4,
+        "comment": "Good instruction, but marble dust got everywhere!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 21,
+    "destinationId": "renaissance-florence",
+    "title": "Piazza Debates & Intellectual Salons",
+    "description": "Participate in lively philosophical and artistic debates in authentic settings.",
+    "duration": "2.5 hours",
+    "groupSize": 20,
+    "ageGroup": "13+",
+    "included": ["Moderator", "Wine and cheese", "Scholarly materials"],
+    "requirements": ["Comfortable with public speaking"],
+    "price": 55,
+    "rating": 4.3,
+    "reviews": [
+      {
+        "user": "Giovanni S.",
+        "rating": 5,
+        "comment": "Intellectually stimulating! Like being in a Renaissance salon."
+      },
+      {
+        "user": "Clara L.",
+        "rating": 3,
+        "comment": "Interesting but some participants were overly competitive."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 22,
+    "destinationId": "renaissance-florence",
+    "title": "Fresco Restoration Volunteer",
+    "description": "Help restore Renaissance frescoes under professional conservators.",
+    "duration": "6 hours",
+    "groupSize": 4,
+    "ageGroup": "18+",
+    "included": ["Training", "Materials", "Professional supervision", "Lunch"],
+    "requirements": ["Attention to detail", "Steady hands"],
+    "price": 220,
+    "rating": 3.2,
+    "reviews": [
+      {
+        "user": "Hans K.",
+        "rating": 3,
+        "comment": "Tedious work. Much slower than expected and very delicate."
+      },
+      {
+        "user": "Sophia E.",
+        "rating": 4,
+        "comment": "Rewarding to contribute, though it's painstaking work."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 23,
+    "destinationId": "renaissance-florence",
+    "title": "Street Musician & Poetry Evening",
+    "description": "Enjoy live Renaissance music and poetry recitations in cobblestone streets.",
+    "duration": "2 hours",
+    "groupSize": 50,
+    "ageGroup": "All ages",
+    "included": ["Performance", "Seating", "Beverages"],
+    "requirements": ["None"],
+    "price": 40,
+    "rating": 4.1,
+    "reviews": [
+      {
+        "user": "Marco T.",
+        "rating": 5,
+        "comment": "Enchanting atmosphere. Felt magical under the stars."
+      },
+      {
+        "user": "Elena D.",
+        "rating": 3,
+        "comment": "Musicians were decent but crowd was too large."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 24,
+    "destinationId": "renaissance-florence",
+    "title": "Leather Crafting Class",
+    "description": "Craft your own leather goods using traditional Florentine techniques.",
+    "duration": "3 hours",
+    "groupSize": 8,
+    "ageGroup": "12+",
+    "included": ["Leather", "Tools", "Dyes", "Your finished item"],
+    "requirements": ["Manual dexterity"],
+    "price": 95,
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "Isabella G.",
+        "rating": 5,
+        "comment": "Crafted a beautiful wallet! The instructor was wonderful."
+      },
+      {
+        "user": "Matteo P.",
+        "rating": 4,
+        "comment": "Fun project, though my fingers were sore afterward."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 25,
+    "destinationId": "medieval-kyoto",
+    "title": "Traditional Tea Ceremony",
+    "description": "Participate in an authentic Japanese tea ceremony with a certified master.",
+    "duration": "1.5 hours",
+    "groupSize": 6,
+    "ageGroup": "All ages",
+    "included": ["Tea", "Sweets", "Ceremony instruction", "Meditation"],
+    "requirements": ["Respect for traditions"],
+    "price": 70,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "Yuki M.",
+        "rating": 5,
+        "comment": "Profoundly meditative and peaceful. Changed my perspective."
+      },
+      {
+        "user": "Hiroshi T.",
+        "rating": 5,
+        "comment": "Master's attention to detail was impeccable."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 26,
+    "destinationId": "medieval-kyoto",
+    "title": "Samurai Sword Training",
+    "description": "Learn basic kenjutsu (sword fighting) from experienced samurai instructors.",
+    "duration": "2 hours",
+    "groupSize": 8,
+    "ageGroup": "14+",
+    "included": [
+      "Training sword",
+      "Protective gear",
+      "Instruction",
+      "Certificate"
+    ],
+    "requirements": ["Physical fitness", "Respect for discipline"],
+    "price": 120,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "Kenji S.",
+        "rating": 5,
+        "comment": "Intense and empowering! Felt like a true warrior."
+      },
+      {
+        "user": "Tomoe K.",
+        "rating": 4,
+        "comment": "Great experience, though my arms are exhausted!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 27,
+    "destinationId": "medieval-kyoto",
+    "title": "Temple Garden Meditation Walk",
+    "description": "Peaceful guided meditation walk through serene temple gardens.",
+    "duration": "1 hour",
+    "groupSize": 10,
+    "ageGroup": "All ages",
+    "included": ["Guide", "Meditation instruction"],
+    "requirements": ["Comfortable shoes"],
+    "price": 35,
+    "rating": 3.5,
+    "reviews": [
+      {
+        "user": "Akira N.",
+        "rating": 4,
+        "comment": "Calming and beautiful, though others' phones distracted me."
+      },
+      {
+        "user": "Sakura Y.",
+        "rating": 3,
+        "comment": "Guide spoke too much. Wished for more silence."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 28,
+    "destinationId": "medieval-kyoto",
+    "title": "Kimono Fitting & Photo Session",
+    "description": "Dress in traditional kimono and have professional photos taken.",
+    "duration": "2 hours",
+    "groupSize": 12,
+    "ageGroup": "All ages",
+    "included": [
+      "Kimono rental",
+      "Styling",
+      "Professional photos",
+      "Digital copies"
+    ],
+    "requirements": ["Comfort with dressing up"],
+    "price": 85,
+    "rating": 4.2,
+    "reviews": [
+      {
+        "user": "Mika T.",
+        "rating": 5,
+        "comment": "Beautiful kimonos and stunning photos! Wonderful memory."
+      },
+      {
+        "user": "Riku H.",
+        "rating": 3,
+        "comment": "Kimono was tight and uncomfortable. Photos felt rushed."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 29,
+    "destinationId": "medieval-kyoto",
+    "title": "Geisha District Walking Tour",
+    "description": "Explore historic geisha quarters and learn about geisha culture and etiquette.",
+    "duration": "2.5 hours",
+    "groupSize": 15,
+    "ageGroup": "12+",
+    "included": ["Expert guide", "Cultural insights", "Photos permitted"],
+    "requirements": ["Respect for customs"],
+    "price": 55,
+    "rating": 4.4,
+    "reviews": [
+      {
+        "user": "Yuki K.",
+        "rating": 5,
+        "comment": "Fascinating history and respectful tour. Highly recommended!"
+      },
+      {
+        "user": "Takeshi I.",
+        "rating": 4,
+        "comment": "Interesting but some areas felt touristy."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 30,
+    "destinationId": "viking-age-fjordlands",
+    "title": "Longship Sailing Adventure",
+    "description": "Sail an authentic Viking longship through Norwegian fjords.",
+    "duration": "3 hours",
+    "groupSize": 10,
+    "ageGroup": "12+",
+    "included": ["Ship", "Crew", "Life jacket", "Norse hospitality"],
+    "requirements": ["Comfort with water", "Physical activity"],
+    "price": 180,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "Erik S.",
+        "rating": 5,
+        "comment": "Exhilarating! Felt the spirit of true Vikings!"
+      },
+      {
+        "user": "Ingrid J.",
+        "rating": 5,
+        "comment": "Crew was knowledgeable and made us feel welcome."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 31,
+    "destinationId": "viking-age-fjordlands",
+    "title": "Weapons Training (Axe & Shield)",
+    "description": "Learn authentic Viking combat techniques with axes and shields.",
+    "duration": "2.5 hours",
+    "groupSize": 8,
+    "ageGroup": "16+",
+    "included": ["Weapon training", "Safety gear", "Instruction"],
+    "requirements": ["Physical fitness"],
+    "price": 150,
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Soren B.",
+        "rating": 5,
+        "comment": "Intense and thrilling! Real Viking warrior training."
+      },
+      {
+        "user": "Astrid L.",
+        "rating": 4,
+        "comment": "Fun but quite tiring. Well-structured though."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 32,
+    "destinationId": "viking-age-fjordlands",
+    "title": "Coastal Market Trading Game",
+    "description": "Participate in realistic Viking-era trading games at bustling shore markets.",
+    "duration": "2 hours",
+    "groupSize": 20,
+    "ageGroup": "10+",
+    "included": ["Trade tokens", "Market access", "Small souvenirs"],
+    "requirements": ["Basic math skills"],
+    "price": 45,
+    "rating": 3.7,
+    "reviews": [
+      {
+        "user": "Lars T.",
+        "rating": 4,
+        "comment": "Fun and competitive! Market feels authentic."
+      },
+      {
+        "user": "Bjorn K.",
+        "rating": 3,
+        "comment": "A bit confusing at first. Rules could be clearer."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 33,
+    "destinationId": "viking-age-fjordlands",
+    "title": "Traditional Norse Craft Workshop",
+    "description": "Learn ancient Viking crafts including woodworking and metalwork basics.",
+    "duration": "3 hours",
+    "groupSize": 6,
+    "ageGroup": "14+",
+    "included": ["Materials", "Tools", "Instruction", "Your finished craft"],
+    "requirements": ["Attention to detail"],
+    "price": 110,
+    "rating": 4.3,
+    "reviews": [
+      {
+        "user": "Ragnar H.",
+        "rating": 5,
+        "comment": "Created a beautiful Viking bracelet! Instructor was patient."
+      },
+      {
+        "user": "Hilda S.",
+        "rating": 4,
+        "comment": "Good workshop, though metalwork was quite challenging."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 34,
+    "destinationId": "viking-age-fjordlands",
+    "title": "Firelight Feast & Sagas",
+    "description": "Enjoy hearty Viking feast around a bonfire while listening to Norse sagas.",
+    "duration": "3.5 hours",
+    "groupSize": 30,
+    "ageGroup": "All ages",
+    "included": ["Feast", "Mead", "Saga performance", "Entertainment"],
+    "requirements": ["None"],
+    "price": 75,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "Leif O.",
+        "rating": 5,
+        "comment": "Authentic feast and captivating storytelling! Magical night!"
+      },
+      {
+        "user": "Sigrid V.",
+        "rating": 4,
+        "comment": "Great food and atmosphere, though a bit chilly."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 35,
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Pyramid Climbing & Ceremonial Sites",
+    "description": "Climb sacred Aztec pyramids and learn about religious ceremonies.",
+    "duration": "3 hours",
+    "groupSize": 15,
+    "ageGroup": "10+",
+    "included": ["Guide", "Ceremonial explanation", "Photos"],
+    "requirements": ["Good physical fitness"],
+    "price": 95,
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "Diego R.",
+        "rating": 5,
+        "comment": "Breathtaking views and profound spiritual energy!"
+      },
+      {
+        "user": "Carmen S.",
+        "rating": 5,
+        "comment": "Guide was incredibly knowledgeable about Aztec culture."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 36,
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Floating Garden (Chinampas) Tour",
+    "description": "Explore the ingenious artificial island gardens with agricultural expert.",
+    "duration": "2.5 hours",
+    "groupSize": 12,
+    "ageGroup": "All ages",
+    "included": ["Boat tour", "Guide", "Plant samples"],
+    "requirements": ["Comfort with boats"],
+    "price": 60,
+    "rating": 4.4,
+    "reviews": [
+      {
+        "user": "Lupita M.",
+        "rating": 5,
+        "comment": "Amazing engineering! So productive and beautiful."
+      },
+      {
+        "user": "Javier L.",
+        "rating": 4,
+        "comment": "Interesting but the boat was crowded."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 37,
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Market Exploration & Food Tasting",
+    "description": "Navigate vibrant Aztec markets and taste authentic indigenous foods.",
+    "duration": "3 hours",
+    "groupSize": 20,
+    "ageGroup": "All ages",
+    "included": ["Market guide", "Food tastings", "Translator"],
+    "requirements": ["Adventurous palate"],
+    "price": 75,
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Miguel A.",
+        "rating": 5,
+        "comment": "Vibrant market energy and delicious, exotic foods!"
+      },
+      {
+        "user": "Rosa T.",
+        "rating": 4,
+        "comment": "Great experience, though some foods were too unfamiliar."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 38,
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Codex Painting Workshop",
+    "description": "Create artwork inspired by Aztec codices using traditional pigments.",
+    "duration": "3.5 hours",
+    "groupSize": 8,
+    "ageGroup": "12+",
+    "included": ["Traditional pigments", "Paper", "Brushes", "Your artwork"],
+    "requirements": ["Artistic interest"],
+    "price": 120,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "Fernanda G.",
+        "rating": 5,
+        "comment": "Beautiful experience learning Aztec art. Stunning results!"
+      },
+      {
+        "user": "Hector P.",
+        "rating": 5,
+        "comment": "Instructor was passionate and the art was captivating."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 39,
+    "destinationId": "tenochtitlan-aztec-capital",
+    "title": "Canal Navigation by Canoe",
+    "description": "Paddle through Tenochtitlan's intricate canal systems like ancient traders.",
+    "duration": "2 hours",
+    "groupSize": 6,
+    "ageGroup": "8+",
+    "included": ["Canoe", "Paddle", "Life jacket", "Guide"],
+    "requirements": ["Ability to swim"],
+    "price": 65,
+    "rating": 3.2,
+    "reviews": [
+      {
+        "user": "Isabel C.",
+        "rating": 3,
+        "comment": "Fun but canoe was unstable. Guide could have been more attentive."
+      },
+      {
+        "user": "Francisco D.",
+        "rating": 4,
+        "comment": "Scenic paddle, though I got a bit wet!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 40,
+    "destinationId": "victorian-london-1888",
+    "title": "Hansom Cab Tour Through Gaslit Streets",
+    "description": "Ride in an authentic hansom cab through Victorian London's historic streets.",
+    "duration": "2 hours",
+    "groupSize": 4,
+    "ageGroup": "All ages",
+    "included": ["Hansom cab ride", "Driver narration", "Historical anecdotes"],
+    "requirements": ["Comfort with horses"],
+    "price": 85,
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Elizabeth T.",
+        "rating": 5,
+        "comment": "Magical ride through gaslit streets! Felt like stepping back in time."
+      },
+      {
+        "user": "George W.",
+        "rating": 4,
+        "comment": "Charming experience, though smell was a bit strong."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 41,
+    "destinationId": "victorian-london-1888",
+    "title": "Steam Exhibition & Technology Fair",
+    "description": "Explore cutting-edge steam-powered inventions and technological marvels.",
+    "duration": "3 hours",
+    "groupSize": 30,
+    "ageGroup": "All ages",
+    "included": ["Fair admission", "Interactive demos", "Refreshments"],
+    "requirements": ["Interest in technology"],
+    "price": 45,
+    "rating": 4.3,
+    "reviews": [
+      {
+        "user": "Charles M.",
+        "rating": 5,
+        "comment": "Fascinating inventions! Steam power in all its glory."
+      },
+      {
+        "user": "Beatrice L.",
+        "rating": 3,
+        "comment": "Interesting but crowded and smoky."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 42,
+    "destinationId": "victorian-london-1888",
+    "title": "Mystery Alley Walk & Detective Training",
+    "description": "Solve Victorian mysteries while walking atmospheric London alleyways.",
+    "duration": "2.5 hours",
+    "groupSize": 10,
+    "ageGroup": "13+",
+    "included": ["Mystery guide", "Clues", "Detective badge"],
+    "requirements": ["Good observation skills"],
+    "price": 65,
+    "rating": 3.8,
+    "reviews": [
+      {
+        "user": "Sherlock F.",
+        "rating": 5,
+        "comment": "Thrilling mystery! Guide made it feel authentic."
+      },
+      {
+        "user": "Watson H.",
+        "rating": 3,
+        "comment": "Fun concept but solution was too convoluted."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 43,
+    "destinationId": "victorian-london-1888",
+    "title": "Afternoon Tea at Luxurious Hotel",
+    "description": "Experience refined Victorian afternoon tea in an opulent setting.",
+    "duration": "2 hours",
+    "groupSize": 8,
+    "ageGroup": "All ages",
+    "included": ["Tea service", "Pastries", "Scones", "Fine china"],
+    "requirements": ["Formal attire preferred"],
+    "price": 75,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "user": "Margaret D.",
+        "rating": 5,
+        "comment": "Exquisite tea service and delightful pastries! Pure elegance."
+      },
+      {
+        "user": "Victoria B.",
+        "rating": 4,
+        "comment": "Lovely experience, though a bit pricey for the portions."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 44,
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Jazz Club Night & Dance Lessons",
+    "description": "Learn 1920s dance moves and enjoy live jazz performances in authentic speakeasies.",
+    "duration": "3 hours",
+    "groupSize": 20,
+    "ageGroup": "18+",
+    "included": ["Dance lesson", "Admission", "One drink", "Live jazz"],
+    "requirements": ["Willingness to dance"],
+    "price": 120,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "Mabel G.",
+        "rating": 5,
+        "comment": "Absolutely fabulous night! Jazz was electrifying!"
+      },
+      {
+        "user": "Tom B.",
+        "rating": 5,
+        "comment": "Best speakeasy experience ever. Authentic and fun!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 45,
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Film Studio Tour & Photo Shoot",
+    "description": "Tour a movie studio and have your photo taken as a silent film star.",
+    "duration": "2.5 hours",
+    "groupSize": 15,
+    "ageGroup": "All ages",
+    "included": [
+      "Studio tour",
+      "Costume rental",
+      "Professional photos",
+      "Digital copies"
+    ],
+    "requirements": ["None"],
+    "price": 95,
+    "rating": 4.2,
+    "reviews": [
+      {
+        "user": "Vivian L.",
+        "rating": 5,
+        "comment": "Glamorous experience! Felt like a true movie star!"
+      },
+      {
+        "user": "Jack R.",
+        "rating": 3,
+        "comment": "Tour was short and costumes were scratchy."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 46,
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Rooftop Bar Cocktail Tasting",
+    "description": "Sample prohibition-era cocktails at a high-rise rooftop bar with city views.",
+    "duration": "2 hours",
+    "groupSize": 12,
+    "ageGroup": "21+",
+    "included": ["Cocktail tasting", "Mixology lesson", "Snacks", "City views"],
+    "requirements": ["Drinking age"],
+    "price": 110,
+    "rating": 4.4,
+    "reviews": [
+      {
+        "user": "Dorothy M.",
+        "rating": 5,
+        "comment": "Elegant cocktails and spectacular views! Sophisticated fun."
+      },
+      {
+        "user": "Charlie H.",
+        "rating": 3,
+        "comment": "Cocktails were good but expensive. Views were nice though."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 47,
+    "destinationId": "roaring-twenties-nyc",
+    "title": "Broadway Musical Production",
+    "description": "Attend a spectacular 1920s Broadway-style musical production.",
+    "duration": "3 hours",
+    "groupSize": 500,
+    "ageGroup": "All ages",
+    "included": ["Ticket", "Program", "Seating"],
+    "requirements": ["Appreciation for theater"],
+    "price": 140,
+    "rating": 4.7,
+    "reviews": [
+      {
+        "user": "Ethel A.",
+        "rating": 5,
+        "comment": "Spectacular production! Talented performers and beautiful sets."
+      },
+      {
+        "user": "Fred T.",
+        "rating": 4,
+        "comment": "Great show, though some songs were hard to hear."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 48,
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Habitat Engineering Tour",
+    "description": "Tour advanced bio-domes and learn pioneering terraforming techniques.",
+    "duration": "3 hours",
+    "groupSize": 15,
+    "ageGroup": "12+",
+    "included": ["Pressure suit", "Guide", "Technical briefing", "Lab samples"],
+    "requirements": ["Comfort with technology"],
+    "price": 400,
+    "rating": 5,
+    "reviews": [
+      {
+        "user": "Dr. Lin Y.",
+        "rating": 5,
+        "comment": "Mind-blowing technology! The habitat design is ingenious."
+      },
+      {
+        "user": "Ava K.",
+        "rating": 5,
+        "comment": "Incredible glimpse into the future of human civilization!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 49,
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Low-Gravity Recreation & Sports",
+    "description": "Experience unique sports and recreation in Mars's low-gravity environment.",
+    "duration": "2.5 hours",
+    "groupSize": 10,
+    "ageGroup": "10+",
+    "included": ["Suit", "Equipment", "Training", "Experience"],
+    "requirements": ["Physical fitness", "No heart conditions"],
+    "price": 350,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "user": "Chen Z.",
+        "rating": 5,
+        "comment": "Absolutely thrilling! Floating in low gravity is surreal!"
+      },
+      {
+        "user": "Maya P.",
+        "rating": 5,
+        "comment": "Exhilarating and fun. Best experience of my life!"
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 50,
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Robotics Lab & AI Interaction",
+    "description": "Work with advanced robots and interact with artificial intelligence systems.",
+    "duration": "2 hours",
+    "groupSize": 8,
+    "ageGroup": "14+",
+    "included": [
+      "Lab access",
+      "AI interaction",
+      "Hands-on demos",
+      "Tech briefing"
+    ],
+    "requirements": ["Interest in technology"],
+    "price": 320,
+    "rating": 4.5,
+    "reviews": [
+      {
+        "user": "Dr. Patel R.",
+        "rating": 5,
+        "comment": "Fascinating AI systems. Real-world applications are amazing!"
+      },
+      {
+        "user": "Zoe T.",
+        "rating": 4,
+        "comment": "Cool tech but interface was a bit complex to learn."
+      }
+    ],
+    "thumbnail": ""
+  },
+  {
+    "id": 51,
+    "destinationId": "mars-colony-new-dawn-2145",
+    "title": "Panoramic Valles Marineris Observation",
+    "description": "View the massive Valles Marineris canyon from observation platforms.",
+    "duration": "1.5 hours",
+    "groupSize": 30,
+    "ageGroup": "All ages",
+    "included": [
+      "Pressure suit",
+      "Observation platform",
+      "Telescope",
+      "Photography"
+    ],
+    "requirements": ["No fear of heights"],
+    "price": 280,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "user": "Emma L.",
+        "rating": 5,
+        "comment": "Breath-taking vistas! The canyon is even more massive in person."
+      },
+      {
+        "user": "Oliver S.",
+        "rating": 5,
+        "comment": "Otherworldly beauty. A perspective-changing experience."
+      }
+    ],
+    "thumbnail": ""
   }
 ]

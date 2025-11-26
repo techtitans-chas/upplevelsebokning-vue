@@ -56,7 +56,7 @@ export interface Travel {
   accommodationId: string;
   accommodation?: Accommodation;
   startDate: string; //"dec 1" TODO:
-  endDate: string;  //"dec 3" TODO:
+  endDate: string; //"dec 3" TODO:
   duration?: number; // Computed: Number of nights
-  price: number;    // Computed: Total price based on accommodation
+  price: number; // Computed: Total price based on accommodation
 }

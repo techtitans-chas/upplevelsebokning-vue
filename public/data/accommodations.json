@@ -5,9 +5,9 @@
     "title": "Marble Manor - Luxury Guesthouse",
     "description": "An opulently furnished manor with sea views and private courtyards—luxury hosts provide guided philosophical salons.",
     "amenities": [
-      "Private courtyards",
-      "Serviced baths",
-      "Breakfast with olives and honey"
+      { "title": "Private courtyards", "icon": "mdi:tree" },
+      { "title": "Serviced baths", "icon": "mdi:hot-tub" },
+      { "title": "Breakfast with olives and honey", "icon": "mdi:bowl-mix" }
     ],
     "beds": 2,
     "pricePerNight": 1200,
@@ -31,7 +31,11 @@
     "destinationId": "ancient-greece",
     "title": "Olive Inn — Simple Townhouse",
     "description": "A modest, cozy townhouse near the market—clean and friendly, great value for travelers who just need a place to sleep.",
-    "amenities": ["Close to market", "Shared courtyard", "Local breakfasts"],
+    "amenities": [
+      { "title": "Close to market", "icon": "mdi:store" },
+      { "title": "Shared courtyard", "icon": "mdi:tree" },
+      { "title": "Local breakfasts", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 120,
     "thumbnail": "",
@@ -54,7 +58,11 @@
     "destinationId": "ancient-greece",
     "title": "Starlit Tent Camp",
     "description": "For the adventurous: open-air tent camps near ruins with fireside storytellers—very rustic.",
-    "amenities": ["Open fires", "Blankets", "Night watch"],
+    "amenities": [
+      { "title": "Open fires", "icon": "mdi:fire" },
+      { "title": "Blankets", "icon": "mdi:bed" },
+      { "title": "Night watch", "icon": "mdi:security" }
+    ],
     "beds": 1,
     "pricePerNight": 60,
     "thumbnail": "",
@@ -79,9 +87,9 @@
     "title": "River Palace — Nilefront Suites",
     "description": "Luxurious suites with private Nile access and sun-god named attendants—best for discerning travelers.",
     "amenities": [
-      "Private boat",
-      "Guided river tours",
-      "Dietary accommodations"
+      { "title": "Private boat", "icon": "mdi:boat" },
+      { "title": "Guided river tours", "icon": "mdi:map" },
+      { "title": "Dietary accommodations", "icon": "mdi:food-apple" }
     ],
     "beds": 2,
     "pricePerNight": 1400,
@@ -105,7 +113,10 @@
     "destinationId": "ancient-egypt-giza-nile",
     "title": "Pyramid Inn — Budget Lodging",
     "description": "No frills but close to the pyramid sites; perfect for budget travelers who want more time at the sites.",
-    "amenities": ["Shared courtyards", "Simple meals"],
+    "amenities": [
+      { "title": "Shared courtyards", "icon": "mdi:tree" },
+      { "title": "Simple meals", "icon": "mdi:food" }
+    ],
     "beds": 2,
     "pricePerNight": 80,
     "thumbnail": "",
@@ -128,7 +139,11 @@
     "destinationId": "ancient-egypt-giza-nile",
     "title": "Sarcophagus Spa & Resort",
     "description": "A piquant luxury resort that blends themed design with indulgent spa services—private tours included.",
-    "amenities": ["On-site spa", "Private guided tours", "Air-cooled chambers"],
+    "amenities": [
+      { "title": "On-site spa", "icon": "mdi:spa" },
+      { "title": "Private guided tours", "icon": "mdi:map" },
+      { "title": "Air-cooled chambers", "icon": "mdi:air-conditioner" }
+    ],
     "beds": 2,
     "pricePerNight": 900,
     "thumbnail": "",
@@ -151,7 +166,11 @@
     "destinationId": "ancient-egypt-giza-nile",
     "title": "Nile Camp — Riverside Tents",
     "description": "Riverside tents for small-group travelers who want to sleep under the sky and rise for early boat tours.",
-    "amenities": ["Morning boat rides", "Campfires", "Local food"],
+    "amenities": [
+      { "title": "Morning boat rides", "icon": "mdi:boat" },
+      { "title": "Campfires", "icon": "mdi:fire" },
+      { "title": "Local food", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 200,
     "thumbnail": "",
@@ -175,7 +194,11 @@
     "destinationId": "jurassic-coastal-delta",
     "title": "Dome Lodge — Predator-Proof Luxury",
     "description": "High-tech predator-proof domes with climate controls and 24/7 monitoring—recommended for small groups.",
-    "amenities": ["Predator-proof dome", "Climate control", "Private ranger"],
+    "amenities": [
+      { "title": "Predator-proof dome", "icon": "mdi:shield-home" },
+      { "title": "Climate control", "icon": "mdi:air-conditioner" },
+      { "title": "Private ranger", "icon": "mdi:account-badge" }
+    ],
     "beds": 2,
     "pricePerNight": 3500,
     "thumbnail": "",
@@ -199,9 +222,9 @@
     "title": "Elevated Huts — Cliffside Cabins",
     "description": "Wooden cabins raised on stilts to keep visitors safe from ground predators and high tides; scenic but rustic.",
     "amenities": [
-      "Raised platforms",
-      "Solar lanterns",
-      "Guided hunts and safaris"
+      { "title": "Raised platforms", "icon": "mdi:home-floor-1" },
+      { "title": "Solar lanterns", "icon": "mdi:solar-power" },
+      { "title": "Guided hunts and safaris", "icon": "mdi:binoculars" }
     ],
     "beds": 2,
     "pricePerNight": 500,
@@ -225,7 +248,11 @@
     "destinationId": "jurassic-coastal-delta",
     "title": "Cave Bunkhouse — Group Dorms",
     "description": "Large dorm-style accommodation carved into stone—cheap and adventurous but noisy and cramped.",
-    "amenities": ["Shared sleeping bays", "Basic kitchen", "Group guide"],
+    "amenities": [
+      { "title": "Shared sleeping bays", "icon": "mdi:bed" },
+      { "title": "Basic kitchen", "icon": "mdi:stove" },
+      { "title": "Group guide", "icon": "mdi:map" }
+    ],
     "beds": 6,
     "pricePerNight": 80,
     "thumbnail": "",
@@ -249,9 +276,9 @@
     "title": "Park Guard Station — Field Quarters",
     "description": "Field quarters run by the park rangers for those on official paleontology excursions — tough conditions, excellent access.",
     "amenities": [
-      "On-guard ranger",
-      "Secure storage",
-      "Scientific briefing room"
+      { "title": "On-guard ranger", "icon": "mdi:account-badge" },
+      { "title": "Secure storage", "icon": "mdi:safe" },
+      { "title": "Scientific briefing room", "icon": "mdi:beaker" }
     ],
     "beds": 2,
     "pricePerNight": 250,
@@ -275,7 +302,10 @@
     "destinationId": "jurassic-coastal-delta",
     "title": "Rusty Rodent B&B — Not Recommended",
     "description": "A dilapidated B&B with uncertain hygiene standards—some travelers claim charm, others called it a dump.",
-    "amenities": ["Porch seating", "Questionable attic storage"],
+    "amenities": [
+      { "title": "Porch seating", "icon": "mdi:chair-rolling" },
+      { "title": "Questionable attic storage", "icon": "mdi:package-variant" }
+    ],
     "beds": 2,
     "pricePerNight": 30,
     "thumbnail": "",
@@ -300,9 +330,12 @@
     "title": "Grand Palazzo — Aristocratic Rooms",
     "description": "Stay in a noble's palazzo with frescoed ceilings and private art viewings—elegant and costly.",
     "amenities": [
-      "Private art viewing",
-      "Personal valet",
-      "Formal courtyard dining"
+      { "title": "Private art viewing", "icon": "mdi:palette" },
+      { "title": "Personal valet", "icon": "mdi:account-tie" },
+      {
+        "title": "Formal courtyard dining",
+        "icon": "mdi:silverware-fork-knife"
+      }
     ],
     "beds": 2,
     "pricePerNight": 1600,
@@ -326,7 +359,11 @@
     "destinationId": "renaissance-florence",
     "title": "Artists' Lodge — Shared Workshop",
     "description": "A shared lodging that connects to a working artisan workshop—meet craftsmen and learn techniques.",
-    "amenities": ["Workshop access", "Tools for sketching", "Communal meals"],
+    "amenities": [
+      { "title": "Workshop access", "icon": "mdi:hammer-wrench" },
+      { "title": "Tools for sketching", "icon": "mdi:pencil" },
+      { "title": "Communal meals", "icon": "mdi:food" }
+    ],
     "beds": 2,
     "pricePerNight": 180,
     "thumbnail": "",
@@ -349,7 +386,10 @@
     "destinationId": "renaissance-florence",
     "title": "Tiny Inn — Modest Rooms",
     "description": "Simple rooms for traveling scholars; inexpensive and quiet but minimal services.",
-    "amenities": ["Quiet study nooks", "Basic breakfast"],
+    "amenities": [
+      { "title": "Quiet study nooks", "icon": "mdi:book-open" },
+      { "title": "Basic breakfast", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 90,
     "thumbnail": "",
@@ -373,7 +413,11 @@
     "destinationId": "medieval-kyoto",
     "title": "Bamboo Retreat — Traditional Ryokan",
     "description": "Enjoy tatami rooms and exquisite kaiseki meals prepared daily; an authentic cultural stay.",
-    "amenities": ["Tatami rooms", "Kaiseki dining", "Hot baths"],
+    "amenities": [
+      { "title": "Tatami rooms", "icon": "mdi:bed" },
+      { "title": "Kaiseki dining", "icon": "mdi:silverware-fork-knife" },
+      { "title": "Hot baths", "icon": "mdi:hot-tub" }
+    ],
     "beds": 1,
     "pricePerNight": 600,
     "thumbnail": "",
@@ -396,7 +440,11 @@
     "destinationId": "medieval-kyoto",
     "title": "Temple Guesthouse — Monastic Stay",
     "description": "A serene stay with morning chants and simple vegetarian meals; very meditative.",
-    "amenities": ["Meditation sessions", "Monastic dining", "Guided rituals"],
+    "amenities": [
+      { "title": "Meditation sessions", "icon": "mdi:meditation" },
+      { "title": "Monastic dining", "icon": "mdi:silverware-fork-knife" },
+      { "title": "Guided rituals", "icon": "mdi:book-multiple" }
+    ],
     "beds": 1,
     "pricePerNight": 140,
     "thumbnail": "",
@@ -419,7 +467,10 @@
     "destinationId": "medieval-kyoto",
     "title": "Rustic Inn — Traveler's Rooms",
     "description": "A homely inn run by a family of artisans—decent value and very friendly hosts.",
-    "amenities": ["Craft workshops", "Home-cooked meals"],
+    "amenities": [
+      { "title": "Craft workshops", "icon": "mdi:hammer-wrench" },
+      { "title": "Home-cooked meals", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 95,
     "thumbnail": "",
@@ -442,7 +493,10 @@
     "destinationId": "medieval-kyoto",
     "title": "Guest Pavilion — Garden View",
     "description": "Small private apartments overlooking serene gardens—excellent for couples and scholars.",
-    "amenities": ["Private garden view", "Tea ceremony sessions"],
+    "amenities": [
+      { "title": "Private garden view", "icon": "mdi:flower" },
+      { "title": "Tea ceremony sessions", "icon": "mdi:tea" }
+    ],
     "beds": 1,
     "pricePerNight": 340,
     "thumbnail": "",
@@ -466,7 +520,11 @@
     "destinationId": "viking-age-fjordlands",
     "title": "Longhouse Luxe — Coastal Manor",
     "description": "A refined longhouse with private docks, warm hearths, and hearty feasts—luxurious reinterpretation of Viking comforts.",
-    "amenities": ["Private dock", "Feasts and story nights", "Warm hearths"],
+    "amenities": [
+      { "title": "Private dock", "icon": "mdi:dock-window" },
+      { "title": "Feasts and story nights", "icon": "mdi:fire" },
+      { "title": "Warm hearths", "icon": "mdi:home-heart" }
+    ],
     "beds": 3,
     "pricePerNight": 1100,
     "thumbnail": "",
@@ -489,7 +547,10 @@
     "destinationId": "viking-age-fjordlands",
     "title": "Harbor Inn — Seaside Rooms",
     "description": "Family-run inn with easy access to boats and local market—comfortable and friendly.",
-    "amenities": ["Local market access", "Boat rentals"],
+    "amenities": [
+      { "title": "Local market access", "icon": "mdi:store" },
+      { "title": "Boat rentals", "icon": "mdi:boat" }
+    ],
     "beds": 2,
     "pricePerNight": 190,
     "thumbnail": "",
@@ -512,7 +573,10 @@
     "destinationId": "viking-age-fjordlands",
     "title": "Boat Cabins — Dockside Stay",
     "description": "Converted cabins on larger ships for travelers who love being on the water and want quick sea access.",
-    "amenities": ["On-boat breakfast", "Dockside transport"],
+    "amenities": [
+      { "title": "On-boat breakfast", "icon": "mdi:food" },
+      { "title": "Dockside transport", "icon": "mdi:boat" }
+    ],
     "beds": 2,
     "pricePerNight": 260,
     "thumbnail": "",
@@ -535,7 +599,10 @@
     "destinationId": "viking-age-fjordlands",
     "title": "Cliff Outhouse — Spartan Shelter",
     "description": "Extremely rustic — minimal shelter for adventurous travelers or workers; no running water.",
-    "amenities": ["Basic shelter", "Bonfire area"],
+    "amenities": [
+      { "title": "Basic shelter", "icon": "mdi:home" },
+      { "title": "Bonfire area", "icon": "mdi:fire" }
+    ],
     "beds": 1,
     "pricePerNight": 25,
     "thumbnail": "",
@@ -558,7 +625,10 @@
     "destinationId": "viking-age-fjordlands",
     "title": "Watchtower Quarters — Guarding Post",
     "description": "Quiet quarters in an old watch post with sweeping views—perfect for history buffs and solitude seekers.",
-    "amenities": ["Panoramic views", "Quiet retreat"],
+    "amenities": [
+      { "title": "Panoramic views", "icon": "mdi:eye" },
+      { "title": "Quiet retreat", "icon": "mdi:nature" }
+    ],
     "beds": 1,
     "pricePerNight": 220,
     "thumbnail": "",
@@ -582,7 +652,11 @@
     "destinationId": "tenochtitlan-aztec-capital",
     "title": "Palace Guestrooms — Canal-side Suites",
     "description": "Elegant suites with canal views and private access to floating gardens—historically-inspired, upscale.",
-    "amenities": ["Canal access", "Private guide", "Gardens"],
+    "amenities": [
+      { "title": "Canal access", "icon": "mdi:boat" },
+      { "title": "Private guide", "icon": "mdi:map" },
+      { "title": "Gardens", "icon": "mdi:flower" }
+    ],
     "beds": 2,
     "pricePerNight": 1300,
     "thumbnail": "",
@@ -605,7 +679,10 @@
     "destinationId": "tenochtitlan-aztec-capital",
     "title": "Market Rooms — Near the Main Plaza",
     "description": "Simple rooms a short walk from the market — a great spot to experience local commerce and cuisine.",
-    "amenities": ["Market access", "Local breakfasts"],
+    "amenities": [
+      { "title": "Market access", "icon": "mdi:store" },
+      { "title": "Local breakfasts", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 120,
     "thumbnail": "",
@@ -628,7 +705,10 @@
     "destinationId": "tenochtitlan-aztec-capital",
     "title": "Floating Hut — On the Canals",
     "description": "Unique floating huts directly on the canal—quaint but susceptible to weather and limited services.",
-    "amenities": ["Canal views", "Canoe service"],
+    "amenities": [
+      { "title": "Canal views", "icon": "mdi:eye" },
+      { "title": "Canoe service", "icon": "mdi:boat" }
+    ],
     "beds": 1,
     "pricePerNight": 240,
     "thumbnail": "",
@@ -652,7 +732,11 @@
     "destinationId": "victorian-london-1888",
     "title": "Crystal Hotel — Grand Victorian",
     "description": "An ornate hotel offering refined dining, gas-lit lounges, and rooms with sweeping city views—ideal for visitors seeking comfort.",
-    "amenities": ["Grand dining", "Concierge", "Gas-lit parlor"],
+    "amenities": [
+      { "title": "Grand dining", "icon": "mdi:silverware-fork-knife" },
+      { "title": "Concierge", "icon": "mdi:phone" },
+      { "title": "Gas-lit parlor", "icon": "mdi:lamp" }
+    ],
     "beds": 2,
     "pricePerNight": 450,
     "thumbnail": "",
@@ -675,7 +759,10 @@
     "destinationId": "victorian-london-1888",
     "title": "Railway Boardinghouse — Practical Stay",
     "description": "Convenient lodgings for travelers based near a rail station—functional with shared dining.",
-    "amenities": ["Rail access", "Shared meals"],
+    "amenities": [
+      { "title": "Rail access", "icon": "mdi:train" },
+      { "title": "Shared meals", "icon": "mdi:food" }
+    ],
     "beds": 1,
     "pricePerNight": 90,
     "thumbnail": "",
@@ -698,7 +785,10 @@
     "destinationId": "victorian-london-1888",
     "title": "Speakeasy Rooms — Hidden Suites",
     "description": "Stylish underground rooms with access to clandestine performances and late-night music, suitable for daring guests.",
-    "amenities": ["Hidden club access", "Nightly shows"],
+    "amenities": [
+      { "title": "Hidden club access", "icon": "mdi:door" },
+      { "title": "Nightly shows", "icon": "mdi:drama-masks" }
+    ],
     "beds": 2,
     "pricePerNight": 220,
     "thumbnail": "",
@@ -721,7 +811,7 @@
     "destinationId": "victorian-london-1888",
     "title": "Gutter Lodge — The Gritty Quarter",
     "description": "A truly 'Victorian' experience for hardier travelers; questionable sanitation but very authentic street scenes.",
-    "amenities": ["Street access only"],
+    "amenities": [{ "title": "Street access only", "icon": "mdi:road" }],
     "beds": 1,
     "pricePerNight": 15,
     "thumbnail": "",
@@ -744,7 +834,10 @@
     "destinationId": "victorian-london-1888",
     "title": "Boarding Terrace — Hidden Gardens",
     "description": "A quieter terrace with small private gardens—an oasis away from the city chaos.",
-    "amenities": ["Terrace gardens", "Quiet lounges"],
+    "amenities": [
+      { "title": "Terrace gardens", "icon": "mdi:flower" },
+      { "title": "Quiet lounges", "icon": "mdi:sofa" }
+    ],
     "beds": 1,
     "pricePerNight": 260,
     "thumbnail": "",
@@ -768,7 +861,10 @@
     "destinationId": "roaring-twenties-nyc",
     "title": "Skyline Suite — Jazz & Luxury",
     "description": "Penthouse suite above the jazz clubs with exclusive access to nightlife and rooftop dances.",
-    "amenities": ["Rooftop parties", "Private speakeasy access"],
+    "amenities": [
+      { "title": "Rooftop parties", "icon": "mdi:party-popper" },
+      { "title": "Private speakeasy access", "icon": "mdi:door" }
+    ],
     "beds": 2,
     "pricePerNight": 700,
     "thumbnail": "",
@@ -791,7 +887,10 @@
     "destinationId": "roaring-twenties-nyc",
     "title": "Speakeasy Inn — Cozy & Hidden",
     "description": "Small, intimate lodging attached to a speakeasy—fun for nightlife lovers.",
-    "amenities": ["Nightly music", "Discrete entrance"],
+    "amenities": [
+      { "title": "Nightly music", "icon": "mdi:music" },
+      { "title": "Discrete entrance", "icon": "mdi:door" }
+    ],
     "beds": 1,
     "pricePerNight": 220,
     "thumbnail": "",
@@ -814,7 +913,10 @@
     "destinationId": "roaring-twenties-nyc",
     "title": "Boardinghouse — Practical Rooms",
     "description": "Reliable, practical lodging near theaters with communal dining—good for long stays.",
-    "amenities": ["Communal meals", "Laundry"],
+    "amenities": [
+      { "title": "Communal meals", "icon": "mdi:food" },
+      { "title": "Laundry", "icon": "mdi:washing-machine" }
+    ],
     "beds": 1,
     "pricePerNight": 95,
     "thumbnail": "",
@@ -837,7 +939,10 @@
     "destinationId": "roaring-twenties-nyc",
     "title": "Flophouse — Sleep & Go",
     "description": "The cheapest option in town; expect rowdy neighbors and basic bunks.",
-    "amenities": ["Bunks", "Shared washroom"],
+    "amenities": [
+      { "title": "Bunks", "icon": "mdi:bed-bunk" },
+      { "title": "Shared washroom", "icon": "mdi:shower" }
+    ],
     "beds": 1,
     "pricePerNight": 12,
     "thumbnail": "",
@@ -862,9 +967,9 @@
     "title": "Biodome Elite — Executive Habitat",
     "description": "Top-tier habitat with controlled ecosystems, private labs, and personalized excursions across the colony's surface.",
     "amenities": [
-      "Controlled environment",
-      "Private rover",
-      "Personal lab access"
+      { "title": "Controlled environment", "icon": "mdi:air-filter" },
+      { "title": "Private rover", "icon": "mdi:car" },
+      { "title": "Personal lab access", "icon": "mdi:beaker" }
     ],
     "beds": 2,
     "pricePerNight": 8000,
@@ -888,7 +993,11 @@
     "destinationId": "mars-colony-new-dawn-2145",
     "title": "Research Quarters — Staff Housing",
     "description": "Functional accommodation for researchers and technicians—clean, efficient, and practical.",
-    "amenities": ["Lab access", "Communal kitchen", "Workshop"],
+    "amenities": [
+      { "title": "Lab access", "icon": "mdi:beaker" },
+      { "title": "Communal kitchen", "icon": "mdi:stove" },
+      { "title": "Workshop", "icon": "mdi:hammer-wrench" }
+    ],
     "beds": 1,
     "pricePerNight": 400,
     "thumbnail": "",
@@ -911,7 +1020,10 @@
     "destinationId": "mars-colony-new-dawn-2145",
     "title": "Red Sand Dorm — Budget Habitat",
     "description": "Basic, no-frills dorms for travelers on a strict budget—shared facilities and limited views.",
-    "amenities": ["Shared facilities", "Basic Wi-Fi"],
+    "amenities": [
+      { "title": "Shared facilities", "icon": "mdi:home" },
+      { "title": "Basic Wi-Fi", "icon": "mdi:wifi" }
+    ],
     "beds": 1,
     "pricePerNight": 60,
     "thumbnail": "",
@@ -935,9 +1047,9 @@
     "title": "Terraform Villa — Experimental Retreat",
     "description": "An experimental retreat on an early irrigation dome—full biosystems and guided terraforming demos for guests.",
     "amenities": [
-      "Biosphere tours",
-      "Eco-lab experiences",
-      "Private dome gardens"
+      { "title": "Biosphere tours", "icon": "mdi:earth" },
+      { "title": "Eco-lab experiences", "icon": "mdi:leaf" },
+      { "title": "Private dome gardens", "icon": "mdi:flower" }
     ],
     "beds": 2,
     "pricePerNight": 2900,

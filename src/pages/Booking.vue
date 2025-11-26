@@ -1,43 +1,22 @@
 <template>
   <div v-if="destination">
     <Section>
-      <h1 font="bold" text="4xl" class="mb-6">Booking</h1>
+      <h1>Booking</h1>
       <div class="flex gap-6" text="2xl">
         <div>{{ destination.title }}</div>
         <div>{{ destination.price }} SEK</div>
       </div>
 
-      <Dropdown
-        label="Date"
-        placeholder="Select dates"
-        v-model="dateRangeDisplay"
-      >
-        <template #content>
-          <div class="p-4 gap-3">
-            <div>
-              <label class="text-xs text-gray-500 block mb-1">Start Date</label>
-              <input
-                type="date"
-                v-model="departureDate"
-                class="w-full p-2 border border-gray-300 rounded text-sm"
-              />
-            </div>
-            <div>
-              <label class="text-xs text-gray-500 block mb-1">End Date</label>
-              <input
-                type="date"
-                v-model="returnDate"
-                :min="departureDate"
-                class="w-full p-2 border border-gray-300 rounded text-sm"
-              />
-            </div>
-          </div>
-        </template>
-      </Dropdown>
+      <div class="flex gap-4">
+        <DateDropdown />
 
-      <RouterLink to="/cart">
-        <Button @click="order"> Order and go to cart </Button>
-      </RouterLink>
+        <NumberInput
+          label="Number of people"
+          v-model="numberOfPeople"
+          :min="1"
+          :max="20"
+        />
+      </div>
     </Section>
 
     <!-- Accommodations -->
@@ -51,7 +30,21 @@
           :data="acc"
         />
       </div>
-      <div v-else>No accommodations available.</div>
+      <div v-else>No accommodations available for your chosen dates.</div>
+    </Section>
+
+    <!-- Activities -->
+    <Section>
+      <h2>Activities</h2>
+
+      <div v-if="activities.length > 0" class="grid grid-cols-4 gap-4">
+        <ActivityCard
+          v-for="activitity in activities"
+          :key="activitity.id"
+          :data="activitity"
+        />
+      </div>
+      <div v-else>No activities available for your chosen dates.</div>
     </Section>
   </div>
   <Section v-else>
@@ -64,20 +57,24 @@ import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
 import { useAccommodationStore } from "@/stores/accommodation";
+import { useActivityStore } from "@/stores/activity";
 import { useCartStore } from "@/stores/cart";
-import { useSessionStore } from "@/stores/session";
-import Section from "@/components/Section.vue";
-import Button from "@/components/Button.vue";
-import Dropdown from "@/components/Dropdown.vue";
-import AccommodationCard from "@/components/AccommodationCard.vue";
+import Section from "@/components/layout/Section.vue";
+import Button from "@/components/ui/Button.vue";
+import DateDropdown from "@/components/form/DateDropdown.vue";
+import AccommodationCard from "@/components/cards/AccommodationCard.vue";
+import ActivityCard from "@/components/cards/ActivityCard.vue";
+import NumberInput from "@/components/form/NumberInput.vue";
+import { ref } from "vue";
 
 const route = useRoute();
 const router = useRouter();
 
 const destinationStore = useDestinationStore();
 const accommodationStore = useAccommodationStore();
-const sessionStore = useSessionStore();
+const activityStore = useActivityStore();
 const cart = useCartStore();
+const numberOfPeople = ref(1);
 
 const destination = computed(() => {
   const id = route.params.id as string;
@@ -89,21 +86,9 @@ const accommodations = computed(() => {
   return accommodationStore.getByDestination(id);
 });
 
-const departureDate = computed({
-  get: () => sessionStore.departureDate,
-  set: (value) => (sessionStore.departureDate = value),
-});
-
-const returnDate = computed({
-  get: () => sessionStore.returnDate,
-  set: (value) => (sessionStore.returnDate = value),
-});
-
-const dateRangeDisplay = computed(() => {
-  if (departureDate.value && returnDate.value)
-    return `${departureDate.value} - ${returnDate.value}`;
-  else if (departureDate.value) return departureDate.value;
-  return "";
+const activities = computed(() => {
+  const id = route.params.id as string;
+  return activityStore.getByDestination(id);
 });
 
 function order() {
