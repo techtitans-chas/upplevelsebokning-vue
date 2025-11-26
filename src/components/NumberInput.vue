@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex gap-2 p-3 px-4 items-center bg-white rounded-sm color-gray-600 min-w-[200px] h-full"
+    class="flex gap-2 p-3 px-4 items-center bg-white rounded-sm color-gray-600"
   >
     <div class="flex-1">
       <div class="text-xs text-gray-500 mb-1">{{ label }}</div>
@@ -12,9 +12,13 @@
           class="w-7 h-7 rounded-full disabled:cursor-not-allowed transition-colors flex items-center justify-center"
           type="button"
         >
-          <Icon icon="fa-solid:minus" class="text-[.8rem]" :class="modelValue <= min ? 'text-gray-400' : 'text-primary-700'" />
+          <Icon
+            icon="fa-solid:minus"
+            class="text-[.8rem]"
+            :class="modelValue <= min ? 'text-gray-400' : 'text-primary-700'"
+          />
         </button>
-        
+
         <input
           type="number"
           :value="modelValue"
@@ -24,7 +28,7 @@
           class="w-16 text-center text-sm font-medium border-none outline-none"
           readonly
         />
-        
+
         <button
           @click="increment"
           :disabled="max !== undefined && modelValue >= max"
@@ -32,7 +36,15 @@
           class="w-7 h-7 rounded-full disabled:cursor-not-allowed transition-colors flex items-center justify-center"
           type="button"
         >
-          <Icon icon="fa-solid:plus" class="text-[.8rem]" :class="max !== undefined && modelValue >= max ? 'text-gray-400' : 'text-primary-700'" />
+          <Icon
+            icon="fa-solid:plus"
+            class="text-[.8rem]"
+            :class="
+              max !== undefined && modelValue >= max
+                ? 'text-gray-400'
+                : 'text-primary-700'
+            "
+          />
         </button>
       </div>
     </div>
@@ -42,17 +54,20 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 
-const props = withDefaults(defineProps<{
-  label: string
-  modelValue: number
-  min?: number
-  max?: number
-}>(), {
-  min: 0
-});
+const props = withDefaults(
+  defineProps<{
+    label: string;
+    modelValue: number;
+    min?: number;
+    max?: number;
+  }>(),
+  {
+    min: 0,
+  }
+);
 
 const emit = defineEmits<{
-  "update:modelValue": [value: number]
+  "update:modelValue": [value: number];
 }>();
 
 const increment = () => {
@@ -70,13 +85,14 @@ const decrement = () => {
 const handleInput = (e: Event) => {
   const target = e.target as HTMLInputElement;
   const value = parseInt(target.value);
-  
+
   if (!isNaN(value)) {
     let clampedValue = value;
-    
+
     if (clampedValue < props.min) clampedValue = props.min;
-    if (props.max !== undefined && clampedValue > props.max) clampedValue = props.max;
-    
+    if (props.max !== undefined && clampedValue > props.max)
+      clampedValue = props.max;
+
     emit("update:modelValue", clampedValue);
   }
 };

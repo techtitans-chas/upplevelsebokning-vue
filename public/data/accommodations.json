@@ -11,7 +11,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1200,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.9,
     "reviews": [
       {
@@ -34,7 +34,7 @@
     "amenities": ["Close to market", "Shared courtyard", "Local breakfasts"],
     "beds": 1,
     "pricePerNight": 120,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.0,
     "reviews": [
       {
@@ -57,7 +57,7 @@
     "amenities": ["Open fires", "Blankets", "Night watch"],
     "beds": 1,
     "pricePerNight": 60,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.7,
     "reviews": [
       {
@@ -85,7 +85,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1400,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.8,
     "reviews": [
       {
@@ -108,7 +108,7 @@
     "amenities": ["Shared courtyards", "Simple meals"],
     "beds": 2,
     "pricePerNight": 80,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.2,
     "reviews": [
       {
@@ -131,7 +131,7 @@
     "amenities": ["On-site spa", "Private guided tours", "Air-cooled chambers"],
     "beds": 2,
     "pricePerNight": 900,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.6,
     "reviews": [
       {
@@ -154,7 +154,7 @@
     "amenities": ["Morning boat rides", "Campfires", "Local food"],
     "beds": 1,
     "pricePerNight": 200,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.0,
     "reviews": [
       {
@@ -178,7 +178,7 @@
     "amenities": ["Predator-proof dome", "Climate control", "Private ranger"],
     "beds": 2,
     "pricePerNight": 3500,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.9,
     "reviews": [
       {
@@ -205,7 +205,7 @@
     ],
     "beds": 2,
     "pricePerNight": 500,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.3,
     "reviews": [
       {
@@ -228,7 +228,7 @@
     "amenities": ["Shared sleeping bays", "Basic kitchen", "Group guide"],
     "beds": 6,
     "pricePerNight": 80,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 2.8,
     "reviews": [
       {
@@ -255,7 +255,7 @@
     ],
     "beds": 2,
     "pricePerNight": 250,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.5,
     "reviews": [
       {
@@ -278,7 +278,7 @@
     "amenities": ["Porch seating", "Questionable attic storage"],
     "beds": 2,
     "pricePerNight": 30,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 1.3,
     "reviews": [
       {
@@ -306,7 +306,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1600,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.9,
     "reviews": [
       {
@@ -329,7 +329,7 @@
     "amenities": ["Workshop access", "Tools for sketching", "Communal meals"],
     "beds": 2,
     "pricePerNight": 180,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.6,
     "reviews": [
       {
@@ -352,7 +352,7 @@
     "amenities": ["Quiet study nooks", "Basic breakfast"],
     "beds": 1,
     "pricePerNight": 90,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.8,
     "reviews": [
       {
@@ -376,7 +376,7 @@
     "amenities": ["Tatami rooms", "Kaiseki dining", "Hot baths"],
     "beds": 1,
     "pricePerNight": 600,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.8,
     "reviews": [
       {
@@ -399,7 +399,7 @@
     "amenities": ["Meditation sessions", "Monastic dining", "Guided rituals"],
     "beds": 1,
     "pricePerNight": 140,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.5,
     "reviews": [
       {
@@ -422,7 +422,7 @@
     "amenities": ["Craft workshops", "Home-cooked meals"],
     "beds": 1,
     "pricePerNight": 95,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.1,
     "reviews": [
       {
@@ -445,7 +445,7 @@
     "amenities": ["Private garden view", "Tea ceremony sessions"],
     "beds": 1,
     "pricePerNight": 340,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.7,
     "reviews": [
       {
@@ -469,7 +469,7 @@
     "amenities": ["Private dock", "Feasts and story nights", "Warm hearths"],
     "beds": 3,
     "pricePerNight": 1100,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.8,
     "reviews": [
       {
@@ -492,7 +492,7 @@
     "amenities": ["Local market access", "Boat rentals"],
     "beds": 2,
     "pricePerNight": 190,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.2,
     "reviews": [
       {
@@ -515,7 +515,7 @@
     "amenities": ["On-boat breakfast", "Dockside transport"],
     "beds": 2,
     "pricePerNight": 260,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.9,
     "reviews": [
       {
@@ -538,7 +538,7 @@
     "amenities": ["Basic shelter", "Bonfire area"],
     "beds": 1,
     "pricePerNight": 25,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 1.8,
     "reviews": [
       {
@@ -561,7 +561,7 @@
     "amenities": ["Panoramic views", "Quiet retreat"],
     "beds": 1,
     "pricePerNight": 220,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.4,
     "reviews": [
       {
@@ -585,7 +585,7 @@
     "amenities": ["Canal access", "Private guide", "Gardens"],
     "beds": 2,
     "pricePerNight": 1300,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.8,
     "reviews": [
       {
@@ -608,7 +608,7 @@
     "amenities": ["Market access", "Local breakfasts"],
     "beds": 1,
     "pricePerNight": 120,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.1,
     "reviews": [
       {
@@ -631,7 +631,7 @@
     "amenities": ["Canal views", "Canoe service"],
     "beds": 1,
     "pricePerNight": 240,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.5,
     "reviews": [
       {
@@ -655,7 +655,7 @@
     "amenities": ["Grand dining", "Concierge", "Gas-lit parlor"],
     "beds": 2,
     "pricePerNight": 450,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.6,
     "reviews": [
       {
@@ -678,7 +678,7 @@
     "amenities": ["Rail access", "Shared meals"],
     "beds": 1,
     "pricePerNight": 90,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.6,
     "reviews": [
       {
@@ -701,7 +701,7 @@
     "amenities": ["Hidden club access", "Nightly shows"],
     "beds": 2,
     "pricePerNight": 220,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.5,
     "reviews": [
       {
@@ -724,7 +724,7 @@
     "amenities": ["Street access only"],
     "beds": 1,
     "pricePerNight": 15,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 1.2,
     "reviews": [
       {
@@ -747,7 +747,7 @@
     "amenities": ["Terrace gardens", "Quiet lounges"],
     "beds": 1,
     "pricePerNight": 260,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.2,
     "reviews": [
       {
@@ -771,7 +771,7 @@
     "amenities": ["Rooftop parties", "Private speakeasy access"],
     "beds": 2,
     "pricePerNight": 700,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.8,
     "reviews": [
       {
@@ -794,7 +794,7 @@
     "amenities": ["Nightly music", "Discrete entrance"],
     "beds": 1,
     "pricePerNight": 220,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.4,
     "reviews": [
       {
@@ -817,7 +817,7 @@
     "amenities": ["Communal meals", "Laundry"],
     "beds": 1,
     "pricePerNight": 95,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 3.7,
     "reviews": [
       {
@@ -840,7 +840,7 @@
     "amenities": ["Bunks", "Shared washroom"],
     "beds": 1,
     "pricePerNight": 12,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 1.9,
     "reviews": [
       {
@@ -868,7 +868,7 @@
     ],
     "beds": 2,
     "pricePerNight": 8000,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 5.0,
     "reviews": [
       {
@@ -891,7 +891,7 @@
     "amenities": ["Lab access", "Communal kitchen", "Workshop"],
     "beds": 1,
     "pricePerNight": 400,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.3,
     "reviews": [
       {
@@ -914,7 +914,7 @@
     "amenities": ["Shared facilities", "Basic Wi-Fi"],
     "beds": 1,
     "pricePerNight": 60,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 2.5,
     "reviews": [
       {
@@ -941,7 +941,7 @@
     ],
     "beds": 2,
     "pricePerNight": 2900,
-    "thumbnail": "src image",
+    "thumbnail": "",
     "rating": 4.7,
     "reviews": [
       {

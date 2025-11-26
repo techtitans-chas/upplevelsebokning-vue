@@ -55,7 +55,9 @@ const classes = computed(() =>
 
 const headerClasses = computed(() => twMerge("p-2", props.headerClass));
 
-const contentClasses = computed(() => twMerge("p-2 flex-1", props.contentClass));
+const contentClasses = computed(() =>
+  twMerge("p-2 flex-1 text-black", props.contentClass)
+);
 
 const footerClasses = computed(() => twMerge("p-2", props.footerClass));
 </script>
