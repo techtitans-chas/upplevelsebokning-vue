@@ -29,7 +29,12 @@ export default defineConfig({
         500: "#dd831cff"
       }
       // secondary: "#f3a639",
-    }
+    },
+    animation: {
+      spin180: "spin-180 0.6s ease-in-out forwards",
+      spin180Reverse: "spin-180-reverse 0.6s ease-in-out forwards",
+    },
+
   },
   preflights: [
     {

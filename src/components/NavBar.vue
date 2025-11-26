@@ -2,7 +2,7 @@
   <header>
     <nav class="nav bg-black/15 border-bottom border-1 border-black/30 solid">
       <div v-tooltip="'Home'" class="branding nav-link">
-        <Icon icon="streamline-plump:hourglass-remix" class="text-secondary" /> <RouterLink to="/" class="text-white">Hourglass Adventures</RouterLink>
+        <RouterLink to="/"><Logo /></RouterLink>
       </div>
       <ul class="flex gap-4">
         <li v-tooltip="'Cart'" class="nav-link">
@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { useCartStore } from "@/stores/cart";
+import Logo from "./Logo.vue";
 
 const cart = useCartStore();
 </script>

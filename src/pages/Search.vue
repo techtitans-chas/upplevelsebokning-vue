@@ -1,27 +1,23 @@
 <template>
-  <div class="max-w-6xl mx-auto p-6">
-    <h1 font="bold" text="4xl" class="mb-6">Search results</h1>
+  <Section>
+    <h1>Search results</h1>
 
     <p>{{ destination }}</p>
 
-    <div class="grid grid-cols-[1fr_1fr_1fr] gap-4 p-8">
-      <div v-for="item in results" :key="item.id">
-        <RouterLink
-          :to="`/destination/${item.id}`"
-          class="border border-1 p-4 block"
-        >
-          {{ item.title }}
-        </RouterLink>
-      </div>
+    <div class="grid grid-cols-[1fr_1fr_1fr] gap-4">
+      <DestinationCard v-for="item in results" :key="item.id" :data="item" @click="router.push(`/destination/${item.id}`)" />
     </div>
-  </div>
+  </Section>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
-import { RouterLink, useRoute } from "vue-router";
+import Section from "@/components/Section.vue";
+import DestinationCard from "@/components/DestinationCard.vue";
 
+const router = useRouter();
 const route = useRoute();
 
 const destinationStore = useDestinationStore();
