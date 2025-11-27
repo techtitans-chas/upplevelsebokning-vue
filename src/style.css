@@ -90,3 +90,44 @@ strong {
     transform: rotate(0deg);
   }
 }
+
+@keyframes fadeOutBackdrop {
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Floating Vue Tooltip - ensure it appears above modals */
+.v-popper__popper {
+  z-index: 99999 !important;
+}
