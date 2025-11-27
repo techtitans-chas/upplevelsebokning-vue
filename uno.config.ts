@@ -24,6 +24,7 @@ export default defineConfig({
       // "primary-dark": "#051b2a",
       // "primary-light": "#9cd5cb",
       secondary: {
+        200: "#ffd773ff",
         300: "#ffb845ff",
         400: "#ee9725ff",
         500: "#dd831cff"
@@ -51,6 +52,7 @@ export default defineConfig({
           --color-primary-800: ${theme.colors.primary["800"]};
           --color-primary-900: ${theme.colors.primary["900"]};
           --color-primary-950: ${theme.colors.primary["950"]};
+          --color-secondary-200: ${theme.colors.secondary["200"]};
           --color-secondary-300: ${theme.colors.secondary["300"]};
           --color-secondary-400: ${theme.colors.secondary["400"]};
           --color-secondary-500: ${theme.colors.secondary["500"]};

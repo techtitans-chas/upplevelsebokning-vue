@@ -1,9 +1,11 @@
 <template>
-  <Section center bg-image="/images/placeholder.jpg" bg-color="bg-primary-950/70" class="bg-fixed min-h-[500px]" inner-class="w-full">
+  <Section center bg-image="/images/placeholder.jpg" bg-color="bg-primary-950/70" class="bg-fixed min-h-[500px]"
+    inner-class="w-full">
     <h1 class="leading-snug mb-6"><span class="text-white">Welcome to</span><br /> Hourglass Adventures</h1>
     <p class="text-xl mb-8 max-w-xl">Embark on extraordinary journeys through time. Explore ancient civilizations,
       witness pivotal moments in history, and experience unforgettable nights in the heart of bygone eras.</p>
-    <Button color="secondary" size="lg" to="/search" icon="streamline-plump:hourglass-remix">Browse our destinations</Button>
+    <Button color="secondary" size="lg" to="/search" icon="streamline-plump:hourglass-remix">Browse our
+      destinations</Button>
   </Section>
   <Section class="p-6">
     <!-- <Modal title="My modal" :actions="actionButtons">
@@ -31,23 +33,68 @@
       make the impossible possible. Book your time travel expedition today and spend unforgettable nights in the heart
       of history.
     </p>
+    <Button @click="contact"
+      ref="contactButton"
+      :icon="loadingComms ? 'line-md:loading-twotone-loop' : 'bi:chat-fill'"
+      size="lg"
+      :class="`hover:cursor-pointer transition-all ${isBouncing ? 'animate-bounce' : ''}`"
+    >
+      Contact us
+    </Button>
   </Section>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import SearchForm from "@/components/form/SearchForm.vue";
 import Section from "@/components/layout/Section.vue";
 import DestinationCard from "@/components/cards/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
 import Button from "@/components/ui/Button.vue";
+import { useToast } from "@/composables/useToast";
 
 const router = useRouter();
-
 const destinations = useDestinationStore();
+const { error } = useToast();
+
+const loadingComms = ref(false);
+const isBouncing = ref(false);
 
 const actionButtons = [
   { title: "Cancel", icon: "mdi:cross", action: () => console.log("Cancel") },
   { title: "Accept", action: () => console.log("Accept") },
 ];
+
+const contact = () => {
+  loadingComms.value = true;
+
+  setTimeout(() => {
+    loadingComms.value = false;
+    isBouncing.value = true;
+    setTimeout(() => isBouncing.value = false, 600);
+    error("Failed to establish wormhole connection", "Please try again later.");
+  }, 3000);
+}
 </script>
+
+<style scoped>
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-12px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 0.6s ease-in-out;
+}
+</style>

@@ -42,8 +42,8 @@ const iconPadding = {
 };
 
 const buttonColors = {
-  primary: "bg-primary-500 hover:bg-primary-400 text-primary-300",
-  secondary: "bg-secondary-500 hover:bg-secondary-400 text-secondary-300",
+  primary: "bg-primary-500 hover:bg-primary-400 text-primary-200",
+  secondary: "bg-secondary-500 hover:bg-secondary-400 text-secondary-200",
 };
 
 const classes = computed(() => {
