@@ -38,14 +38,8 @@
       <div v-else>No activities available for your chosen dates.</div>
 
       <!-- Go to Cart Button -->
-      <div v-if="cart.items.length > 0" class="mt-6 flex justify-center">
-        <RouterLink to="/cart">
-          <button
-            class="bg-emerald-500 text-white px-8 py-3 rounded hover:bg-emerald-600 font-semibold"
-          >
-            Go to Cart
-          </button>
-        </RouterLink>
+      <div v-if="cart.items.length > 0" class="mt-6 flex justify-end">
+        <Button to="/cart" icon="ion:cart">Go to cart</Button>
       </div>
     </Section>
   </div>
@@ -65,6 +59,7 @@ import Section from "@/components/layout/Section.vue";
 import DateDropdown from "@/components/form/DateDropdown.vue";
 import AccommodationCard from "@/components/cards/AccommodationCard.vue";
 import ActivityCard from "@/components/cards/ActivityCard.vue";
+import Button from "@/components/ui/Button.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
 import { ref } from "vue";
 
