@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
+import { ref, computed, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import Button from "@/components/ui/Button.vue";
 import Input from "@/components/form/Input.vue";
 import Dropdown from "@/components/form/Dropdown.vue";
@@ -55,6 +55,7 @@ import DateDropdown from "@/components/form/DateDropdown.vue";
 import { useDestinationStore } from "@/stores/destination";
 
 const router = useRouter();
+const route = useRoute();
 const destinations = useDestinationStore();
 
 const searchTerm = ref("");
@@ -72,8 +73,12 @@ const query = computed(() => {
   const joinedArray = array.join("&");
 
   return `/search?${joinedArray}`;
-
 });
 
 const handleSearch = () => router.push(query.value);
+
+onMounted(() => {
+  const termQuery = route.query.term;
+  searchTerm.value = typeof termQuery === 'string' ? termQuery : '';
+});
 </script>
