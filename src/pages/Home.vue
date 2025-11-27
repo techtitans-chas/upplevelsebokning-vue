@@ -12,6 +12,11 @@
       voluptates dignissimos repellat?
     </p>
 
+    <Modal title="My modal" :actions="actionButtons">
+      Here's a modal!
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </Modal>
+
     <h2>Search</h2>
 
     <SearchForm class="mb-6" />
@@ -34,10 +39,16 @@ import SearchForm from "@/components/form/SearchForm.vue";
 import Section from "@/components/layout/Section.vue";
 import DestinationCard from "@/components/cards/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
+import Modal from "@/components/ui/Modal.vue";
 
 const router = useRouter();
 
 const destinations = useDestinationStore();
+
+const actionButtons = [
+  { title: "Cancel", icon: "mdi:cross", action: () => console.log("Cancel") },
+  { title: "Accept", action: () => console.log("Accept") },
+];
 </script>
 
 <style scoped>
