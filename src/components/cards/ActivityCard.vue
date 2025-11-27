@@ -72,22 +72,24 @@ import { Dropdown } from "floating-vue";
 import Card from "@/components/ui/Card.vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
-import { Icon } from "@iconify/vue";
 import NumberInput from "@/components/form/NumberInput.vue";
 import type { Activity } from "@/types";
+import { useCartStore } from "@/stores/cart";
 
-const props = defineProps<{
+interface Props {
   data: Activity;
-}>();
+}
+
+const props = defineProps<Props>();
 
 const numberOfPeople = ref(1);
 const isOpen = ref(false);
 const dropdownRef = ref<InstanceType<typeof Dropdown>>();
+const cart = useCartStore();
 
 function order() {
-  // TODO: Add logic to add item to cart and navigate
-  console.log(
-    `Adding ${numberOfPeople.value} people to cart for ${props.data.title}`
-  );
+  // Add activity to the cart (destination item will be created automatically if it doesn't exist)
+  cart.addActivity(props.data.destinationId, props.data, numberOfPeople.value);
+  numberOfPeople.value = 1; // Reset for next activity
 }
 </script>

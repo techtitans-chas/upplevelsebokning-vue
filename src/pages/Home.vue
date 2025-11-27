@@ -26,33 +26,14 @@
       />
     </div>
   </Section>
-
-  <Section>
-    <Card
-      image="./images/sunrise-over-matanzas-bay.jpg"
-      headerClass="bg-blue-500"
-    >
-      <template #header> Header! </template>
-      <template #content class="bg-blue-500">
-        This is card content. Here's a <Link to="/">link</Link>.
-      </template>
-      This is not content.
-      <template #footer>
-        <Button>Click</Button>
-      </template>
-    </Card>
-  </Section>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import SearchForm from "@/components/form/SearchForm.vue";
 import Section from "@/components/layout/Section.vue";
-import Link from "@/components/ui/Link.vue";
-import Card from "@/components/ui/Card.vue";
 import DestinationCard from "@/components/cards/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
-import Button from "@/components/ui/Button.vue";
 
 const router = useRouter();
 

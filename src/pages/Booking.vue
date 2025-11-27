@@ -7,16 +7,7 @@
         <div>{{ destination.price }} SEK</div>
       </div>
 
-      <div class="flex gap-4">
-        <DateDropdown />
-
-        <NumberInput
-          label="Number of people"
-          v-model="numberOfPeople"
-          :min="1"
-          :max="20"
-        />
-      </div>
+      <DateDropdown />
     </Section>
 
     <!-- Accommodations -->
@@ -34,7 +25,7 @@
     </Section>
 
     <!-- Activities -->
-    <Section>
+    <Section id="activities-section">
       <h2>Activities</h2>
 
       <div v-if="activities.length > 0" class="grid grid-cols-4 gap-4">
@@ -45,6 +36,17 @@
         />
       </div>
       <div v-else>No activities available for your chosen dates.</div>
+
+      <!-- Go to Cart Button -->
+      <div v-if="cart.items.length > 0" class="mt-6 flex justify-center">
+        <RouterLink to="/cart">
+          <button
+            class="bg-emerald-500 text-white px-8 py-3 rounded hover:bg-emerald-600 font-semibold"
+          >
+            Go to Cart
+          </button>
+        </RouterLink>
+      </div>
     </Section>
   </div>
   <Section v-else>
@@ -54,13 +56,12 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, RouterLink } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
 import { useAccommodationStore } from "@/stores/accommodation";
 import { useActivityStore } from "@/stores/activity";
 import { useCartStore } from "@/stores/cart";
 import Section from "@/components/layout/Section.vue";
-import Button from "@/components/ui/Button.vue";
 import DateDropdown from "@/components/form/DateDropdown.vue";
 import AccommodationCard from "@/components/cards/AccommodationCard.vue";
 import ActivityCard from "@/components/cards/ActivityCard.vue";
@@ -68,7 +69,6 @@ import NumberInput from "@/components/form/NumberInput.vue";
 import { ref } from "vue";
 
 const route = useRoute();
-const router = useRouter();
 
 const destinationStore = useDestinationStore();
 const accommodationStore = useAccommodationStore();
@@ -90,9 +90,4 @@ const activities = computed(() => {
   const id = route.params.id as string;
   return activityStore.getByDestination(id);
 });
-
-function order() {
-  cart.addItem(destination.value);
-  router.push("/cart");
-}
 </script>

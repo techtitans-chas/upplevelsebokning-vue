@@ -10,7 +10,7 @@ export interface Accommodation {
   destination?: Destination;
   title: string;
   description: string;
-  amenities: string[];
+  amenities: Array<{ icon: string; title: string }>;
   beds: number;
   pricePerNight: number;
   thumbnail: string;
@@ -49,14 +49,22 @@ export interface Destination {
   reviews: Review[];
 }
 
-export interface Travel {
+export interface CartActivity {
+  activity: Activity;
+  attendees: number;
+}
+
+export interface CartAccommodation {
+  accommodation: Accommodation;
+  startDate: string;
+  endDate: string;
+  duration?: number;
+  guests: number;
+}
+
+export interface CartItem {
   id: string;
   destinationId: string;
-  destination?: Destination;
-  accommodationId: string;
-  accommodation?: Accommodation;
-  startDate: string; //"dec 1" TODO:
-  endDate: string; //"dec 3" TODO:
-  duration?: number; // Computed: Number of nights
-  price: number; // Computed: Total price based on accommodation
+  accommodations: CartAccommodation[];
+  activities: CartActivity[];
 }
