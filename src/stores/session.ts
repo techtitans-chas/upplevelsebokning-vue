@@ -1,9 +1,13 @@
 import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 export const useSessionStore = defineStore("session", () => {
-  const departureDate = ref("");
-  const returnDate = ref("");
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date();
+  const todayString = today.toISOString().split('T')[0];
+
+  const departureDate = ref(todayString);
+  const returnDate = ref(todayString);
 
   return {
     departureDate,
