@@ -2,11 +2,11 @@
   <div class="flex flex-col gap-4">
     <!-- Search -->
     <Input placeholder="Search destinations, dates, and more" v-model="searchTerm" @keydown.enter="handleSearch">
-      <template #right>
-        <Button icon="iconamoon:search-bold" size="sm" color="secondary" @click="handleSearch">
-          Search
-        </Button>
-      </template>
+    <template #right>
+      <Button icon="iconamoon:search-bold" size="md" color="secondary" class="hover:cursor-pointer" @click="handleSearch">
+        Search
+      </Button>
+    </template>
     </Input>
 
     <!-- Filters -->
@@ -29,24 +29,13 @@
       <DateDropdown />
 
       <!-- Age group -->
-      <Dropdown
-        label="Age group"
-        placeholder="Select an age group"
-        v-model="selectedAgeGroup"
-      >
+      <Dropdown label="Age group" placeholder="Select an age group" v-model="selectedAgeGroup">
         <template #content="{ select }">
           <div class="p-2 gap-1">
-            <div
-              v-for="group in ageGroups"
-              :key="group"
-              @click="select(group)"
-              role="option"
-              :aria-selected="selectedAgeGroup === group"
-              tabindex="0"
-              @keydown.enter.prevent="select(group)"
+            <div v-for="group in ageGroups" :key="group" @click="select(group)" role="option"
+              :aria-selected="selectedAgeGroup === group" tabindex="0" @keydown.enter.prevent="select(group)"
               @keydown.space.prevent="select(group)"
-              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none"
-            >
+              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none">
               {{ group }}
             </div>
           </div>
@@ -83,7 +72,7 @@ const query = computed(() => {
   const joinedArray = array.join("&");
 
   return `/search?${joinedArray}`;
-  
+
 });
 
 const handleSearch = () => router.push(query.value);

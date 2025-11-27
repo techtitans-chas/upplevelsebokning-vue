@@ -1,7 +1,7 @@
 <template>
   <component :is="to ? RouterLink : 'button'" :to="to" :class="classes">
     <Icon :icon="iconLeft" v-if="iconLeft" />
-    <div class="text-white">
+    <div class="leading-none uppercase text-white">
       <slot />
     </div>
     <Icon :icon="icon" v-if="icon" />
