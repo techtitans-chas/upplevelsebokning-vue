@@ -4,41 +4,34 @@
 
     <div v-if="cart.items.length === 0" class="text-center py-12">
       <p class="text-gray-500 mb-4">Your cart is empty</p>
-      <RouterLink to="/">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">
-          Continue Shopping
-        </button>
-      </RouterLink>
+      <Button to="/">Continue shopping</Button>
     </div>
 
-    <div v-else>
+    <Section v-else>
       <!-- Destination Cart Items -->
-      <div
+      <Card
         v-for="destinationItem in cart.items"
         :key="destinationItem.id"
-        class="mb-8 border rounded-lg p-6 bg-gray-50"
+        class="mb-8 p-6 bg-gray-50 flex-col"
       >
         <!-- Destination Header -->
-        <div class="mb-6 pb-6 border-b">
-          <h2 class="text-2xl font-bold mb-4">
-            Destination: {{ destinationItem.destinationId }}
-          </h2>
-          <button
-            @click="cart.removeDestinationItem(destinationItem.destinationId)"
-            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+        <header>
+          <RouterLink
+            :to="`/destination/${destinationItem.destinationId}`"
+            class="font-semibold color-primary-500 hover:color-primary-600"
           >
-            Remove All
-          </button>
-        </div>
+            {{ destinationStore.getById(destinationItem.destinationId)?.title }}
+          </RouterLink>
+        </header>
 
         <!-- Accommodations Section -->
         <div v-if="destinationItem.accommodations.length > 0" class="mb-6">
           <h3 class="text-lg font-semibold mb-4">Accommodations</h3>
           <div class="space-y-4">
-            <div
+            <Card
               v-for="cartAcc in destinationItem.accommodations"
               :key="cartAcc.accommodation.id"
-              class="flex justify-between items-start bg-white p-4 rounded border border-gray-200"
+              class="flex justify-between items-start p-4 border border-gray-200"
             >
               <div class="flex-1">
                 <h4 class="font-semibold mb-2">
@@ -68,16 +61,6 @@
                     <span class="font-semibold">{{ cartAcc.guests }}</span>
                   </div>
                 </div>
-
-                <div class="flex gap-2 flex-wrap">
-                  <div
-                    v-for="amenity in cartAcc.accommodation.amenities"
-                    :key="amenity.title"
-                    class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm"
-                  >
-                    {{ amenity.title }}
-                  </div>
-                </div>
               </div>
 
               <div class="text-right ml-6">
@@ -89,19 +72,19 @@
                     ).toFixed(2)
                   }}
                 </div>
-                <button
+                <Button
                   @click="
                     cart.removeAccommodation(
                       destinationItem.destinationId,
                       cartAcc.accommodation.id
                     )
                   "
-                  class="w-full bg-red-400 text-white px-3 py-2 rounded hover:bg-red-500"
+                  class="bg-red-400 hover:bg-red-500"
                 >
                   Remove
-                </button>
+                </Button>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
 
@@ -109,10 +92,10 @@
         <div v-if="destinationItem.activities.length > 0">
           <h3 class="text-lg font-semibold mb-4">Activities</h3>
           <div class="space-y-4">
-            <div
+            <Card
               v-for="cartActivity in destinationItem.activities"
               :key="cartActivity.activity.id"
-              class="flex justify-between items-start bg-white p-4 rounded border border-gray-200"
+              class="flex justify-between items-start p-4 border border-gray-200"
             >
               <div class="flex-1">
                 <h4 class="font-semibold mb-2">
@@ -159,52 +142,34 @@
                   }}
                 </div>
                 <div class="space-y-2">
-                  <div class="flex gap-2">
-                    <button
-                      @click="
+                  <NumberInput
+                    label="Attendees"
+                    :modelValue="cartActivity.attendees"
+                    @update:modelValue="
+                      (val) =>
                         cart.updateActivityAttendees(
                           destinationItem.destinationId,
                           cartActivity.activity.id,
-                          cartActivity.attendees - 1
+                          val
                         )
-                      "
-                      :disabled="cartActivity.attendees <= 1"
-                      class="bg-gray-300 px-3 py-1 rounded disabled:opacity-50"
-                    >
-                      -
-                    </button>
-                    <span class="px-4 py-1">{{ cartActivity.attendees }}</span>
-                    <button
-                      @click="
-                        cart.updateActivityAttendees(
-                          destinationItem.destinationId,
-                          cartActivity.activity.id,
-                          cartActivity.attendees + 1
-                        )
-                      "
-                      :disabled="
-                        cartActivity.attendees >=
-                        cartActivity.activity.groupSize
-                      "
-                      class="bg-gray-300 px-3 py-1 rounded disabled:opacity-50"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <button
+                    "
+                    :min="1"
+                    :max="cartActivity.activity.groupSize"
+                  />
+                  <Button
                     @click="
                       cart.removeActivity(
                         destinationItem.destinationId,
                         cartActivity.activity.id
                       )
                     "
-                    class="w-full bg-red-400 text-white px-3 py-2 rounded hover:bg-red-500"
+                    class="w-full bg-red-400 hover:bg-red-500"
                   >
                     Remove
-                  </button>
+                  </Button>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
 
@@ -217,13 +182,13 @@
         >
           No items for this destination
         </div>
-      </div>
+      </Card>
 
       <!-- Cart Summary -->
       <div class="mt-8 border-t-2 pt-6">
         <div class="text-right mb-6">
           <div class="mb-2">
-            <span class="text-lg text-gray-600">Total Cart Value: </span>
+            <span class="text-lg text-gray-600">Total: </span>
             <span class="text-3xl font-bold text-green-600"
               >${{ cart.totalValue.toFixed(2) }}</span
             >
@@ -231,29 +196,31 @@
         </div>
 
         <div class="flex gap-4 justify-end">
-          <button
-            class="bg-gray-400 text-white px-6 py-3 rounded hover:bg-gray-500"
+          <Button
             @click="cart.clear"
+            class="secondary-400 hover:bg-red-400 cursor-pointer"
+            icon="maki:cross"
+            >Clear Cart</Button
           >
-            Clear Cart
-          </button>
-          <RouterLink to="/checkout">
-            <button
-              class="bg-emerald-500 text-white px-8 py-3 rounded hover:bg-emerald-600 font-semibold"
-              @click="pay"
-            >
-              Proceed to Checkout
-            </button>
-          </RouterLink>
+          <Button @click="pay" icon="mingcute:arrow-right-fill"
+            >Proceed to checkout</Button
+          >
         </div>
       </div>
-    </div>
+    </Section>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useCartStore } from "@/stores/cart";
-import { RouterLink, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
+import Button from "@/components/ui/Button.vue";
+import Section from "@/components/layout/Section.vue";
+import Card from "@/components/ui/Card.vue";
+import Badge from "@/components/ui/Badge.vue";
+import Link from "@/components/ui/Link.vue";
+import NumberInput from "@/components/form/NumberInput.vue";
+import { useDestinationStore } from "@/stores";
 
 const cart = useCartStore();
 const router = useRouter();
@@ -262,4 +229,6 @@ function pay() {
   cart.clear();
   router.push("/checkout");
 }
+
+const destinationStore = useDestinationStore();
 </script>
