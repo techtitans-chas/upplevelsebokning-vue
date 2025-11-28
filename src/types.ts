@@ -13,7 +13,7 @@ export interface Accommodation {
   amenities: Array<{ icon: string; title: string }>;
   beds: number;
   pricePerNight: number;
-  thumbnail: string;
+  coverImage: string;
   rating: number;
   reviews: Review[];
 }
@@ -44,7 +44,6 @@ export interface Destination {
   travelTips: string[];
   price: number;
   description: string;
-  thumbnail: string;
   coverImage: string;
   tags?: string[];
   reviews: Review[];

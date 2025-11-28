@@ -11,7 +11,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1200,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-greece-marble-manor.jpg",
     "rating": 4.9,
     "reviews": [
       {
@@ -38,7 +38,7 @@
     ],
     "beds": 1,
     "pricePerNight": 120,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-greece-olive-inn.jpg",
     "rating": 4.0,
     "reviews": [
       {
@@ -65,7 +65,7 @@
     ],
     "beds": 1,
     "pricePerNight": 60,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-greece-starlit-tent.jpg",
     "rating": 3.7,
     "reviews": [
       {
@@ -93,7 +93,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1400,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-egypt-river-palace.jpg",
     "rating": 4.8,
     "reviews": [
       {
@@ -119,7 +119,7 @@
     ],
     "beds": 2,
     "pricePerNight": 80,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-egypt-pyramid-inn.jpg",
     "rating": 3.2,
     "reviews": [
       {
@@ -146,7 +146,7 @@
     ],
     "beds": 2,
     "pricePerNight": 900,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-egypt-sarcophagus-spa.jpg",
     "rating": 4.6,
     "reviews": [
       {
@@ -173,7 +173,7 @@
     ],
     "beds": 1,
     "pricePerNight": 200,
-    "thumbnail": "",
+    "coverImage": "/images/ancient-egypt-nile-camp.jpg",
     "rating": 4.0,
     "reviews": [
       {
@@ -201,7 +201,7 @@
     ],
     "beds": 2,
     "pricePerNight": 3500,
-    "thumbnail": "",
+    "coverImage": "/images/jurassic-coastal-delta-dome-lodge.jpg",
     "rating": 4.9,
     "reviews": [
       {
@@ -228,7 +228,7 @@
     ],
     "beds": 2,
     "pricePerNight": 500,
-    "thumbnail": "",
+    "coverImage": "/images/jurassic-coastal-delta-elevated-huts.jpg",
     "rating": 4.3,
     "reviews": [
       {
@@ -255,7 +255,7 @@
     ],
     "beds": 6,
     "pricePerNight": 80,
-    "thumbnail": "",
+    "coverImage": "/images/jurassic-coastal-delta-cave-bunkhouse.jpg",
     "rating": 2.8,
     "reviews": [
       {
@@ -282,7 +282,7 @@
     ],
     "beds": 2,
     "pricePerNight": 250,
-    "thumbnail": "",
+    "coverImage": "/images/jurassic-coastal-delta-park-guard-station.jpg",
     "rating": 4.5,
     "reviews": [
       {
@@ -308,7 +308,7 @@
     ],
     "beds": 2,
     "pricePerNight": 30,
-    "thumbnail": "",
+    "coverImage": "/images/jurassic-coastal-delta-rusty-rodents-bnb.jpg",
     "rating": 1.3,
     "reviews": [
       {
@@ -339,7 +339,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1600,
-    "thumbnail": "",
+    "coverImage": "/images/renaissance-florence-grand-palazzo.jpg",
     "rating": 4.9,
     "reviews": [
       {
@@ -366,7 +366,7 @@
     ],
     "beds": 2,
     "pricePerNight": 180,
-    "thumbnail": "",
+    "coverImage": "/images/renaissance-florence-artists-lodge.jpg",
     "rating": 4.6,
     "reviews": [
       {
@@ -392,7 +392,7 @@
     ],
     "beds": 1,
     "pricePerNight": 90,
-    "thumbnail": "",
+    "coverImage": "/images/renaissance-florence-tiny-inn.jpg",
     "rating": 3.8,
     "reviews": [
       {
@@ -420,7 +420,7 @@
     ],
     "beds": 1,
     "pricePerNight": 600,
-    "thumbnail": "",
+    "coverImage": "/images/medieval-kyoto-bamboo-retreat.jpg",
     "rating": 4.8,
     "reviews": [
       {
@@ -447,7 +447,7 @@
     ],
     "beds": 1,
     "pricePerNight": 140,
-    "thumbnail": "",
+    "coverImage": "/images/medieval-kyoto-temple-guesthouse.jpg",
     "rating": 4.5,
     "reviews": [
       {
@@ -473,7 +473,7 @@
     ],
     "beds": 1,
     "pricePerNight": 95,
-    "thumbnail": "",
+    "coverImage": "/images/medieval-kyoto-rustic-inn.jpg",
     "rating": 4.1,
     "reviews": [
       {
@@ -499,7 +499,7 @@
     ],
     "beds": 1,
     "pricePerNight": 340,
-    "thumbnail": "",
+    "coverImage": "/images/medieval-kyoto-guest-pavilion.jpg",
     "rating": 4.7,
     "reviews": [
       {
@@ -527,7 +527,7 @@
     ],
     "beds": 3,
     "pricePerNight": 1100,
-    "thumbnail": "",
+    "coverImage": "/images/viking-age-fjordlands-longhouse-luxe.jpg",
     "rating": 4.8,
     "reviews": [
       {
@@ -553,7 +553,7 @@
     ],
     "beds": 2,
     "pricePerNight": 190,
-    "thumbnail": "",
+    "coverImage": "/images/viking-age-fjordlands-harbor-inn.jpg",
     "rating": 4.2,
     "reviews": [
       {
@@ -579,7 +579,7 @@
     ],
     "beds": 2,
     "pricePerNight": 260,
-    "thumbnail": "",
+    "coverImage": "/images/viking-age-fjordlands-boat-cabins.jpg",
     "rating": 3.9,
     "reviews": [
       {
@@ -605,7 +605,7 @@
     ],
     "beds": 1,
     "pricePerNight": 25,
-    "thumbnail": "",
+    "coverImage": "/images/viking-age-fjordlands-cliff-outhouse.jpg",
     "rating": 1.8,
     "reviews": [
       {
@@ -631,7 +631,7 @@
     ],
     "beds": 1,
     "pricePerNight": 220,
-    "thumbnail": "",
+    "coverImage": "/images/viking-age-fjordlands-watchtower-quarters.jpg",
     "rating": 4.4,
     "reviews": [
       {
@@ -659,7 +659,7 @@
     ],
     "beds": 2,
     "pricePerNight": 1300,
-    "thumbnail": "",
+    "coverImage": "/images/tenochtitlan-aztec-capital-palace-guest.jpg",
     "rating": 4.8,
     "reviews": [
       {
@@ -685,7 +685,7 @@
     ],
     "beds": 1,
     "pricePerNight": 120,
-    "thumbnail": "",
+    "coverImage": "/images/tenochtitlan-aztec-capital-market-rooms.jpg",
     "rating": 4.1,
     "reviews": [
       {
@@ -711,7 +711,7 @@
     ],
     "beds": 1,
     "pricePerNight": 240,
-    "thumbnail": "",
+    "coverImage": "/images/tenochtitlan-aztec-capital-floating-hut.jpg",
     "rating": 3.5,
     "reviews": [
       {
@@ -739,7 +739,7 @@
     ],
     "beds": 2,
     "pricePerNight": 450,
-    "thumbnail": "",
+    "coverImage": "/images/victorian-london-1888-crystal-hotel.jpg",
     "rating": 4.6,
     "reviews": [
       {
@@ -765,7 +765,7 @@
     ],
     "beds": 1,
     "pricePerNight": 90,
-    "thumbnail": "",
+    "coverImage": "/images/victorian-london-1888-railway-boardinghouse.jpg",
     "rating": 3.6,
     "reviews": [
       {
@@ -791,7 +791,7 @@
     ],
     "beds": 2,
     "pricePerNight": 220,
-    "thumbnail": "",
+    "coverImage": "/images/victorian-london-1888-speakeasy-rooms.jpg",
     "rating": 4.5,
     "reviews": [
       {
@@ -814,7 +814,7 @@
     "amenities": [{ "title": "Street access only", "icon": "mdi:road" }],
     "beds": 1,
     "pricePerNight": 15,
-    "thumbnail": "",
+    "coverImage": "/images/victorian-london-1888-gutter-lodge.jpg",
     "rating": 1.2,
     "reviews": [
       {
@@ -840,7 +840,7 @@
     ],
     "beds": 1,
     "pricePerNight": 260,
-    "thumbnail": "",
+    "coverImage": "/images/victorian-london-1888-boarding-terrace.jpg",
     "rating": 4.2,
     "reviews": [
       {
@@ -867,7 +867,7 @@
     ],
     "beds": 2,
     "pricePerNight": 700,
-    "thumbnail": "",
+    "coverImage": "/images/roaring-twenties-nyc-skyline-suite.jpg",
     "rating": 4.8,
     "reviews": [
       {
@@ -893,7 +893,7 @@
     ],
     "beds": 1,
     "pricePerNight": 220,
-    "thumbnail": "",
+    "coverImage": "/images/roaring-twenties-nyc-speakeasy-inn.jpg",
     "rating": 4.4,
     "reviews": [
       {
@@ -919,7 +919,7 @@
     ],
     "beds": 1,
     "pricePerNight": 95,
-    "thumbnail": "",
+    "coverImage": "/images/roaring-twenties-nyc-boardinghouse.jpg",
     "rating": 3.7,
     "reviews": [
       {
@@ -945,7 +945,7 @@
     ],
     "beds": 1,
     "pricePerNight": 12,
-    "thumbnail": "",
+    "coverImage": "/images/roaring-twenties-nyc-flophouse.jpg",
     "rating": 1.9,
     "reviews": [
       {
@@ -973,7 +973,7 @@
     ],
     "beds": 2,
     "pricePerNight": 8000,
-    "thumbnail": "",
+    "coverImage": "/images/mars-colony-new-dawn-2145-biodome-elite.jpg",
     "rating": 5.0,
     "reviews": [
       {
@@ -1000,7 +1000,7 @@
     ],
     "beds": 1,
     "pricePerNight": 400,
-    "thumbnail": "",
+    "coverImage": "/images/mars-colony-new-dawn-2145-research-quarters.jpg",
     "rating": 4.3,
     "reviews": [
       {
@@ -1026,7 +1026,7 @@
     ],
     "beds": 1,
     "pricePerNight": 60,
-    "thumbnail": "",
+    "coverImage": "/images/mars-colony-new-dawn-2145-red-sand-dorm.jpg",
     "rating": 2.5,
     "reviews": [
       {
@@ -1053,7 +1053,7 @@
     ],
     "beds": 2,
     "pricePerNight": 2900,
-    "thumbnail": "",
+    "coverImage": "/images/mars-colony-new-dawn-2145-terraform-villa.jpg",
     "rating": 4.7,
     "reviews": [
       {

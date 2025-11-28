@@ -1,6 +1,6 @@
 <template>
   <Card
-    :image="data.thumbnail ? data.thumbnail : '/images/placeholder.jpg'"
+    :image="data.coverImage ? data.coverImage : '/images/placeholder.jpg'"
     :class="isInCart ? 'opacity-50' : ''"
   >
     <template #header>
