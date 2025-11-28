@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, type RouteLocationNormalized } from "vue-router";
 
 import Home from "./pages/Home.vue";
 import Cart from "./pages/Cart.vue";
@@ -19,4 +19,8 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    // always scroll to top
+    return { top: 0 }
+  },
 });
