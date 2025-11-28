@@ -50,6 +50,15 @@ export const useDestinationStore = defineStore("destination", () => {
     };
   });
 
+  const timePeriods = computed(() => {
+    const periods = data.value.map(d => d.timePeriod);
+    return [...new Set(periods)].sort((a, b) => a - b);
+  });
+
+  const filterByTimePeriod = (minPeriod: number, maxPeriod: number) => {
+    return data.value.filter((i) => i.timePeriod >= minPeriod && i.timePeriod <= maxPeriod);
+  };
+
   return {
     data,
     loading,
@@ -61,5 +70,7 @@ export const useDestinationStore = defineStore("destination", () => {
     getAccommodationAmount,
     getActivityAmount,
     search,
+    timePeriods,
+    filterByTimePeriod,
   };
 });

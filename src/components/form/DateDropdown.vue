@@ -1,5 +1,5 @@
 <template>
-  <Dropdown label="Date" placeholder="Select dates" v-model="dateRangeDisplay">
+  <Dropdown label="Date" icon="uil:calendar" placeholder="Select dates" v-model="dateRangeDisplay">
     <template #content>
       <div class="p-4 flex flex-col gap-3">
         <div>

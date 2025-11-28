@@ -57,7 +57,6 @@ import Section from "@/components/layout/Section.vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import ReviewList from "@/components/ui/ReviewList.vue";
-import { Icon } from "@iconify/vue";
 
 const route = useRoute();
 const destinationStore = useDestinationStore();
@@ -66,4 +65,5 @@ const destination = computed(() => {
   const id = route.params.id as string;
   return destinationStore.getById(id);
 });
+
 </script>

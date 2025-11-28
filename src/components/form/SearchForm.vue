@@ -3,38 +3,64 @@
     <!-- Search -->
     <Input placeholder="Search destinations, dates, and more" v-model="searchTerm" @keydown.enter="handleSearch">
     <template #right>
-      <Button icon="iconamoon:search-bold" size="md" color="secondary" class="hover:cursor-pointer" @click="handleSearch">
+      <Button icon="iconamoon:search-bold" size="md" color="secondary" class="hover:cursor-pointer"
+        @click="handleSearch">
         Search
       </Button>
     </template>
     </Input>
 
     <!-- Filters -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_auto_1fr] gap-4 w-full items-stretch">
-      
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full items-stretch">
+
       <!-- Date -->
       <DateDropdown />
 
+      <!-- Time Period Range -->
+      <Dropdown label="Time Period" icon="bx:hourglass" :modelValue="`${formatYear(minTimePeriod)} to ${formatYear(maxTimePeriod)}`">
+        <template #content>
+          <div class="flex flex-col gap-4 p-4 min-w-[300px]">
+            <div class="flex gap-2 items-center justify-between">
+              <span class="text-sm font-medium">{{ formatYear(minTimePeriod) }}</span>
+              <span class="text-sm text-gray-500">to</span>
+              <span class="text-sm font-medium">{{ formatYear(maxTimePeriod) }}</span>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div>
+                <label class="text-xs text-gray-500 mb-1 block">Oldest</label>
+                <input type="range" :min="0" :max="availableTimePeriods.length - 1" :value="minTimePeriodIndex"
+                  @input="minTimePeriodIndex = Math.min(parseInt(($event.target as HTMLInputElement).value), maxTimePeriodIndex)"
+                  class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary-500" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-500 mb-1 block">Most Recent</label>
+                <input type="range" :min="0" :max="availableTimePeriods.length - 1" :value="maxTimePeriodIndex"
+                  @input="maxTimePeriodIndex = Math.max(parseInt(($event.target as HTMLInputElement).value), minTimePeriodIndex)"
+                  class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary-500" />
+              </div>
+            </div>
+          </div>
+        </template>
+      </Dropdown>
+
       <!-- Rating -->
-      <Dropdown label="Minimum rating" placeholder="Select rating" :modelValue="selectedRating === null ? 'No filter' : selectedRating === 0 ? 'No stars' : `${selectedRating} star${selectedRating !== 1 ? 's' : ''}`">
+      <Dropdown label="Minimum rating" icon="lucide:star" placeholder="Select rating"
+        :modelValue="selectedRating === null ? 'No filter' : selectedRating === 0 ? 'No stars' : `${selectedRating} star${selectedRating !== 1 ? 's' : ''}`">
         <template #content="{ select }">
           <div class="p-2 gap-1 flex flex-col">
-            <div @click="selectedRating = null" role="option"
-              :aria-selected="selectedRating === null" tabindex="0"
-              @keydown.enter.prevent="selectedRating = null"
-              @keydown.space.prevent="selectedRating = null"
+            <div @click="selectedRating = null" role="option" :aria-selected="selectedRating === null" tabindex="0"
+              @keydown.enter.prevent="selectedRating = null" @keydown.space.prevent="selectedRating = null"
               class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none">
               No filter
             </div>
-            <div @click="select(0); selectedRating = 0" role="option"
-              :aria-selected="selectedRating === 0" tabindex="0"
+            <div @click="select(0); selectedRating = 0" role="option" :aria-selected="selectedRating === 0" tabindex="0"
               @keydown.enter.prevent="select(0); selectedRating = 0"
               @keydown.space.prevent="select(0); selectedRating = 0"
               class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none flex items-center gap-2">
               <span class="text-xs">Below 1 star</span>
             </div>
-            <div v-for="rating in [1, 2, 3, 4, 5]" :key="rating" @click="select(rating); selectedRating = rating" role="option"
-              :aria-selected="selectedRating === rating" tabindex="0"
+            <div v-for="rating in [1, 2, 3, 4, 5]" :key="rating" @click="select(rating); selectedRating = rating"
+              role="option" :aria-selected="selectedRating === rating" tabindex="0"
               @keydown.enter.prevent="select(rating); selectedRating = rating"
               @keydown.space.prevent="select(rating); selectedRating = rating"
               class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none flex items-center gap-2">
@@ -46,26 +72,12 @@
           </div>
         </template>
       </Dropdown>
-
-      <!-- Age group -->
-      <Dropdown label="Age group" placeholder="Select an age group" v-model="selectedAgeGroup">
-        <template #content="{ select }">
-          <div class="p-2 gap-1">
-            <div v-for="group in ageGroups" :key="group" @click="select(group)" role="option"
-              :aria-selected="selectedAgeGroup === group" tabindex="0" @keydown.enter.prevent="select(group)"
-              @keydown.space.prevent="select(group)"
-              class="p-2 hover:bg-primary-100 cursor-pointer rounded text-sm focus:bg-primary-100 focus:outline-none">
-              {{ group }}
-            </div>
-          </div>
-        </template>
-      </Dropdown>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import Button from "@/components/ui/Button.vue";
 import Input from "@/components/form/Input.vue";
@@ -85,14 +97,42 @@ const selectedRating = computed({
   get: () => session.minimumRating,
   set: (value) => { session.minimumRating = value; }
 });
-const selectedAgeGroup = ref("");
-const ageGroups = ref(["All ages", "18 and above"]);
+
+// Get unique time periods from destinations and sort them
+const availableTimePeriods = computed(() => destinations.timePeriods);
+
+const minTimePeriodIndex = ref(0);
+const maxTimePeriodIndex = ref(0);
+
+// Auto-initialize maxTimePeriodIndex when availableTimePeriods loads
+watch(() => availableTimePeriods.value.length, (length) => {
+  if (length > 0 && maxTimePeriodIndex.value === 0) {
+    maxTimePeriodIndex.value = length - 1;
+  }
+});
+
+const minTimePeriod = computed(() => availableTimePeriods.value[minTimePeriodIndex.value] || 0);
+const maxTimePeriod = computed(() => availableTimePeriods.value[maxTimePeriodIndex.value] || 0);
+
+const formatYear = (year: number) => {
+  if (year < 0) {
+    return `${Math.abs(year)} BC`;
+  } else if (year === 0) {
+    return "1";
+  } else {
+    return year;
+  }
+};
 
 const query = computed(() => {
   const array = [];
 
   if (searchTerm.value) array.push(`term=${searchTerm.value}`);
   if (session.minimumRating !== null) array.push(`minRating=${session.minimumRating}`);
+
+  // Always add time period to the query
+  array.push(`minTimePeriod=${minTimePeriod.value}`);
+  array.push(`maxTimePeriod=${maxTimePeriod.value}`);
 
   const joinedArray = array.join("&");
 
@@ -103,12 +143,28 @@ const handleSearch = () => router.push(query.value);
 
 onMounted(() => {
   const termQuery = route.query.term;
-  searchTerm.value = typeof termQuery === 'string' ? termQuery : '';
-  
+  searchTerm.value = typeof termQuery === "string" ? termQuery : "";
+
   const ratingQuery = route.query.minRating;
-  if (ratingQuery) {
-    const ratingStr = Array.isArray(ratingQuery) ? ratingQuery[0] : ratingQuery;
-    if (ratingStr) session.minimumRating = parseInt(ratingStr);
+  if (typeof ratingQuery === "string") {
+    session.minimumRating = parseInt(ratingQuery);
+  }
+
+  // Initialize time period from query
+  const minTimePeriodQuery = route.query.minTimePeriod;
+  const maxTimePeriodQuery = route.query.maxTimePeriod;
+
+  if (typeof minTimePeriodQuery === "string") {
+    const minIndex = availableTimePeriods.value.findIndex(p => p === parseInt(minTimePeriodQuery));
+    if (minIndex >= 0) minTimePeriodIndex.value = minIndex;
+  }
+
+  if (typeof maxTimePeriodQuery === "string") {
+    const maxIndex = availableTimePeriods.value.findIndex(p => p === parseInt(maxTimePeriodQuery));
+    if (maxIndex >= 0) maxTimePeriodIndex.value = maxIndex;
+  } else if (!minTimePeriodQuery) {
+    // Initialize max to the last index if not set
+    maxTimePeriodIndex.value = availableTimePeriods.value.length - 1;
   }
 });
 </script>

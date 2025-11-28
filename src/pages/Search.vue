@@ -36,15 +36,14 @@ const route = useRoute();
 
 const destinationStore = useDestinationStore();
 
-const destination = computed(() => route.query.destination);
 const term = computed(() => route.query.term);
 const minRating = computed(() => route.query.minRating);
+const minTimePeriod = computed(() => route.query.minTimePeriod);
+const maxTimePeriod = computed(() => route.query.maxTimePeriod);
 
 const results = computed(() => {
   let results = destinationStore.data;
-  if (destination.value)
-    // TODO:
-    results = results.filter((i) => i.id === destination.value);
+
   if (term.value)
     results = results.filter(
       (i) =>
@@ -54,11 +53,18 @@ const results = computed(() => {
         i.description.toLowerCase().includes(String(term.value).toLowerCase())
     );
   
-  if (minRating.value !== null) {
+  if (typeof minRating.value === "string") {
+    const minRatingNum = parseInt(minRating.value);
     results = results.filter((i) => {
-      const averageRating = destinationStore.getAverageRating(i.id as string) || '0';
-      return averageRating >= minRating.value!;
+      const averageRating = parseFloat(destinationStore.getAverageRating(i.id as string) || "0");
+      return averageRating >= minRatingNum;
     });
+  }
+
+  if (typeof minTimePeriod.value === "string" && typeof maxTimePeriod.value === "string") {
+    const minPeriod = parseInt(minTimePeriod.value);
+    const maxPeriod = parseInt(maxTimePeriod.value);
+    results = destinationStore.filterByTimePeriod(minPeriod, maxPeriod);
   }
 
   return results;
