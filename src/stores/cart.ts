@@ -8,6 +8,9 @@ export const useCartStore = defineStore("cart", () => {
 
   const totalValue = computed(() => {
     return items.value.reduce((acc, cartItem) => {
+      // Destination travel price
+      const destinationPrice = cartItem.destinationPrice;
+
       // Sum accommodation prices
       const accommodationPrice = cartItem.accommodations.reduce(
         (sum, cartAcc) =>
@@ -22,7 +25,7 @@ export const useCartStore = defineStore("cart", () => {
         0
       );
 
-      return acc + accommodationPrice + activitiesPrice;
+      return acc + destinationPrice + accommodationPrice + activitiesPrice;
     }, 0);
   });
 
@@ -31,13 +34,14 @@ export const useCartStore = defineStore("cart", () => {
   /**
    * Get or create a cart item for a destination
    */
-  function getOrCreateDestinationItem(destinationId: string): CartItem {
+  function getOrCreateDestinationItem(destinationId: string, destinationPrice: number = 0): CartItem {
     let cartItem = items.value.find((i) => i.destinationId === destinationId);
 
     if (!cartItem) {
       cartItem = {
         id: `destination-${destinationId}-${Date.now()}`,
         destinationId,
+        destinationPrice,
         accommodations: [],
         activities: [],
       };
@@ -53,10 +57,11 @@ export const useCartStore = defineStore("cart", () => {
   function addAccommodation(
     destinationId: string,
     accommodation: Accommodation,
-    guests: number = 1
+    guests: number = 1,
+    destinationPrice: number = 0
   ) {
     const session = useSessionStore();
-    const cartItem = getOrCreateDestinationItem(destinationId);
+    const cartItem = getOrCreateDestinationItem(destinationId, destinationPrice);
 
     // Check if this accommodation is already in the cart for this destination
     const existingAccommodation = cartItem.accommodations.find(
@@ -112,9 +117,10 @@ export const useCartStore = defineStore("cart", () => {
   function addActivity(
     destinationId: string,
     activity: Activity,
-    attendees: number = 1
+    attendees: number = 1,
+    destinationPrice: number = 0
   ) {
-    const cartItem = getOrCreateDestinationItem(destinationId);
+    const cartItem = getOrCreateDestinationItem(destinationId, destinationPrice);
 
     // Check if this activity already exists
     const existingActivity = cartItem.activities.find(

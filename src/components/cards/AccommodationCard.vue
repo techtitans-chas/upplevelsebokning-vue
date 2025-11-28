@@ -46,6 +46,7 @@ import Badge from "@/components/ui/Badge.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
 import { Icon } from "@iconify/vue";
 import { useCartStore } from "@/stores/cart";
+import { useDestinationStore } from "@/stores/destination";
 import { useSessionStore } from "@/stores/session";
 
 const props = defineProps<{
@@ -53,6 +54,7 @@ const props = defineProps<{
 }>();
 
 const cart = useCartStore();
+const destinationStore = useDestinationStore();
 const session = useSessionStore();
 const numberOfGuests = ref(1);
 
@@ -72,7 +74,7 @@ function order(acc: Accommodation) {
     return;
   }
 
-  cart.addAccommodation(acc.destinationId, acc, numberOfGuests.value);
+  cart.addAccommodation(acc.destinationId, acc, numberOfGuests.value, destinationStore.getById(props.data.destinationId)?.price);
   numberOfGuests.value = 1; // Reset for next booking
 
   // Scroll to activities section

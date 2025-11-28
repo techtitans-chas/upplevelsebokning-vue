@@ -66,6 +66,7 @@ export interface CartAccommodation {
 export interface CartItem {
   id: string;
   destinationId: string;
+  destinationPrice: number;
   accommodations: CartAccommodation[];
   activities: CartActivity[];
 }
