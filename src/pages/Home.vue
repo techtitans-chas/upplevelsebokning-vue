@@ -12,7 +12,7 @@
       <div class="max-md:order-first"><img src="/images/mascot-1.png" class="w-full mx-auto max-w-[440px]" /></div>
     </div>
   </Section>
-  <Section class="p-6">
+  <Section inner-class="py-12">
     <!-- <Modal title="My modal" :actions="actionButtons">
       Here's a modal!
       <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -23,7 +23,7 @@
   </Section>
 
   <!-- Featured destinations -->
-  <Section bg-image="/images/placeholder-2.jpg" bg-color="bg-primary-950/70" class="p-8">
+  <Section bg-image="/images/placeholder-2.jpg" bg-color="bg-primary-950/70">
     <h2 class="text-center">Featured destinations</h2>
     <div class="grid grid-cols-[1fr_1fr_1fr] gap-4">
       <DestinationCard v-for="item in destinationStore.getByTag('featured')" :key="item.id" :data="item"
@@ -32,7 +32,7 @@
   </Section>
 
   <!-- Contact -->
-  <Section class="p-12 text-center">
+  <Section class="text-center" inner-class="max-w-2xl">
     <h2>Step beyond the boundaries of time itself.</h2>
     <p class="mb-4">
       Hourglass Adventures offers extraordinary journeys through history,

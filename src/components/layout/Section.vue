@@ -30,7 +30,7 @@ const classes = computed(() =>
 );
 
 const innerClasses = computed(() =>
-  twMerge("relative max-w-4xl mx-auto p-4 z-20", props.innerClass)
+  twMerge("relative max-w-4xl mx-auto px-4 py-14 z-20", props.innerClass)
 );
 
 const bgColorClasses = computed(() =>

@@ -12,8 +12,8 @@
             <Badge>{{ destination.timePeriod }}</Badge>
           </div>
         </div>
-        <div class="grid gap-2 p-6 items-start">
-          <div v-if="destination.description" class="text-white">
+        <div class="grid gap-2 pb-6 pt-0 items-start">
+          <div v-if="destination.description" class="text-white mb-2">
             {{ destination.description }}
           </div>
           <div v-if="destination.climate" class="text-primary-200 w-fit">

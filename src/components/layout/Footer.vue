@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary-800 p-6">
+  <footer class="bg-primary-800 p-6 pt-8">
     <div class="flex flex-col gap-2 items-center">
       <Logo vertical />
       <p>

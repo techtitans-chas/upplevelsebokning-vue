@@ -35,6 +35,10 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+h2:first-child {
+  margin-top: -1rem;
+}
+
 h3 {
   font-size: 1.5rem;
   font-weight: 600;
