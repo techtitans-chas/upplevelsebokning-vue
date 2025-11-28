@@ -8,9 +8,11 @@ export const useSessionStore = defineStore("session", () => {
 
   const departureDate = ref(todayString);
   const returnDate = ref(todayString);
+  const minimumRating = ref<number | null>(null);
 
   return {
     departureDate,
     returnDate,
+    minimumRating,
   };
 });

@@ -18,16 +18,14 @@ export const useDestinationStore = defineStore("destination", () => {
     return (tag: string) => data.value.filter((i) => i.tags?.includes(tag));
   });
 
-  const getAverageRating = computed(() => {
-    return (id: string) => {
-      const dest = data.value.find((i) => i.id === id);
-      const ratings = dest?.reviews.map(r => r.rating);
-      if (ratings) {
-        const averageRating = ratings?.reduce((acc, r) => acc + r, 0) / ratings.length;
-        return averageRating.toFixed(1);
-      } else return null;
-    };
-  });
+  const getAverageRating = (id: string) => {
+    const dest = data.value.find((i) => i.id === id);
+    const ratings = dest?.reviews.map(r => r.rating);
+    if (ratings) {
+      const averageRating = ratings?.reduce((acc, r) => acc + r, 0) / ratings.length;
+      return averageRating.toFixed(1);
+    } else return null;
+  };
 
   const getAccommodationAmount = computed(() => {
     const accommodationStore = useAccommodationStore();

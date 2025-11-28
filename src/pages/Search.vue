@@ -38,6 +38,7 @@ const destinationStore = useDestinationStore();
 
 const destination = computed(() => route.query.destination);
 const term = computed(() => route.query.term);
+const minRating = computed(() => route.query.minRating);
 
 const results = computed(() => {
   let results = destinationStore.data;
@@ -52,6 +53,13 @@ const results = computed(() => {
         i.climate.toLowerCase().includes(String(term.value).toLowerCase()) ||
         i.description.toLowerCase().includes(String(term.value).toLowerCase())
     );
+  
+  if (minRating.value !== null) {
+    results = results.filter((i) => {
+      const averageRating = destinationStore.getAverageRating(i.id as string) || '0';
+      return averageRating >= minRating.value!;
+    });
+  }
 
   return results;
 });
