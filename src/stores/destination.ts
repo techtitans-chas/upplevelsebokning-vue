@@ -12,6 +12,10 @@ export const useDestinationStore = defineStore("destination", () => {
     return (id: string) => data.value.find((i) => i.id === id);
   });
 
+  const getByTag = computed(() => {
+    return (tag: string) => data.value.filter((i) => i.tags?.includes(tag));
+  });
+
   const search = computed(() => {
     return (term: string) => {
       const q = term.toLowerCase();
@@ -25,6 +29,7 @@ export const useDestinationStore = defineStore("destination", () => {
     error,
     load,
     getById,
+    getByTag,
     search,
   };
 });

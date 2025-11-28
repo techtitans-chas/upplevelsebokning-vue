@@ -46,6 +46,7 @@ export interface Destination {
   description: string;
   thumbnail: string;
   coverImage: string;
+  tags?: string[];
   reviews: Review[];
 }
 
