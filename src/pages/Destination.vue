@@ -1,25 +1,35 @@
 <template>
   <div v-if="destination">
-    <Section center class="min-h-[400px]" bg-color="bg-black/60" :bg-image="destination.coverImage
+    <Section class="min-h-[400px]" bg-color="bg-black/60" :bg-image="destination.coverImage
         ? destination.coverImage
         : '/images/placeholder.jpg'
       ">
-      <div>
-        <div class="flex items-center gap-4">
-          <h1>{{ destination.title }}</h1>
-          <div>
-            <div class="text-xs">Time period</div>
-            <Badge>{{ destination.timePeriod }}</Badge>
+      <div class="w-full">
+        <div class="grid">
+          <div class="flex items-center gap-4">
+            <h1 class="mb-0">{{ destination.title }}</h1>
+            <div class="flex flex-col items-center">
+              <div class="text-xs">Time period</div>
+              <Badge class="!text-[.7rem]">{{ destination.timePeriod }}</Badge>
+            </div>
           </div>
+          <div class="font-semibold italic text-xl mb-3">{{ destination.location }}</div>
         </div>
+
+        <!-- Description -->
         <div class="grid gap-2 pb-6 pt-0 items-start">
-          <div v-if="destination.description" class="text-white mb-2">
+          <div v-if="destination.description" class="text-white mb-2 max-w-lg">
             {{ destination.description }}
           </div>
           <div v-if="destination.climate" class="text-primary-200 w-fit">
             <Badge class="bg-primary-950"><Icon icon="tabler:sun" />{{ destination.climate }}</Badge>
           </div>
+          <div class="mt-6 font-semibold">Travel Tips</div>
+          <ul class="pb-6 ml-8 list-disc">
+            <li v-for="tip in destination.travelTips" :key="tip">{{ tip }}</li>
+          </ul>
         </div>
+        <!-- Button to booking page -->
         <Button :to="`/booking/${destination.id}`" icon="fa7-solid:arrow-right">
           Book your journey
         </Button>
