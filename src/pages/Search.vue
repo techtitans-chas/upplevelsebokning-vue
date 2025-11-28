@@ -48,6 +48,8 @@ const results = computed(() => {
     results = results.filter(
       (i) =>
         i.title.toLowerCase().includes(String(term.value).toLowerCase()) ||
+        i.location.toLowerCase().includes(String(term.value).toLowerCase()) ||
+        i.climate.toLowerCase().includes(String(term.value).toLowerCase()) ||
         i.description.toLowerCase().includes(String(term.value).toLowerCase())
     );
 

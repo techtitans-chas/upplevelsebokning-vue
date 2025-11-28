@@ -22,7 +22,7 @@
             {{ destination.description }}
           </div>
           <div v-if="destination.climate" class="text-primary-200 w-fit">
-            <Badge class="bg-primary-950"><Icon icon="tabler:sun" />{{ destination.climate }}</Badge>
+            <Badge class="bg-primary-950" icon="tabler:sun">{{ destination.climate }}</Badge>
           </div>
           <div class="mt-6 font-semibold">Travel Tips</div>
           <ul class="pb-6 ml-8 list-disc">

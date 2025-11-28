@@ -12,11 +12,8 @@
       <p>{{ data.description }}</p>
       <div class="flex justify-between items-center mt-4">
         <div class="flex justify-between items-center gap-2">
-          <Badge class="bg-secondary-400"
-            >{{ data.pricePerNight }}$ per night</Badge
-          >
-          <Badge class="text-[.7rem]" v-for="amenity in data.amenities">
-            <Icon :icon="amenity.icon" />
+          <Badge class="bg-secondary-400">{{ data.pricePerNight }}$ per night</Badge>
+          <Badge class="text-[.7rem]" v-for="amenity in data.amenities" :icon="amenity.icon">
             {{ amenity.title }}
           </Badge>
         </div>
