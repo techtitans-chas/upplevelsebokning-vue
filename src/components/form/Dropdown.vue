@@ -3,20 +3,16 @@
     placement="bottom-start" :autoHide="true" :autoSize="true">
     <!-- Trigger button -->
     <div
-      class="h-full flex gap-2 p-3 px-4 items-start bg-white rounded-sm color-gray-600 cursor-pointer hover:bg-gray-50 transition-colors min-w-[200px]"
-      :class="{ 'ring-2 ring-primary-500': isOpen }"
-      tabindex="0"
-      role="combobox"
-      :aria-expanded="isOpen"
-      :aria-haspopup="true"
-      :aria-controls="`dropdown-content-${label}`"
-      :aria-label="`${label}: ${modelValue || placeholder}`"
-      @keydown.enter.prevent="toggleDropdown"
-      @keydown.space.prevent="toggleDropdown"
-      @keydown.escape="closeDropdown"
-    >
+      class="h-full flex gap-2 p-2 px-3 items-start bg-white rounded-sm color-gray-600 cursor-pointer hover:bg-gray-50 transition-colors min-w-[200px]"
+      :class="{ 'ring-2 ring-primary-500': isOpen }" tabindex="0" role="combobox" :aria-expanded="isOpen"
+      :aria-haspopup="true" :aria-controls="`dropdown-content-${label}`"
+      :aria-label="`${label}: ${modelValue || placeholder}`" @keydown.enter.prevent="toggleDropdown"
+      @keydown.space.prevent="toggleDropdown" @keydown.escape="closeDropdown">
       <div class="flex-1">
-        <div class="text-xs text-gray-500 mb-1" :id="`dropdown-label-${label}`">{{ label }}</div>
+        <div class="flex gap-1 items-center text-xs text-gray-500 mb-1" :id="`dropdown-label-${label}`">
+          <Icon v-if="icon" :icon="icon" />
+          {{ label }}
+        </div>
         <div class="text-sm font-medium" :class="{ 'text-gray-400': !modelValue }">
           {{ modelValue || placeholder }}
         </div>
@@ -27,12 +23,8 @@
 
     <!-- Dropdown content -->
     <template #popper="{ hide }">
-      <div 
-        :id="`dropdown-content-${label}`"
-        role="listbox"
-        :aria-labelledby="`dropdown-label-${label}`"
-        class="bg-white  min-w-[200px] max-h-[300px] overflow-auto"
-      >
+      <div :id="`dropdown-content-${label}`" role="listbox" :aria-labelledby="`dropdown-label-${label}`"
+        class="bg-white  min-w-[200px] max-h-[300px] overflow-auto">
         <slot name="content" :close="hide" :select="(value: string | number) => handleSelect(value, hide)" />
       </div>
     </template>
@@ -45,10 +37,11 @@ import { Dropdown } from "floating-vue";
 import { Icon } from "@iconify/vue";
 
 defineProps<{
-  label: string
-  modelValue?: string | number
-  placeholder?: string
-  autoOpen?: boolean
+  label: string;
+  icon?: string;
+  modelValue?: string | number;
+  placeholder?: string;
+  autoOpen?: boolean;
 }>();
 
 const emit = defineEmits<{ "update:modelValue": [value: string | number] }>();

@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+  <div :class="classes" @mouseenter="isHovered = true" @mouseleave="isHovered = false" class="inline-flex">
     <Icon icon="streamline-plump:hourglass-remix" :class="iconClasses" />
     <div class="flex flex-col items-center justify-center">
       <div :class="textClasses">Hourglass Adventures</div>

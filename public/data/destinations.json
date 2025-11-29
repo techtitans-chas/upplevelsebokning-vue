@@ -12,7 +12,6 @@
     ],
     "price": 500,
     "description": "Wander ruins, attend classic theater performances, and taste early Mediterranean cuisine in a world of myths and philosophers.",
-    "thumbnail": "",
     "coverImage": "/images/ancient-greece.jpg",
     "reviews": [
       {
@@ -40,7 +39,6 @@
     ],
     "price": 750,
     "description": "Explore pyramid construction sites, sail the Nile in a reed boat, and witness the grandeur of pharaonic processions.",
-    "thumbnail": "",
     "coverImage": "/images/ancient-egypt.jpg",
     "reviews": [
       {
@@ -68,8 +66,8 @@
     ],
     "price": 2000,
     "description": "Witness colossal dinosaurs roam the shoreline, gather fossilized ammonites, and explore primeval forests under a sky of prehistoric constellations.",
-    "thumbnail": "",
     "coverImage": "/images/jurassic.jpg",
+    "tags": ["featured"],
     "reviews": [
       {
         "user": "Emily R.",
@@ -96,7 +94,6 @@
     ],
     "price": 1200,
     "description": "Meet master artists, attend exclusive workshops, and stroll cobblestone streets full of new ideas, inventions, and exquisite art.",
-    "thumbnail": "",
     "coverImage": "/images/florence-1.jpg",
     "reviews": [
       {
@@ -124,7 +121,6 @@
     ],
     "price": 1100,
     "description": "Experience serene temple rituals, samurai sword demonstrations, and traditional tea ceremonies in an age of discipline and artistry.",
-    "thumbnail": "",
     "coverImage": "/images/kyoto-1.jpg",
     "reviews": [
       {
@@ -152,8 +148,8 @@
     ],
     "price": 900,
     "description": "Sail longships into narrow fjords, trade at bustling shore markets, and learn ancient crafts by firelight with seasoned crews.",
-    "thumbnail": "",
     "coverImage": "/images/viking-age-1.jpg",
+    "tags": ["featured"],
     "reviews": [
       {
         "user": "Ingrid J.",
@@ -180,7 +176,6 @@
     ],
     "price": 1300,
     "description": "Explore an island metropolis of canals, towering temples, and bustling markets, where tribute, artistry, and ritual meet daily life.",
-    "thumbnail": "",
     "coverImage": "/images/aztec-1.jpg",
     "reviews": [
       {
@@ -208,7 +203,6 @@
     ],
     "price": 850,
     "description": "Ride hansom cabs, visit steam-powered exhibitions, and navigate gaslit alleyways—an era of invention, opulence, and shadowy secrets.",
-    "thumbnail": "",
     "coverImage": "/images/london-2.jpg",
     "reviews": [
       {
@@ -236,7 +230,6 @@
     ],
     "price": 950,
     "description": "Dance at roaring jazz clubs, watch daring new films, and experience the excitement of a city booming with commerce and culture.",
-    "thumbnail": "",
     "coverImage": "/images/new-york-1.jpg",
     "reviews": [
       {
@@ -264,8 +257,8 @@
     ],
     "price": 5000,
     "description": "Visit advanced bio-domes, experience low-gravity recreation, and learn pioneering terraforming techniques from future colonists.",
-    "thumbnail": "",
     "coverImage": "/images/mars-2.jpg",
+    "tags": ["featured"],
     "reviews": [
       {
         "user": "Ava K.",

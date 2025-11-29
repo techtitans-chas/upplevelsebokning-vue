@@ -1,7 +1,7 @@
 <template>
   <component :is="to ? RouterLink : 'button'" :to="to" :class="classes">
     <Icon :icon="iconLeft" v-if="iconLeft" />
-    <div class="text-white">
+    <div class="leading-none uppercase text-white">
       <slot />
     </div>
     <Icon :icon="icon" v-if="icon" />
@@ -42,8 +42,8 @@ const iconPadding = {
 };
 
 const buttonColors = {
-  primary: "bg-primary-500 hover:bg-primary-400 text-primary-300",
-  secondary: "bg-secondary-500 hover:bg-secondary-400 text-secondary-300",
+  primary: "bg-primary-500 hover:bg-primary-400 text-primary-200",
+  secondary: "bg-secondary-500 hover:bg-secondary-400 text-secondary-200",
 };
 
 const classes = computed(() => {

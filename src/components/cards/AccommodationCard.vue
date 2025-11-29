@@ -1,6 +1,6 @@
 <template>
   <Card
-    :image="data.thumbnail ? data.thumbnail : '/images/placeholder.jpg'"
+    :image="data.coverImage ? data.coverImage : '/images/placeholder.jpg'"
     :class="isInCart ? 'opacity-50' : ''"
   >
     <template #header>
@@ -12,11 +12,8 @@
       <p>{{ data.description }}</p>
       <div class="flex justify-between items-center mt-4">
         <div class="flex justify-between items-center gap-2">
-          <Badge class="bg-secondary-400"
-            >{{ data.pricePerNight }}$ per night</Badge
-          >
-          <Badge class="text-[.7rem]" v-for="amenity in data.amenities">
-            <Icon :icon="amenity.icon" />
+          <Badge class="bg-secondary-400">{{ data.pricePerNight }}$ per night</Badge>
+          <Badge class="text-[.7rem]" v-for="amenity in data.amenities" :icon="amenity.icon">
             {{ amenity.title }}
           </Badge>
         </div>
@@ -46,6 +43,7 @@ import Badge from "@/components/ui/Badge.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
 import { Icon } from "@iconify/vue";
 import { useCartStore } from "@/stores/cart";
+import { useDestinationStore } from "@/stores/destination";
 import { useSessionStore } from "@/stores/session";
 
 const props = defineProps<{
@@ -53,6 +51,7 @@ const props = defineProps<{
 }>();
 
 const cart = useCartStore();
+const destinationStore = useDestinationStore();
 const session = useSessionStore();
 const numberOfGuests = ref(1);
 
@@ -72,7 +71,7 @@ function order(acc: Accommodation) {
     return;
   }
 
-  cart.addAccommodation(acc.destinationId, acc, numberOfGuests.value);
+  cart.addAccommodation(acc.destinationId, acc, numberOfGuests.value, destinationStore.getById(props.data.destinationId)?.price);
   numberOfGuests.value = 1; // Reset for next booking
 
   // Scroll to activities section
