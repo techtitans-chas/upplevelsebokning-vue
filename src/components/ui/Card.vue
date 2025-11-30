@@ -6,7 +6,7 @@
     <!-- Left image -->
     <div
       v-if="image && imagePosition !== 'right'"
-      class="w-[400px] bg-cover bg-center"
+      :class="imageClasses"
       :style="`background-image:url(${image})`"
     />
     <!-- Card content wrapper -->
@@ -25,7 +25,7 @@
     <!-- Right image -->
     <div
       v-if="image && imagePosition === 'right'"
-      class="w-[400px] bg-cover bg-center"
+      :class="imageClasses"
       :style="`background-image:url(${image})`"
     />
   </div>
@@ -40,6 +40,7 @@ const props = defineProps<{
   bgImage?: string;
   image?: string;
   imagePosition?: string;
+  imageWidth?: string;
   headerClass?: string;
   contentClass?: string;
   footerClass?: string;
@@ -60,4 +61,8 @@ const contentClasses = computed(() =>
 );
 
 const footerClasses = computed(() => twMerge("p-2", props.footerClass));
+
+const imageClasses = computed(() =>
+  twMerge("bg-cover bg-center", props.imageWidth || "w-[400px]")
+);
 </script>

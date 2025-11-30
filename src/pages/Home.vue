@@ -33,11 +33,6 @@
     </div>
   </Section>
   <Section inner-class="py-12">
-    <!-- <Modal title="My modal" :actions="actionButtons">
-      Here's a modal!
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </Modal> -->
-
     <h2 class="sr-only">Search</h2>
     <SearchForm />
   </Section>
@@ -89,7 +84,6 @@ import DestinationCard from "@/components/cards/DestinationCard.vue";
 import { useDestinationStore } from "@/stores/destination";
 import Button from "@/components/ui/Button.vue";
 import { useToast } from "@/composables/useToast";
-import Modal from "@/components/ui/Modal.vue";
 
 const router = useRouter();
 const destinationStore = useDestinationStore();
@@ -97,11 +91,6 @@ const { error } = useToast();
 
 const loadingComms = ref(false);
 const isBouncing = ref(false);
-
-const actionButtons = [
-  { title: "Cancel", icon: "mdi:cross", action: () => console.log("Cancel") },
-  { title: "Accept", action: () => console.log("Accept") },
-];
 
 const contact = () => {
   loadingComms.value = true;
@@ -113,7 +102,6 @@ const contact = () => {
     error("Failed to establish wormhole connection", "Please try again later.");
   }, 2000);
 };
-const destinations = useDestinationStore();
 </script>
 
 <style scoped>

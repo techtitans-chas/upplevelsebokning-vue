@@ -1,30 +1,51 @@
 <template>
-  <div v-if="isOpen" :class="{ 'modal-container-closing': isClosing }" class="modal-container">
-    <div class="modal-backdrop" @click="handleBackdropClick" />
-    <div :class="dialogClasses" @click.stop class="modal-card-wrapper">
-      <div class="flex justify-between p-4 pb-2">
-        <div class="text-sm font-semibold pl-2">
-          <span v-if="title">{{ title }}</span>
+  <Teleport to="body">
+    <div
+      v-if="isOpen"
+      :class="{ 'modal-container-closing': isClosing }"
+      class="modal-container"
+    >
+      <div class="modal-backdrop" @click="handleBackdropClick" />
+      <div :class="dialogClasses" @click.stop class="modal-card-wrapper">
+        <div class="flex justify-between p-4 pb-2">
+          <div class="text-sm font-semibold pl-2">
+            <span v-if="title">{{ title }}</span>
+          </div>
+          <button
+            @click="closeDialog"
+            class="dialog-close-btn transition-all hover:text-primary-500"
+          >
+            <Icon icon="zondicons:close-outline" />
+          </button>
         </div>
-        <button @click="closeDialog" class="dialog-close-btn transition-all hover:text-primary-500">
-          <Icon icon="zondicons:close-outline" />
-        </button>
-      </div>
-      <div v-if="$slots.header">
-        <slot name="header" />
-      </div>
-      <div v-if="$slots.default" :class="{ 'pb-6': !actions }" class="p-6 py-2 w-full overflow-auto flex-1">
-        <slot />
-      </div>
-      <div v-if="$slots.footer || actions" class="p-2">
-        <slot name="footer" />
-        <div v-if="actions" :class="actionsClasses">
-          <Button v-for="(b, i) in actions" :key="b.title + i" @click="b.action" :icon="b.icon || undefined" :leftIcon="b.iconLeft || undefined" size="sm"
-            :class="getActionBtnClasses(b.class || '')">{{ b.title }}</Button>
+        <div v-if="$slots.header">
+          <slot name="header" />
+        </div>
+        <div
+          v-if="$slots.default"
+          :class="{ 'pb-6': !actions }"
+          class="p-6 py-2 w-full font-regular overflow-auto flex-1"
+        >
+          <slot />
+        </div>
+        <div v-if="$slots.footer || actions" class="p-2">
+          <slot name="footer" />
+          <div v-if="actions" :class="actionsClasses">
+            <Button
+              v-for="(b, i) in actions"
+              :key="b.title + i"
+              @click="b.action"
+              :icon="b.icon || undefined"
+              :leftIcon="b.iconLeft || undefined"
+              size="sm"
+              :class="getActionBtnClasses(b.class || '')"
+              >{{ b.title }}</Button
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </Teleport>
   <div @click="openDialog" class="inline-block">
     <slot name="trigger">
       <Button>Show dialog</Button>
@@ -64,23 +85,27 @@ const dialogClasses = computed(() => {
     md: "w-full max-w-xl max-h-xl",
     lg: "w-full max-w-2xl max-h-2xl",
     xl: "w-full max-w-3xl max-h-3xl",
-  }
+  };
 
   return twMerge(
     "bg-white text-black rounded-sm overflow-hidden flex flex-col modal-card",
-    sizes[props.size || "fit"], props.class
+    sizes[props.size || "fit"],
+    props.class
   );
 });
 
-const actionsClasses = computed(() => twMerge("flex gap-2", props.actionsClass));
+const actionsClasses = computed(() =>
+  twMerge("flex gap-2", props.actionsClass)
+);
 
-const getActionBtnClasses = (newClasses: string) => twMerge("text-xs", newClasses);
+const getActionBtnClasses = (newClasses: string) =>
+  twMerge("text-xs", newClasses);
 
 const openDialog = () => {
   isOpen.value = true;
   isClosing.value = false;
   document.body.style.overflow = "hidden";
-}
+};
 
 const closeDialog = () => {
   isClosing.value = true;
@@ -88,7 +113,7 @@ const closeDialog = () => {
     isOpen.value = false;
     document.body.style.overflow = "";
   }, 300);
-}
+};
 
 const handleBackdropClick = () => closeDialog();
 
@@ -105,7 +130,6 @@ onUnmounted(() => document.removeEventListener("keydown", handleEscape));
 //   { title: "Cancel", action: () => modalRef.value?.closeDialog() },
 // ];
 defineExpose({ closeDialog });
-
 </script>
 
 <style scoped>

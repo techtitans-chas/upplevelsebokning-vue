@@ -4,7 +4,7 @@
       <h1>Booking</h1>
       <div class="flex gap-6" text="2xl">
         <div>{{ destination.title }}</div>
-        <div>{{ destination.price }} SEK</div>
+        <div>${{ destination.price }}</div>
       </div>
 
       <DateDropdown />
@@ -39,13 +39,7 @@
 
       <!-- Go to Cart Button -->
       <div v-if="cart.items.length > 0" class="mt-6 flex justify-center">
-        <RouterLink to="/cart">
-          <button
-            class="bg-emerald-500 text-white px-8 py-3 rounded hover:bg-emerald-600 font-semibold"
-          >
-            Go to Cart
-          </button>
-        </RouterLink>
+        <Button to="/cart">Go to Cart</Button>
       </div>
     </Section>
   </div>
@@ -56,7 +50,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute, RouterLink } from "vue-router";
+import { useRoute } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
 import { useAccommodationStore } from "@/stores/accommodation";
 import { useActivityStore } from "@/stores/activity";
@@ -65,7 +59,7 @@ import Section from "@/components/layout/Section.vue";
 import DateDropdown from "@/components/form/DateDropdown.vue";
 import AccommodationCard from "@/components/cards/AccommodationCard.vue";
 import ActivityCard from "@/components/cards/ActivityCard.vue";
-import NumberInput from "@/components/form/NumberInput.vue";
+import Button from "@/components/ui/Button.vue";
 import { ref } from "vue";
 
 const route = useRoute();

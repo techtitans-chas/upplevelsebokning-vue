@@ -6,7 +6,7 @@
     footerClass="pt-0 flex flex-col items-center"
   >
     <template #header>
-      <div class="font-semibold">{{ data.title }}</div>
+      <ActivityModal :data="data" />
     </template>
     <template #content>
       <p class="text-sm">{{ data.description }}</p>
@@ -69,12 +69,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Dropdown } from "floating-vue";
+import type { Activity } from "@/types";
+import { useCartStore } from "@/stores/cart";
 import Card from "@/components/ui/Card.vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
-import type { Activity } from "@/types";
-import { useCartStore } from "@/stores/cart";
+import ActivityModal from "@/components/modals/ActivityModal.vue";
 
 interface Props {
   data: Activity;

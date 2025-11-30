@@ -1,9 +1,12 @@
 <template>
-  <div
-    class="flex gap-2 p-3 px-4 items-center bg-white rounded-sm color-gray-600 h-full"
-  >
+  <div :class="rootClasses">
     <div class="flex-1 flex flex-col items-center">
-      <div class="text-xs text-gray-500 mb-1">{{ label }}</div>
+      <div
+        :class="theme === 'dark' ? 'text-gray-300' : 'text-gray-500'"
+        class="text-xs mb-1"
+      >
+        {{ label }}
+      </div>
       <div class="flex items-center gap-3">
         <button
           @click="decrement"
@@ -46,6 +49,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+import { twMerge } from "tailwind-merge";
 import { Icon } from "@iconify/vue";
 
 const props = withDefaults(
@@ -54,10 +59,20 @@ const props = withDefaults(
     modelValue: number;
     min?: number;
     max?: number;
+    theme?: "light" | "dark";
+    class?: string;
   }>(),
   {
     min: 0,
   }
+);
+
+const rootClasses = computed(() =>
+  twMerge(
+    "flex gap-2 p-3 px-4 items-center rounded-sm h-full",
+    props.theme === "dark" ? "text-white" : "text-gray-600",
+    props.class
+  )
 );
 
 const emit = defineEmits<{

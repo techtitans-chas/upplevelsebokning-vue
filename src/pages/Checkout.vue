@@ -1,11 +1,12 @@
 <template>
-  <div class="max-w-6xl mx-auto p-6">
+  <Section>
     <h1 font="bold" text="4xl" class="mb-6">Checkout</h1>
     <p>Thanks for your order!</p>
-    <RouterLink to="/"><button class="bg-emerald-500 px-4 py-3">Keep browsing</button></RouterLink>
-  </div>
+    <Button to="/">Keep browsing</Button>
+  </Section>
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import Button from "@/components/ui/Button.vue";
+import Section from "@/components/layout/Section.vue";
 </script>

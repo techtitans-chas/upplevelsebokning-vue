@@ -1,32 +1,27 @@
 <template>
   <Card
     :image="data.coverImage ? data.coverImage : '/images/placeholder.jpg'"
+    imageWidth="w-[600px]"
     :class="isInCart ? 'opacity-50' : ''"
   >
     <template #header>
-      <div class="font-semibold">
-        {{ data.title }}
+      <div>
+        <AccommodationModal :data="data" />
       </div>
     </template>
     <template #content>
-      <p>{{ data.description }}</p>
-      <div class="flex justify-between items-center mt-4">
-        <div class="flex justify-between items-center gap-2">
-          <Badge class="bg-secondary-400">{{ data.pricePerNight }}$ per night</Badge>
-          <Badge class="text-[.7rem]" v-for="amenity in data.amenities" :icon="amenity.icon">
-            {{ amenity.title }}
-          </Badge>
-        </div>
-      </div>
-      <div class="mt-4">
+      <div class="text-sm">{{ data.description }}</div>
+      <div class="flex justify-end items-center mt-2">
+        <Badge class="bg-secondary-400">
+          {{ data.pricePerNight }}$ per night
+        </Badge>
         <NumberInput
           label="Number of guests"
           v-model="numberOfGuests"
           :min="1"
+          class="pt-0"
         />
-      </div>
-      <div class="mt-4 flex justify-end">
-        <Button size="sm" @click="order(data)">
+        <Button size="sm" @click="order(data)" class="mt-2">
           {{ isInCart ? "Selected" : "Book now" }}
         </Button>
       </div>
@@ -36,15 +31,15 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import type { Accommodation } from "@/types";
+import { useSessionStore } from "@/stores/session";
+import { useDestinationStore } from "@/stores/destination";
+import { useCartStore } from "@/stores/cart";
 import Button from "@/components/ui/Button.vue";
 import Card from "@/components/ui/Card.vue";
-import type { Accommodation } from "@/types";
 import Badge from "@/components/ui/Badge.vue";
+import AccommodationModal from "@/components/modals/AccommodationModal.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
-import { Icon } from "@iconify/vue";
-import { useCartStore } from "@/stores/cart";
-import { useDestinationStore } from "@/stores/destination";
-import { useSessionStore } from "@/stores/session";
 
 const props = defineProps<{
   data: Accommodation;
@@ -71,7 +66,12 @@ function order(acc: Accommodation) {
     return;
   }
 
-  cart.addAccommodation(acc.destinationId, acc, numberOfGuests.value, destinationStore.getById(props.data.destinationId)?.price);
+  cart.addAccommodation(
+    acc.destinationId,
+    acc,
+    numberOfGuests.value,
+    destinationStore.getById(props.data.destinationId)?.price
+  );
   numberOfGuests.value = 1; // Reset for next booking
 
   // Scroll to activities section
