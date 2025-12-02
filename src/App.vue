@@ -1,10 +1,6 @@
 <template>
   <div class="wrapper">
-    <NavBar />
-    <main class="content">
-      <RouterView />
-    </main>
-    <Footer />
+    <RouterView />
     <ScrollToTop />
     <ToastContainer />
   </div>
@@ -18,8 +14,6 @@ import {
   useActivityStore,
   useDestinationStore,
 } from "./stores";
-import NavBar from "@/components/layout/NavBar.vue";
-import Footer from "@/components/layout/Footer.vue";
 import ScrollToTop from "@/components/layout/ScrollToTop.vue";
 import ToastContainer from "@/components/ui/ToastContainer.vue";
 
