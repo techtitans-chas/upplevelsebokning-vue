@@ -17,6 +17,7 @@ import {
   useAccommodationStore,
   useActivityStore,
   useDestinationStore,
+  useArticleStore
 } from "./stores";
 import NavBar from "@/components/layout/NavBar.vue";
 import Footer from "@/components/layout/Footer.vue";
@@ -27,12 +28,14 @@ const store = {
   accommodation: useAccommodationStore(),
   activity: useActivityStore(),
   destination: useDestinationStore(),
+  article: useArticleStore(),
 };
 
 onMounted(() => {
   store.accommodation.load();
   store.activity.load();
   store.destination.load();
+  store.article.load();
 });
 </script>
 
