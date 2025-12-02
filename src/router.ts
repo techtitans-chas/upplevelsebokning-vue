@@ -22,8 +22,8 @@ const routes = [
       { path: "/search", component: Search },
       { path: "/cart", component: Cart },
       { path: "/checkout", component: Checkout },
-      { path: "/destination/:id", component: Destination },
-      { path: "/booking/:id", component: Booking },
+      { path: "/destination/:id", component: Destination, props: true },
+      { path: "/booking/:id", component: Booking, props: true },
     ]
   },
   {
