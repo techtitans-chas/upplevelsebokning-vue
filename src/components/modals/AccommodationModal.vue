@@ -47,7 +47,6 @@
 
 <script setup lang="ts">
 import type { Accommodation } from "@/types";
-import Card from "@/components/ui/Card.vue";
 import Modal from "@/components/ui/Modal.vue";
 import ReviewList from "@/components/ui/ReviewList.vue";
 import { Icon } from "@iconify/vue";

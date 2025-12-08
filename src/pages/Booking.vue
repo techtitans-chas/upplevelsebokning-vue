@@ -50,7 +50,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
 import { useAccommodationStore } from "@/stores/accommodation";
 import { useActivityStore } from "@/stores/activity";
@@ -60,19 +59,16 @@ import DateDropdown from "@/components/form/DateDropdown.vue";
 import AccommodationCard from "@/components/cards/AccommodationCard.vue";
 import ActivityCard from "@/components/cards/ActivityCard.vue";
 import Button from "@/components/ui/Button.vue";
-import { ref } from "vue";
 
 const props = defineProps<{
   id: string;
 }>();
 
-const route = useRoute();
-
 const destinationStore = useDestinationStore();
 const accommodationStore = useAccommodationStore();
 const activityStore = useActivityStore();
 const cart = useCartStore();
-const numberOfPeople = ref(1);
+// const numberOfPeople = ref(1);
 
 const destination = computed(() => destinationStore.getById(props.id));
 const accommodations = computed(() => accommodationStore.getByDestination(props.id));

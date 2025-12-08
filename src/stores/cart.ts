@@ -83,8 +83,8 @@ export const useCartStore = defineStore("cart", () => {
 
       cartItem.accommodations.push({
         accommodation,
-        startDate: session.departureDate,
-        endDate: session.returnDate,
+        startDate: session.departureDate || "",
+        endDate: session.returnDate || "",
         duration,
         guests,
       });
