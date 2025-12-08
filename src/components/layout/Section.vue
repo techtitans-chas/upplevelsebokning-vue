@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    :style="bgImage ? `background-image: url(${bgImage})` : ''"
+    :style="resolvedBgImage ? `background-image: url(${resolvedBgImage})` : ''"
   >
     <div :class="bgColorClasses" />
     <div :class="innerClasses">
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { twMerge } from "tailwind-merge";
+import { useAssetUrl } from "@/composables/useAssetUrl";
 
 const props = defineProps<{
   class?: string;
@@ -22,6 +23,8 @@ const props = defineProps<{
   bgColor?: string;
   center?: boolean;
 }>();
+
+const resolvedBgImage = useAssetUrl(() => props.bgImage);
 
 const classes = computed(() =>
   twMerge("relative bg-cover bg-center bg-fixed",

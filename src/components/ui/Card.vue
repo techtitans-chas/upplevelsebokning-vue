@@ -1,13 +1,13 @@
 <template>
   <div
     :class="classes"
-    :style="bgImage ? `background-image:url(${bgImage})` : undefined"
+    :style="resolvedBgImage ? `background-image:url(${resolvedBgImage})` : undefined"
   >
     <!-- Left image -->
     <div
       v-if="image && imagePosition !== 'right'"
       :class="imageClasses"
-      :style="`background-image:url(${image})`"
+      :style="`background-image:url(${resolvedImage})`"
     />
     <!-- Card content wrapper -->
     <div class="flex flex-col h-full w-full">
@@ -26,7 +26,7 @@
     <div
       v-if="image && imagePosition === 'right'"
       :class="imageClasses"
-      :style="`background-image:url(${image})`"
+      :style="`background-image:url(${resolvedImage})`"
     />
   </div>
 </template>
@@ -34,6 +34,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { twMerge } from "tailwind-merge";
+import { useAssetUrl } from "@/composables/useAssetUrl";
 
 const props = defineProps<{
   class?: string;
@@ -45,6 +46,9 @@ const props = defineProps<{
   contentClass?: string;
   footerClass?: string;
 }>();
+
+const resolvedBgImage = useAssetUrl(() => props.bgImage);
+const resolvedImage = useAssetUrl(() => props.image);
 
 const classes = computed(() =>
   twMerge(
