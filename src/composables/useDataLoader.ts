@@ -9,8 +9,10 @@ export function useDataLoader<T = any>(path: string) {
     loading.value = true;
     error.value = null;
     try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error(`Failed to fetch ${path}`);
+      // Prepend base URL to handle subdirectory deployments
+      const fullPath = import.meta.env.BASE_URL + path.replace(/^\//, '');
+      const res = await fetch(fullPath);
+      if (!res.ok) throw new Error(`Failed to fetch ${fullPath}`);
       let items = await res.json();
 
       data.value = items;
