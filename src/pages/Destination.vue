@@ -1,8 +1,8 @@
 <template>
   <div v-if="destination">
     <Section class="min-h-[400px]" bg-color="bg-black/60" :bg-image="destination.coverImage
-        ? destination.coverImage
-        : '/images/placeholder.jpg'
+      ? destination.coverImage
+      : '/images/placeholder.jpg'
       ">
       <div class="w-full">
         <div class="grid">
@@ -39,7 +39,8 @@
     <Section class="p-10 pt-6">
       <h2 class="text-center mb-8">Reviews</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto_auto] sm:gap-x-4 sm:gap-y-2 max-w-lg mx-auto px-2">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto_auto] sm:gap-x-4 sm:gap-y-2 max-w-lg mx-auto px-2">
         <ReviewList :data="destination.reviews" />
       </div>
     </Section>
@@ -51,19 +52,16 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
 import { useDestinationStore } from "@/stores/destination";
 import Section from "@/components/layout/Section.vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import ReviewList from "@/components/ui/ReviewList.vue";
 
-const route = useRoute();
+const props = defineProps<{
+  id: string;
+}>();
+
 const destinationStore = useDestinationStore();
-
-const destination = computed(() => {
-  const id = route.params.id as string;
-  return destinationStore.getById(id);
-});
-
+const destination = computed(() => destinationStore.getById(props.id));
 </script>

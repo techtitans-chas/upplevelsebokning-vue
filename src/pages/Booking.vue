@@ -62,6 +62,10 @@ import ActivityCard from "@/components/cards/ActivityCard.vue";
 import Button from "@/components/ui/Button.vue";
 import { ref } from "vue";
 
+const props = defineProps<{
+  id: string;
+}>();
+
 const route = useRoute();
 
 const destinationStore = useDestinationStore();
@@ -70,18 +74,7 @@ const activityStore = useActivityStore();
 const cart = useCartStore();
 const numberOfPeople = ref(1);
 
-const destination = computed(() => {
-  const id = route.params.id as string;
-  return destinationStore.getById(id);
-});
-
-const accommodations = computed(() => {
-  const id = route.params.id as string;
-  return accommodationStore.getByDestination(id);
-});
-
-const activities = computed(() => {
-  const id = route.params.id as string;
-  return activityStore.getByDestination(id);
-});
+const destination = computed(() => destinationStore.getById(props.id));
+const accommodations = computed(() => accommodationStore.getByDestination(props.id));
+const activities = computed(() => activityStore.getByDestination(props.id));
 </script>
