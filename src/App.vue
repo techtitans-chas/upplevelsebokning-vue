@@ -13,6 +13,7 @@ import {
   useAccommodationStore,
   useActivityStore,
   useDestinationStore,
+  useArticleStore
 } from "./stores";
 import ScrollToTop from "@/components/layout/ScrollToTop.vue";
 import ToastContainer from "@/components/ui/ToastContainer.vue";
@@ -21,12 +22,14 @@ const store = {
   accommodation: useAccommodationStore(),
   activity: useActivityStore(),
   destination: useDestinationStore(),
+  article: useArticleStore(),
 };
 
 onMounted(() => {
   store.accommodation.load();
   store.activity.load();
   store.destination.load();
+  store.article.load();
 });
 </script>
 

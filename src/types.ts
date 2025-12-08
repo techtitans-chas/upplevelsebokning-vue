@@ -49,6 +49,14 @@ export interface Destination {
   reviews: Review[];
 }
 
+export interface Article {
+  id: string;
+  title: string;
+  summary: string;
+  content: string;
+  coverImage: string;
+}
+
 export interface CartActivity {
   activity: Activity;
   attendees: number;

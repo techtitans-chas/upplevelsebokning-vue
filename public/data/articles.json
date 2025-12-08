@@ -1,0 +1,45 @@
+[
+	{
+		"id": "safety-first",
+		"title": "Safety First:<br/> Our Commitment to Secure Time Travel",
+		"summary": "How Hourglass Adventures ensures guest safety on every expedition.",
+		"content": "Safety is our top priority. Every journey is planned with redundant systems, expert historians, and field safety officers who know the era. Trips include thorough briefings, secure accommodation protocols, and emergency extraction plans.\n\nWe maintain strict biological and temporal containment standards to protect both travelers and historical timelines. Equipment is tested to the highest standards and our support teams monitor each expedition in real time. If weather, political unrest, or timeline instability is detected, we delay or reroute the trip to keep guests safe.",
+    "coverImage": "/images/articles/safety-first.jpg"
+  },
+	{
+		"id": "time-travel-basics",
+		"title": "Time Travel Basics:<br/> What to Expect on Your Trip",
+		"summary": "An overview of what guests experience before, during and after a time expedition.",
+		"content": "Preparing for time travel is unlike preparing for any other vacation. Guests receive a pre-trip orientation that covers cultural context, dress codes, health requirements, and etiquette for the target era. We also supply era-appropriate attire and language primers.\n\nDuring the expedition, guided itineraries focus on immersive experiences while minimizing historical disturbance. After the trip, guests participate in a debrief that includes preservation of any collected research and optional follow-up readings. Our goal is an unforgettable experience that is respectful, educational, and safe.",
+    "coverImage": "/images/articles/time-travel-basics.jpg"
+  },
+	{
+		"id": "curated-itineraries",
+		"title": "Curated Itineraries:<br/> Expert-Led Historical Immersion",
+		"summary": "How our curated itineraries are designed by historians and experience designers.",
+		"content": "Each itinerary is co-created by leading historians, anthropologists, and design specialists to balance authenticity, accessibility, and safety. We tailor experiences to different interests: archaeology, cultural arts, culinary history, and natural history.\n\nGroups are intentionally small to reduce impact and increase the quality of interaction. Special-interest expeditions include hands-on workshops, private viewings, and deep-dive lectures that are adapted to the social norms of the time.",
+    "coverImage": "/images/articles/curated-itineraries.jpg"
+  },
+	{
+		"id": "ethical-guidelines",
+		"title": "Ethics & Stewardship:<br/> Our Responsibility to History",
+		"summary": "The ethical principles that guide Hourglass Adventures' operations.",
+		"content": "We operate under strict ethical guidelines designed to preserve people, cultures, and timelines. Our policies prohibit interference with historical events and require informed consent for interactions that involve living communities.\n\nAll research and artifacts are handled with transparency and, where appropriate, shared with local partners or academic institutions. We continually review our ethical frameworks with independent advisors to ensure we act as responsible stewards of the past.",
+    "coverImage": "/images/articles/ethical-guidelines.jpg"
+  },
+	{
+		"id": "customer-stories",
+		"title": "Customer Stories:<br/> Journeys That Changed Perspectives",
+		"summary": "First-hand recollections from travelers who experienced our expeditions.",
+		"content": "Our guests regularly tell us that time travel reframes how they see the present. From watching a classical performance in its original amphitheater to helping record an oral tradition with elders, guests return with new insights and a deeper appreciation for human history.\n\nThese stories are collected with permission and often inspire new itineraries. They also help us refine how we prepare travelers emotionally and practically for the intensity of temporal immersion.",
+    "coverImage": "/images/articles/customer-stories.jpg"
+
+  },
+	{
+		"id": "future-expeditions",
+		"title": "Future Expeditions:<br/> Where We're Going Next",
+		"summary": "A preview of curated destinations and experiences coming soon.",
+		"content": "We're constantly researching new expeditions that expand the range of experiences while maintaining our commitment to safety and ethics. Upcoming plans include collaborative archaeological digs, interdisciplinary cultural exchanges, and expanded educational partnerships.\n\nAs technology and scholarship evolve, we adapt our offerings—always with respect for source communities and scientific protocols. Sign up for updates to hear about new itineraries and priority booking windows.",
+    "coverImage": "/images/articles/future-expeditions.jpg"
+  }
+]
