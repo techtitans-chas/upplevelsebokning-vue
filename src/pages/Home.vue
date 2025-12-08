@@ -41,7 +41,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-y-4">
       <div v-for="article in articles" :key="article.id"
         class="grid gap-1 border-1 border-transparent hover:border-primary-500 transition-all p-4 rounded-sm hover:cursor-pointer"
-        @click="">
+        @click="navigateTo(`/article/${article.id}`)">
         <Card :bg-image="article.coverImage" class="min-h-[220px]">
         </Card>
         <div class="text-center text-white font-semibold mt-2" v-html="article.title"></div>
@@ -103,6 +103,8 @@ const contact = () => {
     error("Failed to establish wormhole connection", "Please try again later.");
   }, 2000);
 };
+
+const navigateTo = (path: string) => router.push(path);
 
 const articles = computed(() => articleStore.data);
 </script>
