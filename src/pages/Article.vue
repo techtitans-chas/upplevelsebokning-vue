@@ -16,18 +16,19 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
 import { useArticleStore } from "@/stores/article";
 import Section from "@/components/layout/Section.vue";
 import Link from "@/components/ui/Link.vue";
 import { Icon } from "@iconify/vue";
 
-const route = useRoute();
 const articleStore = useArticleStore();
 
+const props = defineProps<{
+  id: string;
+}>();
+
 const article = computed(() => {
-  const id = route.params.id as string;
-  return articleStore.getById(id);
+  return articleStore.getById(props.id);
 });
 
 </script>

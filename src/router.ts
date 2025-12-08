@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter, type RouteLocationNormalized } from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 
 import Home from "./pages/Home.vue";
 import Cart from "./pages/Cart.vue";
@@ -15,7 +15,7 @@ const routes = [
   { path: "/checkout", component: Checkout },
   { path: "/destination/:id", component: Destination },
   { path: "/booking/:id", component: Booking },
-  { path: "/article/:id", component: Article },
+  { path: "/article/:id", component: Article, props: true },
 ];
 
 export const router = createRouter({
