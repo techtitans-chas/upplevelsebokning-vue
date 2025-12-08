@@ -36,7 +36,7 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/upplevelsebokning-vue/"),
   routes,
   scrollBehavior() {
     // always scroll to top

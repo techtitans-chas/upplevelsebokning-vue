@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    :style="bgImage ? `background-image: url('${bgImage}')` : ''"
+    :style="bgImage ? `background-image: url(${bgImage})` : ''"
   >
     <div :class="bgColorClasses" />
     <div :class="innerClasses">

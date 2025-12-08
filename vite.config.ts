@@ -4,12 +4,12 @@ import UnoCSS from "unocss/vite";
 import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [vue(), UnoCSS()],
-  base: "/upplevelsebokning-vue/",
+  base: command === 'build' ? "/upplevelsebokning-vue/" : "/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-});
+}));
