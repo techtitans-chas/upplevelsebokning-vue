@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, type NavigationGuardNext } from "vue-router";
 
 // Layouts
 import DefaultLayout from "./layouts/Default.vue";
@@ -22,7 +22,16 @@ const routes = [
       { path: "/", component: Home },
       { path: "/search", component: Search },
       { path: "/cart", component: Cart },
-      { path: "/checkout", component: Checkout },
+      { path: "/checkout", component: Checkout, beforeEnter: (
+        // @ts-ignore
+        _to, _from, next: NavigationGuardNext) => {
+        // Use dynamic import to access store within route guard
+        import("@/stores/cart").then(({ useCartStore }) => {
+          const cart = useCartStore();
+          if (!cart.processingPayment) next({ path: "/not-found" });
+          else next();
+        });
+      }},
       { path: "/destination/:id", component: Destination, props: true },
       { path: "/booking/:id", component: Booking, props: true },
       { path: "/article/:id", component: Article, props: true },

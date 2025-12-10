@@ -35,11 +35,13 @@ import type { Accommodation } from "@/types";
 import { useSessionStore } from "@/stores/session";
 import { useDestinationStore } from "@/stores/destination";
 import { useCartStore } from "@/stores/cart";
+import { useToast } from "@/composables/useToast";
 import Button from "@/components/ui/Button.vue";
 import Card from "@/components/ui/Card.vue";
 import Badge from "@/components/ui/Badge.vue";
 import AccommodationModal from "@/components/modals/AccommodationModal.vue";
 import NumberInput from "@/components/form/NumberInput.vue";
+
 
 const props = defineProps<{
   data: Accommodation;
@@ -48,6 +50,8 @@ const props = defineProps<{
 const cart = useCartStore();
 const destinationStore = useDestinationStore();
 const session = useSessionStore();
+const { success, error } = useToast();
+
 const numberOfGuests = ref(1);
 
 const isInCart = computed(() => {
@@ -62,7 +66,7 @@ const isInCart = computed(() => {
 
 function order(acc: Accommodation) {
   if (!session.departureDate || !session.returnDate) {
-    alert("Please select dates before booking");
+    error("Please select dates before booking")
     return;
   }
 
@@ -73,6 +77,8 @@ function order(acc: Accommodation) {
     destinationStore.getById(props.data.destinationId)?.price
   );
   numberOfGuests.value = 1; // Reset for next booking
+
+  success("Accommodation added successfully");
 
   // Scroll to activities section
   const activitiesSection = document.getElementById("activities-section");

@@ -5,6 +5,7 @@ import { useSessionStore } from "./session";
 
 export const useCartStore = defineStore("cart", () => {
   const items = ref<CartItem[]>([]);
+  const processingPayment = ref<boolean>(false);
 
   const totalValue = computed(() => {
     return items.value.reduce((acc, cartItem) => {
@@ -188,6 +189,7 @@ export const useCartStore = defineStore("cart", () => {
     items,
     totalValue,
     totalAmount,
+    processingPayment,
     addAccommodation,
     removeAccommodation,
     addActivity,

@@ -4,7 +4,7 @@
 
     <div v-if="cart.items.length === 0" class="text-center py-12">
       <p class="text-primary-300 mb-4">Your cart is empty</p>
-      <Button to="/">Continue shopping</Button>
+      <Button to="/">Continue browsing</Button>
     </div>
 
     <Section v-else>
@@ -37,16 +37,18 @@
               class="flex justify-between items-start p-4 border border-sky-700/20 bg-sky-900/40"
             >
               <div class="flex-1">
-                <div class="flex justify-between">
+                <div class="flex justify-between items-start">
                   <h4 class="font-semibold mb-2 text-white">
                     {{ cartAcc.accommodation.title }}
                   </h4>
                   <Button
-                    @click="
+                    @click="() => {
                       cart.removeAccommodation(
                         destinationItem.destinationId,
                         cartAcc.accommodation.id
-                      )
+                      );
+                      success('Accommodation removed from cart');
+                    }
                     "
                     color="primary"
                     size="sm"
@@ -60,7 +62,7 @@
 
                 <!-- Info items -->
                 <div
-                  class="flex gap-4 items-center mb-3 text-primary-200 justify-between"
+                  class="flex gap-4 items-center text-primary-200 justify-between"
                 >
                   <div class="flex gap-4">
                     <InfoItem label="Check-in" :value="cartAcc.startDate" />
@@ -105,12 +107,13 @@
                     {{ cartActivity.activity.title }}
                   </h4>
                   <Button
-                    @click="
+                    @click="() => {
                       cart.removeActivity(
                         destinationItem.destinationId,
                         cartActivity.activity.id
-                      )
-                    "
+                      );
+                      success('Activity removed from cart');
+                    }"
                     color="primary"
                     size="sm"
                   >
@@ -189,7 +192,10 @@
         </div>
 
         <div class="flex gap-4 justify-end">
-          <Button @click="cart.clear" color="secondary" icon="maki:cross">
+          <Button @click="() => {
+            cart.clear();
+            success('Cart was successfully cleared');
+            }" color="secondary" icon="maki:cross">
             Clear Cart
           </Button>
           <Button @click="pay" icon="mingcute:arrow-right-fill">
@@ -204,6 +210,7 @@
 <script setup lang="ts">
 import { useCartStore } from "@/stores/cart";
 import { useRouter } from "vue-router";
+import { useToast } from "@/composables/useToast";
 import Button from "@/components/ui/Button.vue";
 import Section from "@/components/layout/Section.vue";
 import Card from "@/components/ui/Card.vue";
@@ -214,9 +221,11 @@ import InfoItem from "@/components/ui/InfoItem.vue";
 
 const cart = useCartStore();
 const router = useRouter();
+const { success } = useToast();
 
 function pay() {
   cart.clear();
+  cart.processingPayment = true;
   router.push("/checkout");
 }
 

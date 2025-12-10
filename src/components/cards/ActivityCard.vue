@@ -71,6 +71,7 @@ import { ref } from "vue";
 import { Dropdown } from "floating-vue";
 import type { Activity } from "@/types";
 import { useCartStore } from "@/stores/cart";
+import { useToast } from "@/composables/useToast";
 import Card from "@/components/ui/Card.vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
@@ -83,14 +84,16 @@ interface Props {
 
 const props = defineProps<Props>();
 
+const { success } = useToast();
+
 const numberOfPeople = ref(1);
 const isOpen = ref(false);
-const dropdownRef = ref<InstanceType<typeof Dropdown>>();
 const cart = useCartStore();
 
 function order() {
   // Add activity to the cart (destination item will be created automatically if it doesn't exist)
   cart.addActivity(props.data.destinationId, props.data, numberOfPeople.value);
   numberOfPeople.value = 1; // Reset for next activity
+  success("Activity added successfully");
 }
 </script>
