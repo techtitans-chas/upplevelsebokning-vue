@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 
 const classes = twMerge(
-  "bg-primary-500 rounded-full text-white font-regular flex justify-center items-center gap-1 leading-none py-[.2rem] px-[.5rem] text-sm",
+  "bg-primary-500 rounded-full text-white font-regular inline-flex justify-center items-center gap-1 leading-none py-[.2rem] px-[.5rem] text-sm",
   props.class
 );
 </script>

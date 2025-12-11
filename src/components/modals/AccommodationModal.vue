@@ -17,16 +17,7 @@
       <div>
         <p>{{ data.description }}</p>
 
-        <ul class="ml-4 mt-4">
-          <li
-            v-for="amenity in data.amenities"
-            :key="amenity.title"
-            class="flex items-center gap-2 text-sm text-gray-500"
-          >
-            <Icon :icon="amenity.icon" />
-            <div>{{ amenity.title }}</div>
-          </li>
-        </ul>
+        <IconedList :items="data.amenities" />
 
         <div class="text-right font-semibold mt-6 text-primary-500">
           ${{ data.pricePerNight }} per night
@@ -50,6 +41,7 @@ import type { Accommodation } from "@/types";
 import Modal from "@/components/ui/Modal.vue";
 import ReviewList from "@/components/ui/ReviewList.vue";
 import { Icon } from "@iconify/vue";
+import  IconedList from "@/components/ui/IconedList.vue";
 
 defineProps<{
   data: Accommodation;

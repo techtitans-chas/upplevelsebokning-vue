@@ -11,7 +11,7 @@
     </template>
     <template #content>
       <div class="text-sm">{{ data.description }}</div>
-      <div class="flex justify-end items-center mt-2">
+      <div class="flex flex-col sm:flex-row justify-end items-center mt-2">
         <Badge class="bg-secondary-400">
           {{ data.pricePerNight }}$ per night
         </Badge>

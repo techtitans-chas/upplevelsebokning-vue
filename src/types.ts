@@ -4,13 +4,18 @@ export interface Review {
   comment: string;
 }
 
+export interface Amenity {
+  icon: string;
+  title: string;
+}
+
 export interface Accommodation {
   id: string;
   destinationId: string;
   destination?: Destination;
   title: string;
   description: string;
-  amenities: Array<{ icon: string; title: string }>;
+  amenities: Amenity[];
   beds: number;
   pricePerNight: number;
   coverImage: string;
