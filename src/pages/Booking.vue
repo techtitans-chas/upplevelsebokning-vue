@@ -1,13 +1,18 @@
 <template>
   <div v-if="destination">
-    <Section>
-      <h1>Booking</h1>
-      <div class="flex gap-6" text="2xl">
-        <div>{{ destination.title }}</div>
-        <div>${{ destination.price }}</div>
+    <Section bg-color="bg-black/60" :bg-image="destination.coverImage
+      ? destination.coverImage
+      : '/images/placeholder.jpg'
+    ">
+      <h1><span class="text-white text-3xl">Book your trip to</span><br/>{{ destination.title }}</h1>
+      
+      <div class="grid gap-4 justify-start">
+        <div class="bg-primary-600 inline-block text-white rounded-full px-3 py-2 text-center">
+          Wormhole fee: ${{ destination.price }}
+        </div>
+        <DateDropdown />
       </div>
 
-      <DateDropdown />
     </Section>
 
     <!-- Accommodations -->
@@ -28,7 +33,7 @@
     <Section id="activities-section">
       <h2>Activities</h2>
 
-      <div v-if="activities.length > 0" class="grid grid-cols-4 gap-4">
+      <div v-if="activities.length > 0" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         <ActivityCard
           v-for="activitity in activities"
           :key="activitity.id"

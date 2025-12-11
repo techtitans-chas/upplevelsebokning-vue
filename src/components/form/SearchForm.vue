@@ -20,11 +20,6 @@
       <Dropdown label="Time Period" icon="bx:hourglass" :modelValue="`${formatYear(minTimePeriod)} to ${formatYear(maxTimePeriod)}`">
         <template #content>
           <div class="flex flex-col gap-4 p-4 min-w-[300px]">
-            <div class="flex gap-2 items-center justify-between">
-              <span class="text-sm font-medium">{{ formatYear(minTimePeriod) }}</span>
-              <span class="text-sm text-gray-500">to</span>
-              <span class="text-sm font-medium">{{ formatYear(maxTimePeriod) }}</span>
-            </div>
             <div class="flex flex-col gap-3">
               <div>
                 <label class="text-xs text-gray-500 mb-1 block">Oldest</label>

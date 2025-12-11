@@ -5,6 +5,7 @@ import { useSessionStore } from "./session";
 
 export const useCartStore = defineStore("cart", () => {
   const items = ref<CartItem[]>([]);
+  const processingPayment = ref<boolean>(false);
 
   const totalValue = computed(() => {
     return items.value.reduce((acc, cartItem) => {
@@ -47,7 +48,7 @@ export const useCartStore = defineStore("cart", () => {
       };
       items.value.push(cartItem);
     }
-
+    save();
     return cartItem;
   }
 
@@ -89,6 +90,7 @@ export const useCartStore = defineStore("cart", () => {
         guests,
       });
     }
+    save();
   }
 
   /**
@@ -109,6 +111,7 @@ export const useCartStore = defineStore("cart", () => {
         removeDestinationItem(destinationId);
       }
     }
+    save();
   }
 
   /**
@@ -132,6 +135,7 @@ export const useCartStore = defineStore("cart", () => {
     } else {
       cartItem.activities.push({ activity, attendees });
     }
+    save();
   }
 
   /**
@@ -152,6 +156,7 @@ export const useCartStore = defineStore("cart", () => {
         removeDestinationItem(destinationId);
       }
     }
+    save();
   }
 
   /**
@@ -171,6 +176,7 @@ export const useCartStore = defineStore("cart", () => {
         cartActivity.attendees = attendees;
       }
     }
+    save();
   }
 
   /**
@@ -178,16 +184,38 @@ export const useCartStore = defineStore("cart", () => {
    */
   function removeDestinationItem(destinationId: string) {
     items.value = items.value.filter((i) => i.destinationId !== destinationId);
+    save();
   }
 
   function clear() {
     items.value = [];
+    save();
+  }
+
+  function save() {
+    localStorage.setItem("ttchasvue-cart", JSON.stringify(items.value));
+  }
+
+  function load() {
+    const raw = localStorage.getItem("ttchasvue-cart");
+    if (!raw) {
+      items.value = [];
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(raw) as CartItem[];
+      items.value = Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      items.value = [];
+    }
   }
 
   return {
     items,
     totalValue,
     totalAmount,
+    processingPayment,
     addAccommodation,
     removeAccommodation,
     addActivity,
@@ -195,5 +223,7 @@ export const useCartStore = defineStore("cart", () => {
     updateActivityAttendees,
     removeDestinationItem,
     clear,
+    save,
+    load,
   };
 });
