@@ -13,7 +13,8 @@ import {
   useAccommodationStore,
   useActivityStore,
   useDestinationStore,
-  useArticleStore
+  useArticleStore,
+  useCartStore
 } from "./stores";
 import ScrollToTop from "@/components/layout/ScrollToTop.vue";
 import ToastContainer from "@/components/ui/ToastContainer.vue";
@@ -23,6 +24,7 @@ const store = {
   activity: useActivityStore(),
   destination: useDestinationStore(),
   article: useArticleStore(),
+  cart: useCartStore(),
 };
 
 onMounted(() => {
@@ -30,6 +32,7 @@ onMounted(() => {
   store.activity.load();
   store.destination.load();
   store.article.load();
+  store.cart.load();
 });
 </script>
 
